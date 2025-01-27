@@ -1,5 +1,5 @@
-T4-MFA is a projekt to customize the Instrument from an Volkswagen T4
-with a color MFA (Multi Function Diaplay)
+T4-MFA is a projekt to customize the Dash Board from an 
+Volkswagen T4 Van with a color MFA (Multi Function Diaplay)
 
 <img src="Fotos/2_8_Display.jpg"/>
 <img src="Fotos/Dashboard.jpg"/>
