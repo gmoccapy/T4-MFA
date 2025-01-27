@@ -1,7 +1,8 @@
 T4-MFA is a projekt to customize the Instrument from an Volkswagen T4
 with a color MFA (Multi Function Diaplay)
 
-<img src="Fotos/IMG_5877.jpg"/>
+<img src="Fotos/2_8_Display.jpg"/>
+<img src="Fotos/Dashboard.jpg"/>
 
 It is based on a ESP32S-Dev Kit C V4 with 512 kB SRAM and 4 MB Flash
 The used display is an 3,5 Inch RPI Display with 480x320 Pixel

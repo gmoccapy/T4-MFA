@@ -1,0 +1,33 @@
+Display:
+APKLVSR 3,5" LCD RPi                            (Amazon)        modification of the connectors are needed
+alternative:
+EZ Delivery Waveshare 3,5" TFT Touch Shield     (AZ-Delivery)   not tested jet, advantage backlight control
+                                                                3D Holder needs to be modufied
+
+Micocontroler:
+ESP32 Dev KitC V4 ESP32-WROOM-32 unsoldered     (AZ-Delivery)
+
+CAN-Bus Modul:
+WCMCU-230 Modul (R2 has to be removed)          (AZ-Delivery)
+
+Latch Circuit & Brake Out Board:
+1 x resistor 1/4W 220 Ohm                       (Reichelt)
+1 x Mosfet IRF 9510                             (Reichelt)
+2 x resistor 1/4W 100k Ohm                      (Reichelt)
+1 x Transistor 2N 3904                          (Reichelt)
+1 x resistor 1/4W 33k Ohm                       (Reichelt)
+1 x resistor 1/4W 10k Ohm                       (Reichelt)
+2 x Diode 1N 5408                               (Reichelt)
+1 x resistor 1/4W 220k Ohm                      (Reichelt)
+2 x Female pin Header connector 19 pin          (AZ-Delivery)
+1 x Female pin Header connector 6 pin           (AZ-Delivery)
+1 x Screw Terminal 2 pin                        (Amazon)
+
+several cable
+welding material
+single-sided board material
+
+3d Printed parts:
+1 x display holder
+1 x brake out board holder
+
