@@ -18,7 +18,7 @@ Please take care to use ARDUINO IDE 2.XX to programm the ESP
 You will need to use following libraries
 
 - ESP32 library 2.0.17 
-  Do not use newer one as the newer ones are not supported by the TFT_eSpi library
+  Do not use newer one as the newer ones are not supported by the TFT_eSPI library
 - TFT_eSPI 2.5.43
 - ESP32-TWAI-CAN 1.0.1
 
