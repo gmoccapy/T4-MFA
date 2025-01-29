@@ -38,9 +38,9 @@
 // Oil Presure PIN ; IN
 #define PIN_OIL_PRESURE 17
 // Oil Level PIN ; IN
-#define PIN_OIL_LEVEL 34
+#define PIN_OIL_LEVEL 33
 // Wiper Water Warning PIN ; IN
-#define PIN_WASHER_FLUID 33
+//#define PIN_WASHER_FLUID 33
 // Brake Pad PIN ; IN
 #define PIN_BRAKEPADS 34
 

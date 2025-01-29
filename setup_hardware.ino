@@ -59,9 +59,9 @@ void pin_setup(void){
   trunk = digitalRead(PIN_TRUNK);
 
   // Wiper Water Warning PIN ; IN
-  pinMode(PIN_WASHER_FLUID, INPUT_PULLUP);
-  attachInterrupt(digitalPinToInterrupt(PIN_WASHER_FLUID), PIN_washer_fluid_changed, CHANGE);
-  washer_fluid = digitalRead(PIN_WASHER_FLUID);
+  // pinMode(PIN_WASHER_FLUID, INPUT_PULLUP);
+  // attachInterrupt(digitalPinToInterrupt(PIN_WASHER_FLUID), PIN_washer_fluid_changed, CHANGE);
+  // washer_fluid = digitalRead(PIN_WASHER_FLUID);
 
   // Brake Pad PIN ; IN
   pinMode(PIN_BRAKEPADS, INPUT_PULLUP);
@@ -94,32 +94,32 @@ void PIN_memory_changed(void){
 
 void PIN_R_Door_changed(void){
   door_r = digitalRead(PIN_R_DOOR);
-//  check_led = true;
+  check_led = true;
 }
 
 void PIN_S_Door_changed(void){
   door_s = digitalRead(PIN_S_DOOR);
-//  check_led = true;
+  check_led = true;
 }
 
 void PIN_motor_cap_changed(void){
   motor_cap = digitalRead(PIN_MOTOR_CAP);
-//  check_led = true;
+  check_led = true;
 }
 
 void PIN_Trunk_changed(void){
   trunk = digitalRead(PIN_TRUNK);
-//  check_led = true;
+  check_led = true;
 }
 
-void PIN_washer_fluid_changed(void){
-  washer_fluid = digitalRead(PIN_WASHER_FLUID);
-//  check_led = true;
-}
+// void PIN_washer_fluid_changed(void){
+//   washer_fluid = digitalRead(PIN_WASHER_FLUID);
+// //  check_led = true;
+// }
 
 void PIN_brakepads_changed(void){
-  washer_fluid = digitalRead(PIN_BRAKEPADS);
-//  check_led = true;
+  brakepads = digitalRead(PIN_BRAKEPADS);
+  check_led = true;
 }
 
 void PIN_Oil_Presure_changed(void){
@@ -130,7 +130,6 @@ void PIN_Oil_Presure_changed(void){
 void PIN_Oil_Level_changed(void){
   oil_level = digitalRead(PIN_OIL_LEVEL);
   check_led = true;
-//  counter += 1;
 }
 
 

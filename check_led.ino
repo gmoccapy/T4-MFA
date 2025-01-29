@@ -72,12 +72,12 @@ void check_LED (void){
   // oil warnings // over IO
   if(oil_presure == false){
     if(Data.page == 3){
-      tft.drawXBitmap(135, 225, sym_oil, 50, 50, TFT_RED);
+      tft.drawXBitmap(256, 179, sym_oil, 50, 50, TFT_RED);
     }
   }
   else {
     if(Data.page == 3){
-      tft.fillRect(135, 255, 50, 50, BACK_COLOR);
+      tft.fillRect(256, 179, 50, 50, BACK_COLOR);
     }
   }
 
