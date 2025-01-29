@@ -59,59 +59,23 @@ void setup(void) {
 
   Serial.begin(115200);
 
-  // MFA Control buttons
-  // Mode switch button settings
-  pinMode(PIN_Mode, INPUT);
-  attachInterrupt(digitalPinToInterrupt(PIN_Mode), PIN_mode_changed, CHANGE);
-  pinMode(PIN_Reset, INPUT);
-  attachInterrupt(digitalPinToInterrupt(PIN_Reset), PIN_reset_changed, CHANGE);
-  pinMode(PIN_Memory, INPUT);
-  attachInterrupt(digitalPinToInterrupt(PIN_Memory), PIN_memory_changed, CHANGE);
-
-  // Analog and digital PIN
-  // Voltage PIN ; IN
-  pinMode(PIN_Volt, INPUT_PULLUP);
-  // Stay On PIN ; OUT
-  pinMode(PIN_STAY_ON, OUTPUT);
-  // Trunk PIN ; IN
-  pinMode(PIN_TRUNK, INPUT_PULLUP);
-  // Oil Presure PIN ; IN
-  pinMode(PIN_OIL_PRESURE, INPUT_PULLUP);
-  // Door right PIN ; IN
-  pinMode(PIN_R_DOOR, INPUT_PULLUP);
-  // Door Sliding PIN ; IN
-  pinMode(PIN_S_DOOR, INPUT_PULLUP);
-  // Wiper Water Warning PIN ; IN
-  pinMode(PIN_WIPER_WATER, INPUT_PULLUP);
-  // Brake Pad PIN ; IN
-  pinMode(PIN_BRAKE_PAD, INPUT_PULLUP);
-  // Motor Cap PIN ; IN
-  pinMode(PIN_MOTOR_CAP, INPUT_PULLUP);
-  // Oil Level PIN ; IN
-  pinMode(PIN_OIL_LEVEL, INPUT_PULLUP);
+  // Setup the hardware
+  // PIN setup
+  pin_setup();
 
   // start the TFT Display and set orientation
-  tft.begin();
-  tft.setRotation(0);
-  tft.fillScreen(BACK_COLOR);
-  tft.setTextColor(TEXT_COLOR, BACK_COLOR);
-
-  create_sprites();
+  setup_TFT();
 
   // Set up can system
-  // set up filters, need to be done in a better way, as this will accept all ID'S
-// ToDo: calculate filter corectly to avoid unneeded trafic
-  filter.acceptance_code = 0x280 << 5;
-  filter.acceptance_mask = 0x7A8 << 5;
-  filter.single_filter = false;
-  ESP32Can.begin(ESP32Can.convertSpeed(500), CAN_TX, CAN_RX, 0, 20, &filter);
+  setup_CAN();
 
-  // Init the button state, as otherwise it will be set only after first press of the button
-  PIN_mode_state = digitalRead(PIN_Mode);
-  PIN_reset_state = digitalRead(PIN_Reset);
-  PIN_memory_state = digitalRead(PIN_Memory);
+  // need to initialize some PIN, set to default
+  //pin_init();
 
-  // load the stored Data in memory
+  // create some sprites to avoid to much screen drawing
+  create_sprites();
+
+  // load the Data stored in memory
   load_Data();
   temp_page = Data.page;
 
@@ -163,6 +127,7 @@ void loop(void) {
     PIN_mode_previous_state = PIN_mode_state;
     previousPressedMode = millis();
     DrawSelected(Data.page);
+    check_LED();
     //print_Data();
 
     // if (Data.page == 3){
@@ -193,6 +158,7 @@ void loop(void) {
 
     DrawSelected(Data.page);
     start = true;
+    check_LED();
   }
 
   // update time every second
@@ -203,7 +169,6 @@ void loop(void) {
 
   if (check_led == true){
     check_LED();
-    check_led = false;
   }
 
   // to avoid update values for door warning in full page mode
@@ -213,19 +178,25 @@ void loop(void) {
 
   update_volt();
 
-  Serial.println(PIN_mode_state);
-
-  // temp_oil += 1;
-  // if (temp_oil > 160){
-  //   temp_oil = 0;
-  // }
-  // // draw oil temp scale
-  // String(F("Oil")).toCharArray(TFT_String, 4);
-  // draw_bar(TFT_String, 15, 295, temp_oil);
-
-  //draw_dial(75, 108, temp_oil, 0, temp_oil, 160.0, F("Öl"), F("Temperatur"));
-
-
+  Serial.print("door = ");
+  Serial.print(door);
+  Serial.print("\t");
+  Serial.print("light = ");
+  Serial.print(light);
+  Serial.print("\t");
+  Serial.print("petrol = ");
+  Serial.print(petrol);
+  Serial.print("\t");
+  Serial.print("presure = ");
+  Serial.print(oil_presure);
+  Serial.print("\t");
+  Serial.print("level = ");
+  Serial.print(oil_level);
+  Serial.print("\t");
+  Serial.print("counter = ");
+  Serial.print(counter);
+  Serial.println("\t");
+  
 
   // stay_on == true after we had one time ignition
   // shutdown_timer will be set switching off ignition 
@@ -234,19 +205,6 @@ void loop(void) {
     digitalWrite(PIN_STAY_ON, 0);
   }
 }
-
-void PIN_mode_changed(void){
-  PIN_mode_state = digitalRead(PIN_Mode);
-}
-
-void PIN_reset_changed(void){
-  PIN_reset_state = digitalRead(PIN_Reset);
-}
-
-void PIN_memory_changed(void){
-  PIN_memory_state = digitalRead(PIN_Memory);
-}
-
 
 // This loop runs on Core 0, while the main loop runs on Core 1
 void CAN_Loop (void *parameter){

@@ -406,7 +406,7 @@ void draw_value_volt(int Y_Pos){
     String(F("---")).toCharArray(TFT_String, 4);
   }
   else{
-    dtostrf(volt * volt_faktor, 6, 1, TFT_String);
+    dtostrf(volt * VOLT_FAKTOR, 6, 1, TFT_String);
   }
   draw_value_box(218, Y_Pos, 134, 50, TFT_String);
 }

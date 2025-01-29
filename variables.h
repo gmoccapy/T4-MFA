@@ -25,7 +25,7 @@
 // 3.3V = 4095
 // 1.565217391V = 1943
 // factor 1.1 because reading was wrong
-#define volt_faktor (3.3 / 4095.0 ) * ((220.0 + 33.0 ) / 33.0) * 1.12
+#define VOLT_FAKTOR (3.3 / 4095.0 ) * ((220.0 + 33.0 ) / 33.0) * 1.12
 
 float volt = 0;                       // Voltage calculated from analog in PIN 32
 unsigned long shutdown_timer = 0;   	// time for update values in msec
@@ -88,7 +88,6 @@ float C_last_25_km;                   // consumption over the last 25 km in ml
 
 char TFT_String[12];                  // convert values to string to print on the screen
 float temp = 0.0;                     // holds temporarily different values 
-//int old_angle = 45;                    // angle to smooth the scale arc in dial
 
 // variables for the button pin
 unsigned long debounce = 150;
@@ -108,12 +107,17 @@ bool check_led = false;               // only if true, we will redraw the screen
                                       // avoid redrawing the screen every llop cycle
 
 bool light = false;                   // light is on or off
-bool door = false;                    // door is open (true) or closed (false)
+bool door = false;                    // left door is open (true) or closed (false) from can message
+bool door_r = false;                  // right door is open (false) or closed (true) from IO Pull Up
+bool door_s = false;                  // sliding door is open (false) or closed (true) from IO Pull Up
+bool trunk = false;                   // trunk is open (false) or closed (true) from IO Pull Up
+bool motor_cap = false;               // motor cap is open (false) or closed (true) from IO Pull Up
 bool petrol = false;                  // reserve warning controlled by 0x320 can message
-bool oil = false;                     // oil warning controlled by IO
-bool washer_fluid = false;            // washer_fluid warning controlled IO
-bool coolant = false;                 // coolant warning controlled IO
-bool brakepads = false;               // coolant warning controlled IO
+bool oil_presure = true;              // oil presure warning controlled by IO Pull Up 
+bool oil_level = true;                // oil level warning controlled by IO Pull Up
+bool washer_fluid = true;             // washer_fluid warning controlled IO Pull Up
+bool coolant = true;                  // coolant warning controlled IO Pull Up
+bool brakepads = true;                // coolant warning controlled IO Pull Up
 
 int speed;                            // rpm of the motor
 unsigned int km_total = 0;            // total km driven by the vehicle / control the change of this value to recalculate values
@@ -140,3 +144,6 @@ bool units_l_100_km = false;          // true if l/100km ; false if l/h ; start 
                                       // as on start the value will be false, as car is not moving
                                       // we set this to true to have an initial change
 bool hours = false;                   // time is over 3600 sec.
+
+
+int counter = 0;

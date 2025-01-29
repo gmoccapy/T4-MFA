@@ -16,11 +16,11 @@
 
 // MFA Control PIN
 // MODE Switch momentary button
-#define PIN_Mode 13
+#define PIN_MODE 13
 // RESET Switch momentary button
-#define PIN_Reset 14
+#define PIN_RESET 14
 // MEMORY Switch button
-#define PIN_Memory 16
+#define PIN_MEMORY 16
 
 // Analog and digital PIN
 // Voltage PIN ; IN
@@ -29,20 +29,20 @@
 #define PIN_STAY_ON 12 
 // Trunk PIN ; IN
 #define PIN_TRUNK 4
-// Oil Presure PIN ; IN
-#define PIN_OIL_PRESURE 17
 // Door right PIN ; IN
 #define PIN_R_DOOR 26
 // Door Sliding PIN ; IN
 #define PIN_S_DOOR 27
-// Wiper Water Warning PIN ; IN
-#define PIN_WIPER_WATER 33
-// Brake Pad PIN ; IN
-#define PIN_BRAKE_PAD 34
 // Motor Cap PIN ; IN
 #define PIN_MOTOR_CAP 35
+// Oil Presure PIN ; IN
+#define PIN_OIL_PRESURE 17
 // Oil Level PIN ; IN
-#define PIN_OIL_LEVEL 39
+#define PIN_OIL_LEVEL 34
+// Wiper Water Warning PIN ; IN
+#define PIN_WASHER_FLUID 33
+// Brake Pad PIN ; IN
+#define PIN_BRAKEPADS 34
 
 // we get from Can Bus, so we do not need the following PIN
 // Door Left PIN ; IN

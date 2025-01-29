@@ -57,10 +57,10 @@ void check_LED (void){
     }
   }
 
-  // oil warning // over IO
-  if(oil == true){
+  // oil warnings // over IO
+  if(oil_level == false){
     if(Data.page == 3){
-      tft.drawXBitmap(Icon_Pos_Oil[0], Icon_Pos_Oil[1], sym_oil, 50, 50, TFT_RED);
+      tft.drawXBitmap(Icon_Pos_Oil[0], Icon_Pos_Oil[1], sym_oil, 50, 50, TFT_ORANGE);
     }
   }
   else {
@@ -68,5 +68,22 @@ void check_LED (void){
       tft.fillRect(Icon_Pos_Oil[0], Icon_Pos_Oil[1], 50, 50, BACK_COLOR);
     }
   }
+
+  // oil warnings // over IO
+  if(oil_presure == false){
+    if(Data.page == 3){
+      tft.drawXBitmap(135, 225, sym_oil, 50, 50, TFT_RED);
+    }
+  }
+  else {
+    if(Data.page == 3){
+      tft.fillRect(135, 255, 50, 50, BACK_COLOR);
+    }
+  }
+
+
+  counter += 1;
+
+  check_led = false;
 
 }
