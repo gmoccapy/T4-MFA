@@ -17,6 +17,7 @@
   All rights reserved.
 */
 
+#include "pin_setup.h"
 #include "TFT_eSPI.h"
 #include "Free_Fonts.h"
 #include "variables.h"
@@ -28,7 +29,7 @@
 
 //#include "FreeSansBold24pt7b.h"
 
-// Pin definition and settings see USER_SETUP_ID 11
+// Pin definition and settings see pin_setup.h
 
 // make TFT instance
 TFT_eSPI tft = TFT_eSPI();
@@ -41,24 +42,7 @@ TFT_eSprite needle = TFT_eSprite(&tft);
 TFT_eSprite box = TFT_eSprite(&tft);
 
 
-// MFA Control PIN
-// MODE Switch momentary button
-#define PIN_Mode 13
-// RESET Switch momentary button
-#define PIN_Reset 14
-// MEMORY Switch button
-#define PIN_Memory 16
-
-// Analog and digital PIN
-// Voltage PIN ; IN
-#define PIN_Volt 32 
-// Stay On PIN ; OUT
-#define PIN_STAY_ON 12 
-
 // set up can system
-// Default for ESP32
-#define CAN_RX		21
-#define CAN_TX		22
 twai_filter_config_t filter;
 CanFrame rxFrame;
 
@@ -89,11 +73,26 @@ void setup(void) {
   pinMode(PIN_Volt, INPUT_PULLUP);
   // Stay On PIN ; OUT
   pinMode(PIN_STAY_ON, OUTPUT);
+  // Trunk PIN ; IN
+  pinMode(PIN_TRUNK, INPUT_PULLUP);
+  // Oil Presure PIN ; IN
+  pinMode(PIN_OIL_PRESURE, INPUT_PULLUP);
+  // Door right PIN ; IN
+  pinMode(PIN_R_DOOR, INPUT_PULLUP);
+  // Door Sliding PIN ; IN
+  pinMode(PIN_S_DOOR, INPUT_PULLUP);
+  // Wiper Water Warning PIN ; IN
+  pinMode(PIN_WIPER_WATER, INPUT_PULLUP);
+  // Brake Pad PIN ; IN
+  pinMode(PIN_BRAKE_PAD, INPUT_PULLUP);
+  // Motor Cap PIN ; IN
+  pinMode(PIN_MOTOR_CAP, INPUT_PULLUP);
+  // Oil Level PIN ; IN
+  pinMode(PIN_OIL_LEVEL, INPUT_PULLUP);
 
   // start the TFT Display and set orientation
   tft.begin();
   tft.setRotation(0);
-
   tft.fillScreen(BACK_COLOR);
   tft.setTextColor(TEXT_COLOR, BACK_COLOR);
 
@@ -105,13 +104,12 @@ void setup(void) {
   filter.acceptance_code = 0x280 << 5;
   filter.acceptance_mask = 0x7A8 << 5;
   filter.single_filter = false;
-
   ESP32Can.begin(ESP32Can.convertSpeed(500), CAN_TX, CAN_RX, 0, 20, &filter);
 
   // Init the button state, as otherwise it will be set only after first press of the button
   PIN_mode_state = digitalRead(PIN_Mode);
-  PIN_reset_state = digitalRead(PIN_Mode);
-  PIN_memory_state = digitalRead(PIN_Mode);
+  PIN_reset_state = digitalRead(PIN_Reset);
+  PIN_memory_state = digitalRead(PIN_Memory);
 
   // load the stored Data in memory
   load_Data();
@@ -121,26 +119,6 @@ void setup(void) {
 
   // Create Task on Core 0 to read CAN Messages and not delaying due to TFT Drawing functions
   xTaskCreatePinnedToCore(CAN_Loop, "CAN_Loop", 1000, NULL, 0, &EvaluateCAN, 0);
-
-//  esp_sleep_enable_timer_wakeup(10000000); //sleep 10 sec
-
-// Data.C_25_km[6] = 42.95007;
-// Data.C_25_km[15] = 42.95027;
-// temp = 4295010.50 - 42.95007 - 42.95027;
-// Data.C_start = Data.C_start / 1000.0;
-// Data.C_refuel = Data.C_refuel / 1000.0;
-// Data.C_long_period = Data.C_long_period / 1000.0;
-// save_Data();
-
-  // preferences.begin("Settings", false);
-  //   preferences.putInt("page", 3);
-  // preferences.end();
-  // preferences.begin("Consumption", false);
-  //   preferences.putFloat("last_km", 50.00);
-  //   preferences.putFloat("start", 1429.63150);
-  //   preferences.putFloat("refuel", 4297.97150);
-  //   preferences.putFloat("period", 4.29797);
-  // preferences.end();
 
 }
 
@@ -167,7 +145,7 @@ void loop(void) {
   }
 
   if ((PIN_mode_state != PIN_mode_previous_state) && (millis() - previousPressedMode > debounce)){
-    if (PIN_mode_state == false){
+    if (PIN_mode_state == true){
       if(reset == 0){
         Data.page += 1;
         if (Data.page > 4){
@@ -200,7 +178,7 @@ void loop(void) {
   }
 
   // User reset
-  if(PIN_mode_state == true){
+  if(PIN_mode_state == false){
     if(previousPressedMode + 3000 < millis()){
       // We do not want to change page, but this will hapen releasing the button, so we set reset
       reset = Data.mode;
@@ -235,7 +213,7 @@ void loop(void) {
 
   update_volt();
 
-  Serial.println(digitalRead(PIN_Mode));
+  Serial.println(PIN_mode_state);
 
   // temp_oil += 1;
   // if (temp_oil > 160){
