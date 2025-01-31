@@ -22,7 +22,7 @@ Latch Circuit & Brake Out Board:
 2 x Female pin Header connector 19 pin          (AZ-Delivery)
 1 x Female pin Header connector 6 pin           (AZ-Delivery)
 1 x Screw Terminal 2 pin                        (Amazon)
-1 x resistor Network SIL 5-4 47k                (Reichelt)
+1 x resistor Network SIL 5-4 10k                (Reichelt)
 
 several cable
 welding material
