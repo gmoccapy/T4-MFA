@@ -4,6 +4,13 @@
 	(generator_version "8.0")
 	(uuid "c67af5fc-5bb1-4753-93c7-831b7a5a7d41")
 	(paper "A4")
+	(title_block
+		(title "T4_MFA Brakeout Board")
+		(date "30.01.2025")
+		(rev "4")
+		(company "Norbert Schechner")
+		(comment 1 "(c) N. Schechner")
+	)
 	(lib_symbols
 		(symbol "Connector:Conn_01x06_Socket"
 			(pin_names
@@ -6864,7 +6871,7 @@
 				)
 			)
 		)
-		(property "Value" "Pull Up 47k"
+		(property "Value" "Pull Up 10k"
 			(at 143.256 66.04 90)
 			(effects
 				(font
