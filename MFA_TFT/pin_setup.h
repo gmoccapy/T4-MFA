@@ -24,7 +24,7 @@
 
 // Analog and digital PIN
 // Voltage PIN ; IN
-#define PIN_Volt 32 
+#define PIN_Volt 39
 // Stay On PIN ; OUT
 #define PIN_STAY_ON 12 
 // Trunk PIN ; IN
@@ -38,15 +38,19 @@
 // Oil Presure PIN ; IN
 #define PIN_OIL_PRESURE 17
 // Oil Level PIN ; IN
-#define PIN_OIL_LEVEL 33
-// Wiper Water Warning PIN ; IN
-//#define PIN_WASHER_FLUID 33
+#define PIN_OIL_LEVEL 25
 // Brake Pad PIN ; IN
 #define PIN_BRAKEPADS 34
+// Coolant PIN ; IN
+#define PIN_coolant 0        
+
+// Wiper Water Warning PIN ; IN
+#define PIN_WASHER_FLUID 32
+
 
 // we get from Can Bus, so we do not need the following PIN
-// Door Left PIN ; IN
-// #define PIN_L_DOOR 25
+// Door Left
+// petrol warning
 
 
 

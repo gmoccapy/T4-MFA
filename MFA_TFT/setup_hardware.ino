@@ -33,7 +33,7 @@ void pin_setup(void){
 
   // Analog and digital PIN
   // Voltage PIN ; IN
-  pinMode(PIN_Volt, INPUT_PULLUP);
+  //pinMode(PIN_Volt, INPUT); Not needed for analog read
 
   // Stay On PIN ; OUT
   pinMode(PIN_STAY_ON, OUTPUT);

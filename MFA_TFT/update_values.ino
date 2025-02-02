@@ -6,19 +6,29 @@ void update_time(void){
     Data.time_long_period += 1; // min
     time_last = Data.time_start;
   }
+// DEBUG  
+  if(temp_page == 6){
+    tft.setTextDatum(MC_DATUM);
+    temp = (shutdown_timer + 3600000 - millis()) / 1000 ;
+    dtostrf(temp, 4, 0, TFT_String);
+    draw_value_box(160, 250, 134, 50, TFT_String);
+  }
+
 }
 
 void update_volt(void){
   // Get the Voltage value
   temp = analogRead(PIN_Volt);      
-  // get rid of noise influence 
-  // take 70% of old value and 30% of new value to smooth the display
   if (temp > 1000){
     //Serial.println(temp);
+    // get rid of noise influence 
+    // take 70% of old value and 30% of new value to smooth the display
     volt = (0.7 * volt) + (0.3 * temp);
+    // ignition came back bevor one hour has past, so reset timer
     if (shutdown_timer != 0){
       shutdown_timer = 0;
     }
+    // if we had an power off, we need to put Hold high
     if (digitalRead(PIN_STAY_ON) == false){
       digitalWrite(PIN_STAY_ON, 1);
     }
@@ -33,12 +43,6 @@ void update_volt(void){
       shutdown_timer = millis();
       temp_page = 6;
       DrawSelected(temp_page);
-    }
-    if(temp_page == 6){
-      tft.setTextDatum(MC_DATUM);
-      temp = (shutdown_timer + 3600000 - millis()) / 1000 ;
-      dtostrf(temp, 4, 0, TFT_String);
-      draw_value_box(160, 65, 134, 50, TFT_String);
     }
   }
   // Serial.print("PIN 12 = ");
@@ -218,21 +222,30 @@ void draw_value_time(int Y_Pos, int _case){
       break;
     }
 
-    // from now on we need the h label
-    if(temp >= 3600){
-      if (hours == false){
-        draw_units_hours(Y_Pos);
+    // check if we are over 99 hours and 59 minutes
+    // if so we have to strip minutes due to space reasons
+    if(temp <= 359940){
+      char hours[3];
+      dtostrf((int(temp) / 3600), 2, 0, hours);
+      char minutes[3];
+      dtostrf((int(temp) / 60) % 60, 2, 0, minutes);
+      // fill with leading zeros
+      for(int i = 0; i < strlen(minutes); i++){
+        if(minutes[i] == ' '){
+          minutes[i] = '0';
+        }
+        else{
+          break;
+        }
       }
-      // calculate hours from seconds
-      dtostrf(temp / 3600, 2, 0, TFT_String);
-      draw_value_box(100, Y_Pos, 70, 50, TFT_String);
+      strcpy(TFT_String, hours);
+      strcat(TFT_String, ":");
+      strcat(TFT_String, minutes);
     }
-    else{ // this case will only happen if time was over one hour and changing page lead value less than one hour
-      hours = false;
-    }
-    // calulate minutes from seconds
-    dtostrf((int(temp) / 60) % 60, 2, 0, TFT_String);
-    draw_value_box(218, Y_Pos, 70, 50, TFT_String);
+    else{
+      dtostrf((int(temp) / 3600), 5, 0, TFT_String);
+    } 
+    draw_value_box(218, Y_Pos, 145, 50, TFT_String);
 }
 
 void draw_value_trip(int Y_Pos, int _case){

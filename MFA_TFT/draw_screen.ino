@@ -164,15 +164,16 @@ void drawActualConsumption(int Y_Pos){
 void drawTime(int Y_Pos){
   // Draw hours and / or minutes
   // at beginning we only need minutes, hours will be draw from update_values
-  drawUnits(Y_Pos, MINUTES);
+  drawUnits(Y_Pos, HOUR);
 }
 
-void draw_units_hours (int Y_Pos){
-  // if time > 3600 seconds we need also the hour unit, this will be called from update_values
-  tft.setTextDatum(ML_DATUM);
-  tft.drawString(HOUR, 117, Y_Pos, FONT4);
-  hours = true;
-}
+// void draw_units_hours (int Y_Pos){
+//   // if time > 3600 seconds we need also the hour unit, this will be called from update_values
+//   tft.setTextDatum(ML_DATUM);
+//   tft.drawString(HOUR, 117, Y_Pos, FONT4);
+//   hours = true;
+// }
+
 
 void drawOutTemp(int Y_Pos){
   //Draw Snowflake only if Temp under 4 degrees
@@ -351,5 +352,6 @@ void draw_InitPage(void){
 // need to be black to simulate switch off of display
 void drawShutDown(void){
   tft.fillScreen(TFT_BLACK);
+  tft.setTextDatum(TL_DATUM);
   tft.drawString("Waiting for shut Down", 10, 50, FONT2);
 }
