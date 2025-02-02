@@ -79,7 +79,7 @@ void setup(void) {
   load_Data();
   temp_page = Data.page;
 
-  Data.page = 4;
+  Data.page = 3;
 
   // Create Task on Core 0 to read CAN Messages and not delaying due to TFT Drawing functions
   xTaskCreatePinnedToCore(CAN_Loop, "CAN_Loop", 1000, NULL, 0, &EvaluateCAN, 0);

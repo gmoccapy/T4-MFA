@@ -9,81 +9,82 @@
 
 void check_LED (void){
 
-  // door control // over CAN
-  if(door == true){
-    if(Data.page == 3){
+    // door control // over CAN
+    if(door == true){
       tft.drawXBitmap(Icon_Pos_Door[0], Icon_Pos_Door[1], sym_door, 50, 50, TFT_ORANGE);
     }
-    else{
-      temp_page = 5;
-      DrawSelected(temp_page);
-    }
-  }
-  else {
-    if(Data.page == 3){
+    else {
       tft.fillRect(Icon_Pos_Door[0], Icon_Pos_Door[1], 50, 50, BACK_COLOR);
     }
-    else{
-      temp_page = Data.page;
-      DrawSelected(Data.page);
-    }
-  }
 
   // light control // over CAN
   if((light == true) && (TEXT_COLOR != NIGHT_TEXT_COLOR)){
-    if(Data.page == 3){
-      tft.drawXBitmap(Icon_Pos_Light[0], Icon_Pos_Light[1], sym_light, 50, 50, TFT_GREEN);
-    }
+    tft.drawXBitmap(Icon_Pos_Light[0], Icon_Pos_Light[1], sym_light, 50, 50, TFT_GREEN);
     TEXT_COLOR = NIGHT_TEXT_COLOR;
     DrawSelected(Data.page);
   }
   if((light == false) && (TEXT_COLOR != DAY_TEXT_COLOR)){
-    if(Data.page == 3){
-      tft.fillRect(Icon_Pos_Light[0], Icon_Pos_Light[1], 50, 50, BACK_COLOR);
-    }
+    tft.fillRect(Icon_Pos_Light[0], Icon_Pos_Light[1], 50, 50, BACK_COLOR);
     TEXT_COLOR = DAY_TEXT_COLOR;
     DrawSelected(Data.page);
   }
 
   // petrol warning // over CAN
   if(petrol == true){
-    if(Data.page == 3){
-      tft.drawXBitmap(Icon_Pos_Petrol[0], Icon_Pos_Petrol[1], sym_petrol, 50, 50, TFT_ORANGE);
-    }
+    tft.drawXBitmap(Icon_Pos_Petrol[0], Icon_Pos_Petrol[1], sym_petrol, 50, 50, TFT_ORANGE);
   }
   else {
-    if(Data.page == 3){
-      tft.fillRect(Icon_Pos_Petrol[0], Icon_Pos_Petrol[1], 50, 50, BACK_COLOR);
-    }
+    tft.fillRect(Icon_Pos_Petrol[0], Icon_Pos_Petrol[1], 50, 50, BACK_COLOR);
   }
 
   // oil warnings // over IO
   if(oil_level == false){
-    if(Data.page == 3){
-      tft.drawXBitmap(Icon_Pos_Oil[0], Icon_Pos_Oil[1], sym_oil, 50, 50, TFT_ORANGE);
-    }
+    tft.drawXBitmap(Icon_Pos_Oil[0], Icon_Pos_Oil[1], sym_oil, 50, 50, TFT_ORANGE);
   }
   else {
-    if(Data.page == 3){
-      tft.fillRect(Icon_Pos_Oil[0], Icon_Pos_Oil[1], 50, 50, BACK_COLOR);
-    }
+    tft.fillRect(Icon_Pos_Oil[0], Icon_Pos_Oil[1], 50, 50, BACK_COLOR);
   }
 
   // oil warnings // over IO
   if(oil_presure == false){
-    if(Data.page == 3){
-      tft.drawXBitmap(256, 179, sym_oil, 50, 50, TFT_RED);
-    }
+    tft.drawXBitmap(256, 179, sym_oil, 50, 50, TFT_RED);
   }
   else {
-    if(Data.page == 3){
-      tft.fillRect(256, 179, 50, 50, BACK_COLOR);
-    }
+    tft.fillRect(256, 179, 50, 50, BACK_COLOR);
+  }
+
+  // brake pads waring // over IO
+  if(washer_fluid == false){
+    tft.drawXBitmap(256, 179, sym_washer_fluid, 50, 50, TFT_ORANGE);
+  }
+  else {
+    tft.fillRect(256, 179, 50, 50, BACK_COLOR);
+  }
+
+  // brake pads waring // over IO
+  if(brakepads == false){
+    tft.drawXBitmap(14, 179, sym_brakepads, 50, 50, TFT_ORANGE);
+  }
+  else {
+    tft.fillRect(14, 179, 50, 50, BACK_COLOR);
+  }
+
+  // coolant warning // over IO
+  if(coolant == false){
+    tft.drawXBitmap(14, 234, sym_brakepads, 50, 50, TFT_RED);
+  }
+  else {
+    tft.fillRect(14, 234, 50, 50, BACK_COLOR);
+  }
+
+  // Batterie over voltage measurement
+  if((volt > 4000) || (volt < 1000)){
+    tft.drawXBitmap(14, 234, sym_battery, 50, 50, TFT_RED);
+  }
+  else {
+    tft.fillRect(14, 234, 50, 50, BACK_COLOR);
   }
 
 
-  counter += 1;
-
-  check_led = false;
-
 }
+
