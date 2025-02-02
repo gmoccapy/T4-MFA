@@ -13,7 +13,6 @@ void update_time(void){
     dtostrf(temp, 4, 0, TFT_String);
     draw_value_box(160, 250, 134, 50, TFT_String);
   }
-
 }
 
 void update_volt(void){
@@ -44,25 +43,7 @@ void update_volt(void){
       temp_page = 6;
       DrawSelected(temp_page);
     }
-  }
-  // Serial.print("PIN 12 = ");
-  // Serial.print(digitalRead(PIN_STAY_ON));
-  // Serial.print("\t");
-  // Serial.print("volt = ");
-  // Serial.print(volt);
-  // Serial.println("\t");
-  // Serial.print("Timer = ");
-  // Serial.print(shutdown_timer);
-  // Serial.print("\t");
-  // if (shutdown_timer != 0){
-  //   Serial.print("Time untill shutdown = ");
-  //   Serial.print("\t");
-  //   Serial.println(shutdown_timer + 60000 - millis());
-  // }
-  // else{
-  //   Serial.println("\t");
-  // }
- 
+  } 
 }
 
 void update_values(void){
@@ -206,8 +187,7 @@ void draw_value_actual_consumption(int Y_Pos){
 }
 
 void draw_value_time(int Y_Pos, int _case){
-  
-    switch(_case){
+  switch(_case){
 
     case 1: // time from start in sec
       temp = Data.time_start;
@@ -220,7 +200,7 @@ void draw_value_time(int Y_Pos, int _case){
     case 3: // time long period in min
       temp = Data.time_long_period * 60;
       break;
-    }
+  }
 
     // check if we are over 99 hours and 59 minutes
     // if so we have to strip minutes due to space reasons

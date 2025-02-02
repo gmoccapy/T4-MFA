@@ -165,15 +165,8 @@ void drawTime(int Y_Pos){
   // Draw hours and / or minutes
   // at beginning we only need minutes, hours will be draw from update_values
   drawUnits(Y_Pos, HOUR);
+  tft.drawXBitmap(19, Y_Pos - 25, sym_time, 50, 50, TEXT_COLOR);
 }
-
-// void draw_units_hours (int Y_Pos){
-//   // if time > 3600 seconds we need also the hour unit, this will be called from update_values
-//   tft.setTextDatum(ML_DATUM);
-//   tft.drawString(HOUR, 117, Y_Pos, FONT4);
-//   hours = true;
-// }
-
 
 void drawOutTemp(int Y_Pos){
   //Draw Snowflake only if Temp under 4 degrees
