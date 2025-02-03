@@ -79,7 +79,7 @@ void setup(void) {
   load_Data();
   temp_page = Data.page;
 
-  Data.page = 3;
+  Data.page = 4;
 
   // Create Task on Core 0 to read CAN Messages and not delaying due to TFT Drawing functions
   xTaskCreatePinnedToCore(CAN_Loop, "CAN_Loop", 1000, NULL, 0, &EvaluateCAN, 0);
@@ -178,24 +178,24 @@ void loop(void) {
 
   update_volt();
 
-  Serial.print("door = ");
-  Serial.print(door);
-  Serial.print("\t");
-  Serial.print("light = ");
-  Serial.print(light);
-  Serial.print("\t");
-  Serial.print("petrol = ");
-  Serial.print(petrol);
-  Serial.print("\t");
-  Serial.print("presure = ");
-  Serial.print(oil_presure);
-  Serial.print("\t");
-  Serial.print("level = ");
-  Serial.print(oil_level);
-  Serial.print("\t");
-  Serial.print("counter = ");
-  Serial.print(counter);
-  Serial.println("\t");
+  // Serial.print("door = ");
+  // Serial.print(door);
+  // Serial.print("\t");
+  // Serial.print("light = ");
+  // Serial.print(light);
+  // Serial.print("\t");
+  // Serial.print("petrol = ");
+  // Serial.print(petrol);
+  // Serial.print("\t");
+  // Serial.print("presure = ");
+  // Serial.print(oil_presure);
+  // Serial.print("\t");
+  // Serial.print("level = ");
+  // Serial.print(oil_level);
+  // Serial.print("\t");
+  // Serial.print("counter = ");
+  // Serial.print(counter);
+  // Serial.println("\t");
   
 
   // stay_on == true after we had one time ignition

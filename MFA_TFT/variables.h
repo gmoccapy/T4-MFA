@@ -32,13 +32,13 @@ unsigned long shutdown_timer = 0;   	// time for update values in msec
 
 uint16_t TEXT_COLOR = DAY_TEXT_COLOR;  // with this we are able to change color with light state
 
-int Icon_Pos_Coolant[2]     = { 14, 119};   // position of LED icon    coolant
-int Icon_Pos_BrakePads[2]   = { 14, 179};   // position of LED icon    brakepads 
-int Icon_Pos_Oil[2]         = { 14, 234};   // position of LED icon    oil 
-int Icon_Pos_Petrol[2]      = {256, 119};   // position of LED icon    petrol
-int Icon_Pos_Light[2]       = {256, 179};   // position of LED icon    light
-int Icon_Pos_Door[2]        = {256, 234};   // position of LED icon    door 
-int Icon_Pos_WasherFluid[2] = {256, 179};   // position of LED icon    washer_fluid
+int Icon_Pos_Light[2]       = { 10, 48};   // position of LED icon    light
+int Icon_Pos_Door[2]        = { 60, 46};   // position of LED icon    door 
+int Icon_Pos_Oil[2]         = {110, 50};   // position of LED icon    oil 
+int Icon_Pos_BrakePads[2]   = {160, 50};   // position of LED icon    brakepads 
+int Icon_Pos_Petrol[2]      = {210, 50};   // position of LED icon    petrol
+int Icon_Pos_Coolant[2]     = {260, 50};   // position of LED icon    coolant
+int Icon_Pos_WasherFluid[2] = {310, 48};   // position of LED icon    washer_fluid
 
 // for debugging only
 // float debug = 0;
@@ -118,6 +118,7 @@ bool oil_level = true;                // oil level warning controlled by IO Pull
 bool washer_fluid = true;             // washer_fluid warning controlled IO Pull Up
 bool coolant = true;                  // coolant warning controlled IO Pull Up
 bool brakepads = true;                // coolant warning controlled IO Pull Up
+int warnings = false;                 // we count infos, warnings and critical infos
 
 int speed;                            // rpm of the motor
 unsigned int km_total = 0;            // total km driven by the vehicle / control the change of this value to recalculate values

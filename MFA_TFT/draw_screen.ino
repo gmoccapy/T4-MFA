@@ -183,7 +183,9 @@ void drawUnits(int Y_Pos, String upper_line, String lower_line){
 
   // store X position in variable, so we need only to change this line not several
   // do not use X_Pos, as it is used on other places
-  int X = 264;
+  int X = 268;
+  // pushing two pixel down looks better for units 
+  Y_Pos += 2;
 
   tft.setTextDatum(MC_DATUM);
 
@@ -203,9 +205,9 @@ void drawUnits(int Y_Pos, String upper_line, String lower_line){
     else{
       temp = tft.textWidth(lower_line, FONT4);
     }
-    tft.drawString(upper_line, X, Y_Pos - tft.fontHeight(FONT4) / 2 - 2, FONT4);
+    tft.drawString(upper_line, X, Y_Pos - tft.fontHeight(FONT4) / 2, FONT4);
     tft.drawFastHLine(X - temp / 2, Y_Pos - 2, temp, TEXT_COLOR);
-    tft.drawString(lower_line, X, Y_Pos + tft.fontHeight(FONT4) / 2 + 2, FONT4);
+    tft.drawString(lower_line, X, Y_Pos + tft.fontHeight(FONT4) / 2, FONT4);
   }
 }
 
@@ -231,31 +233,16 @@ void draw_average_symbol(int X_Pos, int Y_Pos, int Radius){
 }
 
 void draw_test(bool show){
-  //tft.fillScreen(BACK_COLOR);
-  //Draw separation line
-  // tft.drawFastHLine(0, 105, 320, TEXT_COLOR);
-  // tft.drawFastHLine(0, 171, 320, TEXT_COLOR);
-  // tft.drawFastHLine(0, 237, 320, TEXT_COLOR);
-  // tft.drawFastHLine(0, 303, 320, TEXT_COLOR);
-  // tft.drawFastHLine(0, 369, 320, TEXT_COLOR);
+  // This is the visible area
+  tft.drawRect(10, 40, 300, 417, TFT_RED);
 
-  temp = 10;
+  drawCruiseControl(70);
+  draw_value_cruise_control(70);
 
-  if (show == true){
-    tft.drawXBitmap(temp + 0 * 50, 46, sym_door, 50, 50, TFT_ORANGE);
-    tft.drawXBitmap(temp + 1 * 50, 48, sym_light, 50, 50, TFT_GREEN);
-    tft.drawXBitmap(temp + 2 * 50, 50, sym_oil, 50, 50, TFT_ORANGE);
-    //tft.drawXBitmap(temp + 3 * 50, 50, sym_coolant, 50, 50, TFT_RED);
-    tft.drawXBitmap(temp + 3 * 50, 50, sym_brakepads, 50, 50, TFT_ORANGE);
-    tft.drawXBitmap(temp + 4 * 50, 50, sym_petrol, 50, 50, TFT_ORANGE);
-    //tft.drawXBitmap(temp + 4 * 50, 48, sym_battery, 50, 50, TFT_RED);
-    tft.drawXBitmap(temp + 5 * 50, 48, sym_washer_fluid, 50, 50, TFT_ORANGE);
-  }
-  else{
-    for (int i = 0; i < 6; i++) {
-      tft.fillRect(temp + i * 50, 46, 50, 50, BACK_COLOR);
-    }
-  }
+  // Red ones need to be placed in Middle and big
+  //tft.drawXBitmap(temp + 3 * 50, 50, sym_coolant, 50, 50, TFT_RED);
+  //tft.drawXBitmap(temp + 4 * 50, 48, sym_oil, 50, 50, TFT_RED);
+  //tft.drawXBitmap(temp + 5 * 50, 48, sym_battery, 50, 50, TFT_RED);
 
   tft.drawFastHLine(0, 100, 320, TEXT_COLOR);
 
@@ -264,25 +251,24 @@ void draw_test(bool show){
   temp = C_last_25_km / 250.0;  // ml/25 km and 100km gives factor 250     
   draw_dial(75, 108, temp, 1, C_actual, 24.0, F("Ab"), F("Start"));
 
-  tft.drawFastHLine(0, 288, 320, TEXT_COLOR);
-  //tft.drawFastHLine(0, 366, 320, TEXT_COLOR);
-
-  tft.drawXBitmap(14, 105, sym_washer_fluid, 50, 50, TFT_ORANGE);
-  tft.drawXBitmap(14, 169, sym_brakepads, 50, 50, TFT_ORANGE);
-  tft.drawXBitmap(14, 233, sym_petrol, 50, 50, TFT_ORANGE);
-  tft.drawXBitmap(256, 105, sym_oil, 50, 50, TFT_ORANGE);
-  tft.drawXBitmap(256, 169, sym_light, 50, 50, TFT_GREEN);
-  tft.drawXBitmap(256, 233, sym_door, 50, 50, TFT_ORANGE);
-
-  // red symbols will be displayed in the middle with big symbols
-  // oil pressure
-  // coolant warning
-  // battery
-
   // draw oil temp scale
   String(F("Öl")).toCharArray(TFT_String, 4);
-  draw_bar(TFT_String, 15, 295, 80);
+  draw_bar(TFT_String, 15, 115, 80);
+  String(F("V")).toCharArray(TFT_String, 4);
+  draw_bar(TFT_String, 269, 115, 12);
 
+  tft.drawFastHLine(0, 288, 320, TEXT_COLOR);
+  drawRange(316);
+  draw_value_range(316);
+  tft.drawFastHLine(0, 344, 320, TEXT_COLOR);
+  drawAverageConsumption(372);
+  draw_value_average_consumption(372, START);
+  tft.drawFastHLine(0, 400, 320, TEXT_COLOR);
+  drawOutTemp(428);
+  draw_value_out_temp(428);
+  tft.drawFastHLine(0, 456, 320, TEXT_COLOR);
+
+  //check_LED();
 }
 
 void draw_debug(void){

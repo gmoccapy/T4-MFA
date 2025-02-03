@@ -11,7 +11,7 @@ void update_time(void){
     tft.setTextDatum(MC_DATUM);
     temp = (shutdown_timer + 3600000 - millis()) / 1000 ;
     dtostrf(temp, 4, 0, TFT_String);
-    draw_value_box(160, 250, 134, 50, TFT_String);
+    draw_value_box(250, 134, 50, TFT_String);
   }
 }
 
@@ -183,7 +183,7 @@ void draw_value_actual_consumption(int Y_Pos){
 
   //drawActualConsumption(Y_Pos);
   dtostrf(temp, 4, 1, TFT_String);
-  draw_value_box(218, Y_Pos, 134, 50, TFT_String);
+  draw_value_box(Y_Pos, 134, 50, TFT_String);
 }
 
 void draw_value_time(int Y_Pos, int _case){
@@ -225,7 +225,7 @@ void draw_value_time(int Y_Pos, int _case){
     else{
       dtostrf((int(temp) / 3600), 5, 0, TFT_String);
     } 
-    draw_value_box(218, Y_Pos, 145, 50, TFT_String);
+    draw_value_box(Y_Pos, 145, 50, TFT_String);
 }
 
 void draw_value_trip(int Y_Pos, int _case){
@@ -244,7 +244,7 @@ void draw_value_trip(int Y_Pos, int _case){
       dtostrf(Data.km_long_period, 6, 0, TFT_String);
       break;
     }
-  draw_value_box(218, Y_Pos, 134, 50, TFT_String);
+  draw_value_box(Y_Pos, 134, 50, TFT_String);
 }
 
 void draw_value_consumption(int Y_Pos, int _case){
@@ -284,7 +284,7 @@ void draw_value_consumption(int Y_Pos, int _case){
       }
       break;  
   }
-  draw_value_box(218, Y_Pos, 134, 50, TFT_String);
+  draw_value_box(Y_Pos, 134, 50, TFT_String);
 }
 
 void draw_value_average_consumption(int Y_Pos, int _case){
@@ -324,7 +324,7 @@ void draw_value_average_consumption(int Y_Pos, int _case){
       }
       break;  
   }
-  draw_value_box(218, Y_Pos, 134, 50, TFT_String);
+  draw_value_box(Y_Pos, 134, 50, TFT_String);
 }
 
 void draw_value_cruise_control(int Y_Pos){
@@ -338,7 +338,7 @@ void draw_value_cruise_control(int Y_Pos){
     String(F("---")).toCharArray(TFT_String, 12);
     color = TEXT_COLOR;
   }  
-  draw_value_box(218, Y_Pos, 134, 50, TFT_String);
+  draw_value_box(Y_Pos, 134, 50, TFT_String);
   tft.drawXBitmap(19, Y_Pos - 25, sym_cruise_control, 50, 50, color);
 }
 
@@ -379,7 +379,7 @@ void draw_value_average_velocity(int Y_Pos, int _case){
       }  
       break;  
   }
-  draw_value_box(218, Y_Pos, 134, 50, TFT_String);
+  draw_value_box(Y_Pos, 134, 50, TFT_String);
 }
 
 void draw_value_oil_temp(int Y_Pos){
@@ -390,7 +390,7 @@ void draw_value_oil_temp(int Y_Pos){
   else{
     dtostrf(temp_oil, 3, 0, TFT_String);
   }
-  draw_value_box(218, Y_Pos, 134, 50, TFT_String);
+  draw_value_box(Y_Pos, 134, 50, TFT_String);
 }
 
 void draw_value_volt(int Y_Pos){
@@ -401,20 +401,20 @@ void draw_value_volt(int Y_Pos){
   else{
     dtostrf(volt * VOLT_FAKTOR, 6, 1, TFT_String);
   }
-  draw_value_box(218, Y_Pos, 134, 50, TFT_String);
+  draw_value_box(Y_Pos, 134, 50, TFT_String);
 }
 
 void draw_value_out_temp(int Y_Pos){
   // out temp
   dtostrf(temp_out, 6, 1, TFT_String);
-  draw_value_box(218, Y_Pos, 134, 50, TFT_String);
+  draw_value_box(Y_Pos, 134, 50, TFT_String);
 }
 
 void draw_value_speed(int Y_Pos){
   // motor speed RPM, as we are very fast, not rounding lead to flickering numbers, so rount on 10'th
   temp = round(speed / 10.0); // speed = 1789 gives now 178.9 rounding that gives 179 
   dtostrf(temp * 10, 6, 0, TFT_String); // need to multiply by 10 to get 1790 RPM
-  draw_value_box(218, Y_Pos, 134, 50, TFT_String);
+  draw_value_box(Y_Pos, 134, 50, TFT_String);
 }
 
 void draw_value_range(int Y_Pos){
@@ -427,28 +427,28 @@ void draw_value_range(int Y_Pos){
   else{
     String(F("---")).toCharArray(TFT_String, 12);
   }
-  draw_value_box(218, Y_Pos, 134, 50, TFT_String);
+  draw_value_box(Y_Pos, 134, 50, TFT_String);
 }
 
 void updateDebug(void){
   // DEBUG
   // tft.setTextDatum(MR_DATUM);
   // dtostrf(bitValue[0], 6, 0, TFT_String);
-  // draw_value_box(240, 138, 134, 50, TFT_String);
+  // draw_value_box(138, 134, 50, TFT_String);
   // dtostrf(bitValue[1], 6, 0, TFT_String);
-  // draw_value_box(240, 204, 134, 50, TFT_String);
+  // draw_value_box(204, 134, 50, TFT_String);
   // dtostrf(bitValue[2], 6, 0, TFT_String);
-  // draw_value_box(240, 270, 134, 50, TFT_String);
+  // draw_value_box(270, 134, 50, TFT_String);
   draw_value_cruise_control(404);
   dtostrf(deposit, 6, 0, TFT_String);
-  draw_value_box(306, 72, 200, 50, TFT_String);
+  draw_value_box(72, 200, 50, TFT_String);
   // draw_small_value_box(240, 1*24+12, 100, 24, TFT_String);
 
   // dtostrf(Data.time_start, 6, 0, TFT_String);
   // draw_small_value_box(240, 2*24+12, 100, 24, TFT_String);
 
   dtostrf(temp_oil, 6, 0, TFT_String);
-  draw_value_box(306, 138, 200, 50, TFT_String);
+  draw_value_box(138, 200, 50, TFT_String);
   // draw_small_value_box(240, 3*24+12, 100, 24, TFT_String);
 
   // dtostrf(Data.km_start, 6, 0, TFT_String);
@@ -456,14 +456,14 @@ void updateDebug(void){
 
   dtostrf(C_last_25_km, 8, 0, TFT_String);
   // draw_small_value_box(240, 5*24+12, 100, 24, TFT_String);
-  draw_value_box(306, 204, 200, 50, TFT_String);
+  draw_value_box(204, 200, 50, TFT_String);
 
   // dtostrf(Data.time_refuel, 6, 0, TFT_String);
   // draw_small_value_box(240, 6*24+12, 100, 24, TFT_String);
 
   dtostrf(speed, 6, 0, TFT_String);
   // draw_small_value_box(240, 7*24+12, 100, 24, TFT_String);
-  draw_value_box(306, 270, 200, 50, TFT_String);
+  draw_value_box(270, 200, 50, TFT_String);
 
   // dtostrf(velocity_actual, 6, 0, TFT_String);
   // draw_small_value_box(240, 8*24+12, 100, 24, TFT_String);
@@ -473,7 +473,7 @@ void updateDebug(void){
 
   dtostrf(Data.C_last_km, 8, 0, TFT_String);
   // draw_small_value_box(240, 10*24+12, 100, 24, TFT_String);
-  draw_value_box(306, 337, 200, 50, TFT_String);
+  draw_value_box(337, 200, 50, TFT_String);
 
   // dtostrf(Data.C_start, 6, 1, TFT_String);
   // draw_small_value_box(240, 11*24+12, 100, 24, TFT_String);

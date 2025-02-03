@@ -112,7 +112,8 @@ void create_sprites(void){
   // box.createSprite(width, height);
 }
 
-void draw_value_box(int X_Pos, int Y_Pos, int width, int height, char *value){
+void draw_value_box(int Y_Pos, int width, int height, char *value){
+  int X_Pos = 222;
   // create value box sprite
   box.setColorDepth(8);
   box.createSprite(width, height);
@@ -161,7 +162,7 @@ void draw_bar(char *label, int X_Pos, int Y_Pos, int value){
   box.fillSprite(BACK_COLOR);
 
   // Sourounding Frame
-  box.drawRect(0, 0, width, height, DAY_TEXT_COLOR);
+  box.drawRect(0, 0, width, height, TEXT_COLOR);
 
   // MAX Oil Temp = 160°C and bar is 158 - 19 - 19  Pixel hight
   // 88°C is then 120 x 88 / 160
@@ -169,10 +170,10 @@ void draw_bar(char *label, int X_Pos, int Y_Pos, int value){
 
   // Draw 10 tiks 
   for (int i = 0; i < 130; i += int(height / 10)){
-    box.drawFastHLine(0, 19 + i, 6, DAY_TEXT_COLOR);
+    box.drawFastHLine(0, 19 + i, 6, TEXT_COLOR);
   }
   
-  box.setTextColor(DAY_TEXT_COLOR, BACK_COLOR);
+  box.setTextColor(TEXT_COLOR, BACK_COLOR);
   box.setTextDatum(MC_DATUM);
   box.setFreeFont(&FreeArial12full);
   box.drawString(label, width / 2, 19 / 2, GFXFF);
