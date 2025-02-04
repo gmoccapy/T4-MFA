@@ -9,6 +9,8 @@
 
 void check_LED (void){
 
+return;
+
 //tft.fillRect(10, 40, 300, 60, TFT_BLACK);
 warnings = 0;
 

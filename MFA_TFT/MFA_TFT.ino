@@ -79,21 +79,18 @@ void setup(void) {
   load_Data();
   temp_page = Data.page;
 
-  Data.page = 4;
+// DEBUG:
+  Data.page = 0;
+  Data.mode = START;
 
   // Create Task on Core 0 to read CAN Messages and not delaying due to TFT Drawing functions
-  xTaskCreatePinnedToCore(CAN_Loop, "CAN_Loop", 1000, NULL, 0, &EvaluateCAN, 0);
+//  xTaskCreatePinnedToCore(CAN_Loop, "CAN_Loop", 1000, NULL, 0, &EvaluateCAN, 0);
 
 }
 
 // Main loop running on Core 1 handles all drawing of TFT and IO Stuff
 void loop(void) {
 
-// display size of CAN Queue
-//  dtostrf(ESP32Can.inRxQueue(), 4, 0, TFT_String);
-//  draw_small_value_box(320, 460, 50, 30, TFT_String);
-
-  
   // we are not able to do any hardware stuff on the second task, as it will lead to crashes
   // That's the reason we are doing it in main loop
   if (save == true){
@@ -127,7 +124,7 @@ void loop(void) {
     PIN_mode_previous_state = PIN_mode_state;
     previousPressedMode = millis();
     DrawSelected(Data.page);
-    check_LED();
+    //check_LED();
     //print_Data();
 
     // if (Data.page == 3){
@@ -158,7 +155,7 @@ void loop(void) {
 
     DrawSelected(Data.page);
     start = true;
-    check_LED();
+    //check_LED();
   }
 
   // update time every second
@@ -167,9 +164,9 @@ void loop(void) {
     lastMillis = millis();
   }
 
-  if (check_led == true){
-    check_LED();
-  }
+  // if (check_led == true){
+  //   check_LED();
+  // }
 
   // to avoid update values for door warning in full page mode
   if (Data.page == temp_page){

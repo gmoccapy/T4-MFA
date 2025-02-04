@@ -4,15 +4,13 @@ void DrawSelected(int page){
   tft.setTextColor(TEXT_COLOR);
   tft.setFreeFont(FSS18);
 
-  if(page < 3){
-    //Draw separation line
-    tft.drawFastHLine(0, 105, 320, TEXT_COLOR);
-    tft.drawFastHLine(0, 171, 320, TEXT_COLOR);
-    tft.drawFastHLine(0, 237, 320, TEXT_COLOR);
-    tft.drawFastHLine(0, 303, 320, TEXT_COLOR);
-    tft.drawFastHLine(0, 369, 320, TEXT_COLOR);
-    tft.drawFastHLine(0, 435, 320, TEXT_COLOR);
-  }
+  // //Draw separation line
+  // tft.drawFastHLine(0, 105, 320, TEXT_COLOR);
+  // tft.drawFastHLine(0, 171, 320, TEXT_COLOR);
+  // tft.drawFastHLine(0, 237, 320, TEXT_COLOR);
+  // tft.drawFastHLine(0, 303, 320, TEXT_COLOR);
+  // tft.drawFastHLine(0, 369, 320, TEXT_COLOR);
+  // tft.drawFastHLine(0, 435, 320, TEXT_COLOR);
 
   // max 6 info lines
   // Line 1 = 72
@@ -24,16 +22,41 @@ void DrawSelected(int page){
 
   switch(page){
     
+    // Just draw a half VIS from original Insrument
+    // We have only the lower part to draw and 
+    // the upper part is used only to display the LED ICON
+    // we may display:
+    // Trip Time
+    // Trip diatance
+    // actual consumption
+    // average Velocity (distance / time)
+    // average consumption (consumption / distance)
+    // resting range
+    // Out Temp with ice Warning
+    // Oil Temp
     case 0:
-      Data.mode = START;
-      drawTrip(72);
-      drawActualConsumption(138);
-      drawRange(204);
-      drawAverageConsumption(270);
-      drawTime(337);
-      drawVolt(404);
-//      drawAverageVelocity(404);
-      tft.drawString(F("START"), 160, 453, FONT4);
+      tft.setTextColor(BACK_COLOR, TEXT_COLOR, true);
+      if(Data.mode == START){
+        tft.drawString(F("1"),300 , 302, FONT4);
+      }
+      else if (Data.mode == REFUEL){
+        tft.drawString(F("2"),300 , 302, FONT4);
+      }
+      else{
+        tft.drawString(F("2"),300 , 302, FONT4);
+      }
+      tft.setTextColor(TEXT_COLOR, BACK_COLOR, false);
+      
+      tft.drawFastHLine(0, 288, 320, TEXT_COLOR);
+      drawAverageConsumption(316);
+      draw_value_average_consumption(316, Data.mode);
+      tft.drawFastHLine(0, 344, 320, TEXT_COLOR);
+      drawRange(372);
+      draw_value_range(372);
+      tft.drawFastHLine(0, 400, 320, TEXT_COLOR);
+      drawOutTemp(428);
+      draw_value_out_temp(428);
+      tft.drawFastHLine(0, 456, 320, TEXT_COLOR);
       break;
     
     case 1:
@@ -105,7 +128,7 @@ void DrawSelected(int page){
 
 void drawOil(int Y_Pos){
   // Draw Oil Symbol
-  tft.drawXBitmap(19, Y_Pos - 25, sym_oil, 50, 50, TEXT_COLOR);
+  tft.drawXBitmap(19, Y_Pos - 25, sym_oil_temp, 50, 50, TEXT_COLOR);
   drawUnits(Y_Pos, DEGREE);
 }
 
@@ -261,8 +284,10 @@ void draw_test(bool show){
   drawRange(316);
   draw_value_range(316);
   tft.drawFastHLine(0, 344, 320, TEXT_COLOR);
-  drawAverageConsumption(372);
-  draw_value_average_consumption(372, START);
+  // drawAverageConsumption(372);
+  // draw_value_average_consumption(372, START);
+  drawOil(372);
+  draw_value_oil_temp(372);
   tft.drawFastHLine(0, 400, 320, TEXT_COLOR);
   drawOutTemp(428);
   draw_value_out_temp(428);

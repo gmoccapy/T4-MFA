@@ -1,5 +1,6 @@
 void evaluate_CAN_messages(){
 
+
   // we do not use the temp variable here, as it may be used also from the other kernel
   int bit;     // hold the bit value to evaluate
   int byte;    // The byte / int value to evaluate

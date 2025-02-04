@@ -57,24 +57,66 @@ void update_values(void){
 
   tft.setTextDatum(MR_DATUM); // middle right
   
+// debug infos
+  door = false;
+  light = false;
+  petrol = true;
+  oil_level = true;
+  oil_presure = true;
+  washer_fluid = true;
+  coolant = true;
+  brakepads = true;
+
   switch(Data.page){
-    
+
     // from start
     case 0:
-      // Line 1 = 72
-      //draw_value_oil_temp(72);
-      draw_value_trip(72, START);
-      // Line 2 = 138
-      draw_value_actual_consumption(138);
-      // Line 3 = 204
-      draw_value_range(204);
-      // Line 4 = 270
-      draw_value_average_consumption(270, START);
-      // Line 5 = 337
-      draw_value_time(337, START);
-      // Line 6 = 404
-      draw_value_volt(404);
-//      draw_value_average_velocity(404, START);
+      draw_value_average_consumption(316, Data.mode);
+      draw_value_range(372);
+      draw_value_out_temp(428);
+
+      if(coolant == true){
+        tft.drawXBitmap(20, 50, sym_coolant, 50, 50, TFT_RED);
+      }
+      else{
+        tft.fillRect(20, 50, 50, 50, BACK_COLOR);
+      }
+
+      if(washer_fluid == true){
+        tft.drawXBitmap(135, 50, sym_washer_fluid, 50, 50, TFT_ORANGE);
+      }
+      else{
+        tft.fillRect(195, 50, 50, 50, BACK_COLOR);
+      }
+
+      if(petrol == true){
+        tft.drawXBitmap(240, 50, sym_petrol, 50, 50, TFT_ORANGE);
+      }
+      else{
+        tft.fillRect(240, 50, 50, 50, BACK_COLOR);
+      }
+
+      if((oil_level == true) || (oil_presure == true)){
+        uint16_t COLOR;
+        if (oil_level == true){
+          COLOR = TFT_ORANGE;
+        }
+        if(oil_presure == true){
+          COLOR = TFT_RED;
+        }
+        tft.drawXBitmap(20, 140, sym_oil, 50, 50, COLOR);
+      }
+      else{
+        tft.fillRect(20, 140, 50, 50, BACK_COLOR);
+      }
+
+      if(brakepads == true){
+        tft.drawXBitmap(135, 140, sym_brakepads, 50, 50, TFT_ORANGE);
+      }
+      else{
+        tft.fillRect(135, 140, 50, 50, BACK_COLOR);
+      }
+
       break;
     
     // since refuel
