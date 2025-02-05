@@ -68,6 +68,11 @@ void pin_setup(void){
   attachInterrupt(digitalPinToInterrupt(PIN_BRAKEPADS), PIN_brakepads_changed, CHANGE);
   brakepads = digitalRead(PIN_BRAKEPADS);
 
+  // Brake System PIN ; IN
+  pinMode(PIN_BRAKESYSTEM, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(PIN_BRAKESYSTEM), PIN_brakesystem_changed, CHANGE);
+  brakesystem = digitalRead(PIN_BRAKESYSTEM);
+
   // Oil Presure PIN ; IN
   pinMode(PIN_OIL_PRESURE, INPUT_PULLUP);
   attachInterrupt(digitalPinToInterrupt(PIN_OIL_PRESURE), PIN_Oil_Presure_changed, CHANGE);
@@ -121,6 +126,12 @@ void PIN_brakepads_changed(void){
   brakepads = digitalRead(PIN_BRAKEPADS);
   check_led = true;
 }
+
+void PIN_brakesystem_changed(void){
+  brakesystem = digitalRead(PIN_BRAKESYSTEM);
+  check_led = true;
+}
+
 
 void PIN_Oil_Presure_changed(void){
   oil_presure = digitalRead(PIN_OIL_PRESURE);

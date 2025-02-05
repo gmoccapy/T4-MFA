@@ -35,6 +35,11 @@ void DrawSelected(int page){
     // Out Temp with ice Warning
     // Oil Temp
     case 0:
+
+
+      // This is the visible area
+      tft.drawRect(10, 40, 300, 417, TFT_RED);
+
       tft.setTextColor(BACK_COLOR, TEXT_COLOR, true);
       if(Data.mode == START){
         tft.drawString(F("1"),300 , 302, FONT4);

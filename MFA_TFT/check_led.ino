@@ -9,21 +9,11 @@
 
 void check_LED (void){
 
-return;
+// DEBUG:
+Serial.println("This is check_LED");
 
 //tft.fillRect(10, 40, 300, 60, TFT_BLACK);
 warnings = 0;
-
-// debug infos
-door = false;
-light = false;
-petrol = false;
-oil_level = false;
-oil_presure = false;
-washer_fluid = false;
-coolant = false;
-brakepads = false;
-volt = 2500;
 
     // door control // over CAN
     if(door == true){
@@ -38,13 +28,13 @@ volt = 2500;
   if((light == true) && (TEXT_COLOR != NIGHT_TEXT_COLOR)){
     TEXT_COLOR = NIGHT_TEXT_COLOR;
     DrawSelected(Data.page);
-    // tft.drawXBitmap(Icon_Pos_Light[0], Icon_Pos_Light[1], sym_light, 50, 50, TFT_GREEN);
+    tft.drawXBitmap(Icon_Pos_Light[0], Icon_Pos_Light[1], sym_light, 50, 50, TFT_GREEN);
     // warnings += 2;
   }
   if((light == false) && (TEXT_COLOR != DAY_TEXT_COLOR)){
     TEXT_COLOR = DAY_TEXT_COLOR;
     DrawSelected(Data.page);
-    // tft.fillRect(Icon_Pos_Light[0], Icon_Pos_Light[1], 50, 50, BACK_COLOR);
+    tft.fillRect(Icon_Pos_Light[0], Icon_Pos_Light[1], 50, 50, BACK_COLOR);
   }
 
   // petrol warning // over CAN
@@ -57,7 +47,7 @@ volt = 2500;
   }
 
   // oil warnings // over IO
-  if(oil_level == true){
+  if(oil_level == false){
     tft.drawXBitmap(Icon_Pos_Oil[0], Icon_Pos_Oil[1], sym_oil, 50, 50, TFT_ORANGE);
     warnings += 8;
   }
@@ -75,7 +65,7 @@ volt = 2500;
   // }
 
   // brake pads waring // over IO
-  if(washer_fluid == true){
+  if(washer_fluid == false){
     tft.drawXBitmap(Icon_Pos_WasherFluid[0], Icon_Pos_WasherFluid[1], sym_washer_fluid, 50, 50, TFT_ORANGE);
     warnings += 32;
   }
@@ -84,7 +74,7 @@ volt = 2500;
   }
 
   // brake pads waring // over IO
-  if(brakepads == true){
+  if(brakepads == false){
     tft.drawXBitmap(Icon_Pos_BrakePads[0], Icon_Pos_BrakePads[1], sym_brakepads, 50, 50, TFT_ORANGE);
     warnings += 64;
   }
@@ -93,7 +83,7 @@ volt = 2500;
   }
 
   // coolant warning // over IO
-  if(coolant == true){
+  if(coolant == false){
     tft.drawXBitmap(Icon_Pos_Coolant[0], Icon_Pos_Coolant[1], sym_brakepads, 50, 50, TFT_RED);
     warnings += 128;
   }
@@ -101,14 +91,14 @@ volt = 2500;
     tft.fillRect(Icon_Pos_Coolant[0], Icon_Pos_Coolant[1], 50, 50, BACK_COLOR);
   }
 
-  // Batterie over voltage measurement
-  if((volt > 4000) || (volt < 1000)){
-    tft.drawXBitmap(256, 50, sym_battery, 50, 50, TFT_RED);
-    warnings += 256;
-  }
-  else {
-    tft.fillRect(256, 50, 50, 50, BACK_COLOR);
-  }
+  // // Batterie over voltage measurement
+  // if((volt > 4000) || (volt < 1000)){
+  //   tft.drawXBitmap(256, 50, sym_battery, 50, 50, TFT_RED);
+  //   warnings += 256;
+  // }
+  // else {
+  //   tft.fillRect(256, 50, 50, 50, BACK_COLOR);
+  // }
 
   Serial.println(warnings);
   Serial.println(light);

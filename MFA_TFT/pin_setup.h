@@ -11,16 +11,16 @@
 
 // set up can system
 // Default for ESP32
-#define CAN_RX		21
-#define CAN_TX		22
+#define CAN_RX		21    // Green connector PIN 19
+#define CAN_TX		22    // Green connector PIN 20
 
 // MFA Control PIN
 // MODE Switch momentary button
-#define PIN_MODE 13
+#define PIN_MODE 13     // Green connector PIN 24
 // RESET Switch momentary button
-#define PIN_RESET 14
+#define PIN_RESET 14    // Green connector PIN 25
 // MEMORY Switch button
-#define PIN_MEMORY 16
+#define PIN_MEMORY 16   // Green connector PIN 23
 
 // Analog and digital PIN
 // Voltage PIN ; IN
@@ -33,18 +33,20 @@
 #define PIN_R_DOOR 26
 // Door Sliding PIN ; IN
 #define PIN_S_DOOR 27
-// Motor Cap PIN ; IN
+// Motor Cap PIN ; IN Green connector PIN 22
 #define PIN_MOTOR_CAP 35
 // Oil Presure PIN ; IN
 #define PIN_OIL_PRESURE 17
 // Oil Level PIN ; IN
 #define PIN_OIL_LEVEL 25
-// Brake Pad PIN ; IN
+// Brake Pad PIN ; IN Green connector PIN 7
 #define PIN_BRAKEPADS 34
+// Brake System PIN ; IN Blue connector PIN 29
+#define PIN_BRAKESYSTEM 15
 // Coolant PIN ; IN
 #define PIN_coolant 0        
 
-// Wiper Water Warning PIN ; IN
+// Wiper Water Warning PIN ; IN Green connector PIN 6
 #define PIN_WASHER_FLUID 32
 
 

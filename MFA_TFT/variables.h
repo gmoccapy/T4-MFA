@@ -32,13 +32,13 @@ unsigned long shutdown_timer = 0;   	// time for update values in msec
 
 uint16_t TEXT_COLOR = DAY_TEXT_COLOR;  // with this we are able to change color with light state
 
-int Icon_Pos_Light[2]       = { 10, 48};   // position of LED icon    light
-int Icon_Pos_Door[2]        = { 60, 46};   // position of LED icon    door 
-int Icon_Pos_Oil[2]         = {110, 50};   // position of LED icon    oil 
-int Icon_Pos_BrakePads[2]   = {160, 50};   // position of LED icon    brakepads 
-int Icon_Pos_Petrol[2]      = {210, 50};   // position of LED icon    petrol
-int Icon_Pos_Coolant[2]     = {260, 50};   // position of LED icon    coolant
-int Icon_Pos_WasherFluid[2] = {310, 48};   // position of LED icon    washer_fluid
+int Icon_Pos_Light[2]       = { 20, 210};   // position of LED icon    light
+int Icon_Pos_Door[2]        = { 60,  46};   // position of LED icon    door 
+int Icon_Pos_Oil[2]         = {110,  50};   // position of LED icon    oil 
+int Icon_Pos_BrakePads[2]   = {160,  50};   // position of LED icon    brakepads 
+int Icon_Pos_Petrol[2]      = {210,  50};   // position of LED icon    petrol
+int Icon_Pos_Coolant[2]     = {260,  50};   // position of LED icon    coolant
+int Icon_Pos_WasherFluid[2] = {310,  48};   // position of LED icon    washer_fluid
 
 // for debugging only
 // float debug = 0;
@@ -108,16 +108,17 @@ bool check_led = false;               // only if true, we will redraw the screen
 
 bool light = false;                   // light is on or off
 bool door = false;                    // left door is open (true) or closed (false) from can message
-bool door_r = false;                  // right door is open (false) or closed (true) from IO Pull Up
-bool door_s = false;                  // sliding door is open (false) or closed (true) from IO Pull Up
-bool trunk = false;                   // trunk is open (false) or closed (true) from IO Pull Up
-bool motor_cap = false;               // motor cap is open (false) or closed (true) from IO Pull Up
+bool door_r = true;                   // right door is open (false) or closed (true) from IO Pull Up
+bool door_s = true;                   // sliding door is open (false) or closed (true) from IO Pull Up
+bool trunk = true;                    // trunk is open (false) or closed (true) from IO Pull Up
+bool motor_cap = true;                // motor cap is open (false) or closed (true) from IO Pull Up
 bool petrol = false;                  // reserve warning controlled by 0x320 can message
 bool oil_presure = true;              // oil presure warning controlled by IO Pull Up 
 bool oil_level = true;                // oil level warning controlled by IO Pull Up
 bool washer_fluid = true;             // washer_fluid warning controlled IO Pull Up
 bool coolant = true;                  // coolant warning controlled IO Pull Up
-bool brakepads = true;                // coolant warning controlled IO Pull Up
+bool brakepads = true;                // Brakepads warning controlled IO Pull Up
+bool brakesystem = true;              // Brakefluid warning controlled IO Pull Up
 int warnings = false;                 // we count infos, warnings and critical infos
 
 int speed;                            // rpm of the motor

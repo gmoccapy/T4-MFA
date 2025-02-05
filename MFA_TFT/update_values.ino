@@ -59,35 +59,51 @@ void update_values(void){
   
 // debug infos
   door = false;
-  light = false;
+  light = true;
   petrol = true;
-  oil_level = true;
-  oil_presure = true;
-  washer_fluid = true;
-  coolant = true;
-  brakepads = true;
+  oil_level = false;
+  oil_presure = false;
+  washer_fluid = false;
+  coolant = false;
+  brakepads = false;
+  brakesystem = false;
 
   switch(Data.page){
 
     // from start
     case 0:
+      // light control // over CAN
+      if((light == true) && (TEXT_COLOR != NIGHT_TEXT_COLOR)){
+        TEXT_COLOR = NIGHT_TEXT_COLOR;
+        DrawSelected(Data.page);
+        // warnings += 2;
+      }
+      if((light == false) && (TEXT_COLOR != DAY_TEXT_COLOR)){
+        TEXT_COLOR = DAY_TEXT_COLOR;
+        DrawSelected(Data.page);
+      }
+
+
+
       draw_value_average_consumption(316, Data.mode);
       draw_value_range(372);
       draw_value_out_temp(428);
 
-      if(coolant == true){
+      if(light == true){
+        tft.drawXBitmap(Icon_Pos_Light[0], Icon_Pos_Light[1], sym_light, 50, 50, TFT_GREEN);
+      }
+      else{
+        tft.fillRect(Icon_Pos_Light[0], Icon_Pos_Light[1], 50, 50, BACK_COLOR);
+      }
+
+      if(coolant == false){
         tft.drawXBitmap(20, 50, sym_coolant, 50, 50, TFT_RED);
       }
       else{
         tft.fillRect(20, 50, 50, 50, BACK_COLOR);
       }
 
-      if(washer_fluid == true){
-        tft.drawXBitmap(135, 50, sym_washer_fluid, 50, 50, TFT_ORANGE);
-      }
-      else{
-        tft.fillRect(195, 50, 50, 50, BACK_COLOR);
-      }
+      // Second LED place is empty, in my car there is no LED on this place
 
       if(petrol == true){
         tft.drawXBitmap(240, 50, sym_petrol, 50, 50, TFT_ORANGE);
@@ -96,12 +112,12 @@ void update_values(void){
         tft.fillRect(240, 50, 50, 50, BACK_COLOR);
       }
 
-      if((oil_level == true) || (oil_presure == true)){
+      if((oil_level == false) || (oil_presure == false)){
         uint16_t COLOR;
-        if (oil_level == true){
+        if (oil_level == false){
           COLOR = TFT_ORANGE;
         }
-        if(oil_presure == true){
+        if(oil_presure == false){
           COLOR = TFT_RED;
         }
         tft.drawXBitmap(20, 140, sym_oil, 50, 50, COLOR);
@@ -110,11 +126,25 @@ void update_values(void){
         tft.fillRect(20, 140, 50, 50, BACK_COLOR);
       }
 
-      if(brakepads == true){
+      if(brakepads == false){
         tft.drawXBitmap(135, 140, sym_brakepads, 50, 50, TFT_ORANGE);
       }
       else{
         tft.fillRect(135, 140, 50, 50, BACK_COLOR);
+      }
+
+      if(brakesystem == false){
+        tft.drawXBitmap(135, 50, sym_brakesystem, 50, 50, TFT_RED);
+      }
+      else{
+        tft.fillRect(135, 50, 50, 50, BACK_COLOR);
+      }
+
+      if(washer_fluid == false){
+        tft.drawXBitmap(240, 140, sym_washer_fluid, 50, 50, TFT_ORANGE);
+      }
+      else{
+        tft.fillRect(240, 140, 50, 50, BACK_COLOR);
       }
 
       break;

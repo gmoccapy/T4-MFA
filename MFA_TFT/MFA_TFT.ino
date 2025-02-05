@@ -113,8 +113,6 @@ void loop(void) {
           Data.page = 0;
         }
         temp_page = Data.page;
-        
-        //print_Data();
       }
 //ToDo : Check if this else is realy needed
       else{
@@ -125,18 +123,6 @@ void loop(void) {
     previousPressedMode = millis();
     DrawSelected(Data.page);
     //check_LED();
-    //print_Data();
-
-    // if (Data.page == 3){
-    //   tft.drawXBitmap(Icon_Pos_Door[0]  , Icon_Pos_Door[1],               sym_door,          50, 50, TFT_ORANGE);
-    //   //tft.drawXBitmap(Icon_Pos_Light[0] , Icon_Pos_Light[1],              sym_light,         50, 50, TFT_GREEN);
-    //   tft.drawXBitmap(Icon_Pos_Petrol[0], Icon_Pos_Petrol[1],             sym_petrol,        50, 50, TFT_ORANGE);
-    //   tft.drawXBitmap(Icon_Pos_Oil[0]  , Icon_Pos_Oil[1],                 sym_oil,           50, 50, TFT_RED);
-    //   tft.drawXBitmap(Icon_Pos_WasherFluid[0] , Icon_Pos_WasherFluid[1],  sym_washer_fluid,  50, 50, TFT_ORANGE);
-    //   tft.drawXBitmap(Icon_Pos_Coolant[0], Icon_Pos_Coolant[1],           sym_coolant,       50, 50, TFT_RED);
-    //   tft.drawXBitmap(Icon_Pos_BrakePads[0] , Icon_Pos_BrakePads[1],      sym_brakepads,     50, 50, TFT_ORANGE);
-    // }
-
   }
 
   // User reset
