@@ -4,14 +4,6 @@ void DrawSelected(int page){
   tft.setTextColor(TEXT_COLOR);
   tft.setFreeFont(FSS18);
 
-  // //Draw separation line
-  // tft.drawFastHLine(0, 105, 320, TEXT_COLOR);
-  // tft.drawFastHLine(0, 171, 320, TEXT_COLOR);
-  // tft.drawFastHLine(0, 237, 320, TEXT_COLOR);
-  // tft.drawFastHLine(0, 303, 320, TEXT_COLOR);
-  // tft.drawFastHLine(0, 369, 320, TEXT_COLOR);
-  // tft.drawFastHLine(0, 435, 320, TEXT_COLOR);
-
   // max 6 info lines
   // Line 1 = 72
   // Line 2 = 138
@@ -22,45 +14,19 @@ void DrawSelected(int page){
 
   switch(page){
     
-    // Just draw a half VIS from original Insrument
-    // We have only the lower part to draw and 
-    // the upper part is used only to display the LED ICON
-    // we may display:
-    // Trip Time
-    // Trip diatance
-    // actual consumption
-    // average Velocity (distance / time)
-    // average consumption (consumption / distance)
-    // resting range
-    // Out Temp with ice Warning
-    // Oil Temp
     case 0:
+// DEBUG:
+// This is the visible area
+tft.drawRect(10, 40, 300, 417, TFT_RED);
 
-
-      // This is the visible area
-      tft.drawRect(10, 40, 300, 417, TFT_RED);
-
-      tft.setTextColor(BACK_COLOR, TEXT_COLOR, true);
-      if(Data.mode == START){
-        tft.drawString(F("1"),300 , 302, FONT4);
-      }
-      else if (Data.mode == REFUEL){
-        tft.drawString(F("2"),300 , 302, FONT4);
-      }
-      else{
-        tft.drawString(F("2"),300 , 302, FONT4);
-      }
-      tft.setTextColor(TEXT_COLOR, BACK_COLOR, false);
-      
+      drawCruiseControl(70);
+      tft.drawFastHLine(0, 100, 320, TEXT_COLOR);
       tft.drawFastHLine(0, 288, 320, TEXT_COLOR);
-      drawAverageConsumption(316);
-      draw_value_average_consumption(316, Data.mode);
+      drawRange(316);
       tft.drawFastHLine(0, 344, 320, TEXT_COLOR);
-      drawRange(372);
-      draw_value_range(372);
+      drawAverageConsumption(372);
       tft.drawFastHLine(0, 400, 320, TEXT_COLOR);
       drawOutTemp(428);
-      draw_value_out_temp(428);
       tft.drawFastHLine(0, 456, 320, TEXT_COLOR);
       break;
     
@@ -112,7 +78,42 @@ void DrawSelected(int page){
       break;
     
     case 4:
-      draw_test(true);
+    // Just draw a half VIS from original Insrument
+    // We have only the lower part to draw and 
+    // the upper part is used only to display the LED ICON
+    // we may display:
+    // Trip Time
+    // Trip diatance
+    // actual consumption
+    // average Velocity (distance / time)
+    // average consumption (consumption / distance)
+    // resting range
+    // Out Temp with ice Warning
+    // Oil Temp
+
+
+      tft.setTextColor(BACK_COLOR, TEXT_COLOR, true);
+      if(Data.mode == START){
+        tft.drawString(F("1"),300 , 302, FONT4);
+      }
+      else if (Data.mode == REFUEL){
+        tft.drawString(F("2"),300 , 302, FONT4);
+      }
+      else{
+        tft.drawString(F("2"),300 , 302, FONT4);
+      }
+      tft.setTextColor(TEXT_COLOR, BACK_COLOR, false);
+      
+      tft.drawFastHLine(0, 288, 320, TEXT_COLOR);
+      drawAverageConsumption(316);
+      draw_value_average_consumption(316, Data.mode);
+      tft.drawFastHLine(0, 344, 320, TEXT_COLOR);
+      drawRange(372);
+      draw_value_range(372);
+      tft.drawFastHLine(0, 400, 320, TEXT_COLOR);
+      drawOutTemp(428);
+      draw_value_out_temp(428);
+      tft.drawFastHLine(0, 456, 320, TEXT_COLOR);
       break;
 
     case 5:
@@ -260,47 +261,6 @@ void draw_average_symbol(int X_Pos, int Y_Pos, int Radius){
   tft.drawLine(X_Pos - Radius + 1, Y_Pos + Radius, X_Pos + Radius + 1, Y_Pos - Radius, TEXT_COLOR);
 }
 
-void draw_test(bool show){
-  // This is the visible area
-  tft.drawRect(10, 40, 300, 417, TFT_RED);
-
-  drawCruiseControl(70);
-  draw_value_cruise_control(70);
-
-  // Red ones need to be placed in Middle and big
-  //tft.drawXBitmap(temp + 3 * 50, 50, sym_coolant, 50, 50, TFT_RED);
-  //tft.drawXBitmap(temp + 4 * 50, 48, sym_oil, 50, 50, TFT_RED);
-  //tft.drawXBitmap(temp + 5 * 50, 48, sym_battery, 50, 50, TFT_RED);
-
-  tft.drawFastHLine(0, 100, 320, TEXT_COLOR);
-
-  // draw_dial needs 181 pixel hight, value may be changes with #define SPRITESIZE and SPRITEPIVOT
-  // C_last_25_km = 1755.65 ml/25km = 70.226 ml/km => 0,070226 l/km = 7.0226 l/100km 
-  temp = C_last_25_km / 250.0;  // ml/25 km and 100km gives factor 250     
-  draw_dial(75, 108, temp, 1, C_actual, 24.0, F("Ab"), F("Start"));
-
-  // draw oil temp scale
-  String(F("Öl")).toCharArray(TFT_String, 4);
-  draw_bar(TFT_String, 15, 115, 80);
-  String(F("V")).toCharArray(TFT_String, 4);
-  draw_bar(TFT_String, 269, 115, 12);
-
-  tft.drawFastHLine(0, 288, 320, TEXT_COLOR);
-  drawRange(316);
-  draw_value_range(316);
-  tft.drawFastHLine(0, 344, 320, TEXT_COLOR);
-  // drawAverageConsumption(372);
-  // draw_value_average_consumption(372, START);
-  drawOil(372);
-  draw_value_oil_temp(372);
-  tft.drawFastHLine(0, 400, 320, TEXT_COLOR);
-  drawOutTemp(428);
-  draw_value_out_temp(428);
-  tft.drawFastHLine(0, 456, 320, TEXT_COLOR);
-
-  //check_LED();
-}
-
 void draw_debug(void){
   // DEBUG
   tft.fillScreen(BACK_COLOR);
@@ -362,5 +322,7 @@ void draw_InitPage(void){
 void drawShutDown(void){
   tft.fillScreen(TFT_BLACK);
   tft.setTextDatum(TL_DATUM);
+
+//DEBUG:
   tft.drawString("Waiting for shut Down", 10, 50, FONT2);
 }

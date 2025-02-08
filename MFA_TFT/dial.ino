@@ -106,6 +106,26 @@ void create_sprites(void){
   needle.fillSprite(TFT_BLACK);
   needle.fillTriangle(SPRITESIZE / 20, SPRITESIZE / 10 - 1, 1, 1, SPRITESIZE / 10 - 1, 1, TFT_RED);
 
+  int width = 36;
+  int height = 158;
+  // create a left bar sprite
+  left_bar.setColorDepth(8);
+  left_bar.createSprite(width, height);
+  left_bar.fillSprite(TFT_BLACK);
+  // Draw 10 tiks
+  for (int i = 0; i < 130; i += int(height / 10)){
+    left_bar.drawFastHLine(0, 19 + i, 6, TEXT_COLOR);
+  }
+
+  // create a right bar sprite
+  right_bar.setColorDepth(8);
+  right_bar.createSprite(width, height);
+  right_bar.fillSprite(TFT_BLACK);
+  // Draw 10 tiks
+  for (int i = 0; i < 130; i += int(height / 10)){
+    right_bar.drawFastHLine(width - 6, 19 + i, 6, TEXT_COLOR);
+  }
+
   // create a value box will be done in function, as it may be of diferent sizes
   // see update_values.ino draw_value_box
   // box.setColorDepth(8);
@@ -141,50 +161,59 @@ void draw_small_value_box(int X_Pos, int Y_Pos, int width, int height, char *val
 
 
 //  Draw a linear meter on the screen
-void draw_bar(char *label, int X_Pos, int Y_Pos, int value){
+void draw_bar(String label, String unit, int X_Pos, int Y_Pos, float value, int min_value, int max_value, int lower_limit, int upper_limit, int max_limit){
 
   int width = 36;
   int height = 158;
 
-  temp = map(value, 0, 160, 0, 120); // 120 = Hight of 158 - 19 - 19 (label and value)
+  temp = map(value, min_value, max_value, 0, 120); // 120 = Hight of 158 - 19 - 19 (label and value)
 
-  uint32_t color = TFT_GREEN;
+  uint32_t color = TEXT_COLOR;
 
-  if ((value < 60) || (value > 120)){
+  if ((value < lower_limit) || (value > upper_limit)){
     color = TFT_ORANGE;
+    if(max_limit < 0){
+      color = TFT_RED;
+    }
   }
-  if (value > 130){
+  if ((value > max_limit) && (max_limit > 0)){
     color = TFT_RED;
   }
-  
   box.setColorDepth(8);
   box.createSprite(width, height);
   box.fillSprite(BACK_COLOR);
 
-  // Sourounding Frame
-  box.drawRect(0, 0, width, height, TEXT_COLOR);
-
+  // Draw 10 tiks 
+  if(X_Pos < 160){
+    left_bar.pushToSprite(&box, 0, 0, TFT_BLACK);
+  }
+  else{
+    right_bar.pushToSprite(&box, 0, 0, TFT_BLACK);
+  }
+  // example for Oil Temp
   // MAX Oil Temp = 160°C and bar is 158 - 19 - 19  Pixel hight
   // 88°C is then 120 x 88 / 160
-  box.fillRect(8, height - 19 - temp, width - 11, temp, color);
-
-  // Draw 10 tiks 
-  for (int i = 0; i < 130; i += int(height / 10)){
-    box.drawFastHLine(0, 19 + i, 6, TEXT_COLOR);
+  if(X_Pos < 160){
+    box.fillRect(12, height - 19 - temp, width - 20, temp, color);
   }
-  
+  else{
+    box.fillRect(8, height - 19 - temp, width - 20, temp, color);
+  }
+
   box.setTextColor(TEXT_COLOR, BACK_COLOR);
   box.setTextDatum(MC_DATUM);
   box.setFreeFont(&FreeArial12full);
   box.drawString(label, width / 2, 19 / 2, GFXFF);
   
-  box.drawString(F("`C"), width / 2, 28, FONT2);
-
-  dtostrf(value, 3, 0, TFT_String);
+  if(value-(int)value == 0){
+    dtostrf(value, 3, 0, TFT_String);
+  }
+  else{
+    dtostrf(value, 3, 1, TFT_String);
+  }
   box.setTextDatum(MC_DATUM);
-  box.drawString(TFT_String, width / 2, height - 19 / 2, FONT2);
-  // box.setTextDatum(ML_DATUM);
-  // box.drawString(F("`C"), width / 2 + 5, height - 19 / 2, FONT2);
+  String sum = TFT_String + unit;
+  box.drawString(sum, width / 2, height - 19 / 2, FONT2);
 
   box.pushSprite(X_Pos , Y_Pos, TFT_TRANSPARENT);
   box.deleteSprite();

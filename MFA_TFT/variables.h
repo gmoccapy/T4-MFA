@@ -9,9 +9,11 @@
 #define CAR_NO    "HI-SN 3463"
 
 // define case for differnt calculation
-#define START      1              // values from start
-#define REFUEL     2              // values since refuel
-#define PERIOD     3              // values long period
+enum memory{
+  START,               // values from start
+  REFUEL,              // values since refuel
+  PERIOD               // values long period
+};
 
 // position variables and colors to display Infos 5:6:5 Format 1.Letter = red 2 and 3 are Green and 4 is blue
 #define NIGHT_TEXT_COLOR 0x041F
@@ -32,15 +34,18 @@ unsigned long shutdown_timer = 0;   	// time for update values in msec
 
 uint16_t TEXT_COLOR = DAY_TEXT_COLOR;  // with this we are able to change color with light state
 
+int Icon_Pos_Coolant[2]     = { 20,  50};   // position of LED icon    coolant
+int Icon_Pos_BrakeSystem[2] = {135,  50};   // position of LED icon    brakepads 
+int Icon_Pos_Petrol[2]      = {240,  50};   // position of LED icon    petrol
+int Icon_Pos_Oil[2]         = { 20, 140};   // position of LED icon    oil 
+int Icon_Pos_BrakePads[2]   = {135, 140};   // position of LED icon    brakepads 
+int Icon_Pos_WasherFluid[2] = {240, 140};   // position of LED icon    washer_fluid
 int Icon_Pos_Light[2]       = { 20, 210};   // position of LED icon    light
-int Icon_Pos_Door[2]        = { 60,  46};   // position of LED icon    door 
-int Icon_Pos_Oil[2]         = {110,  50};   // position of LED icon    oil 
-int Icon_Pos_BrakePads[2]   = {160,  50};   // position of LED icon    brakepads 
-int Icon_Pos_Petrol[2]      = {210,  50};   // position of LED icon    petrol
-int Icon_Pos_Coolant[2]     = {260,  50};   // position of LED icon    coolant
-int Icon_Pos_WasherFluid[2] = {310,  48};   // position of LED icon    washer_fluid
+int Icon_Pos_Door[2]        = {135, 210};   // position of LED icon    door 
+int Icon_Pos_Batterie[2]    = {240, 210};   // position of LED icon    batterie
 
-// for debugging only
+
+// DEBUG:
 // float debug = 0;
 // float bitValue [8];
 
@@ -92,11 +97,11 @@ float temp = 0.0;                     // holds temporarily different values
 // variables for the button pin
 unsigned long debounce = 150;
 unsigned int previousPressedMode = 0;
-bool PIN_mode_state = false;
+bool PIN_mode_state = true;
 bool PIN_mode_previous_state = true;
-bool PIN_reset_state = false;
+bool PIN_reset_state = true;
 bool PIN_reset_previous_state = true;
-bool PIN_memory_state = false;
+bool PIN_memory_state = true;
 bool PIN_memory_previous_state = true;
 int reset = 0;                        // Set to 1 to reset from start, 2 to reset refuel and 3 to reset period
 
@@ -145,7 +150,3 @@ unsigned int velocity_cruise_control; // actual velocity in km/h
 bool units_l_100_km = false;          // true if l/100km ; false if l/h ; start as false, as car is not moving at start 
                                       // as on start the value will be false, as car is not moving
                                       // we set this to true to have an initial change
-bool hours = false;                   // time is over 3600 sec.
-
-
-int counter = 0;

@@ -18,24 +18,29 @@ void update_time(void){
 void update_volt(void){
   // Get the Voltage value
   temp = analogRead(PIN_Volt);      
+
+  // ignition is on! K15 with 12 V
   if (temp > 1000){
-    //Serial.println(temp);
-    // get rid of noise influence 
-    // take 70% of old value and 30% of new value to smooth the display
-    volt = (0.7 * volt) + (0.3 * temp);
+    // get rid of noise influence ; high pass filtering 
+    // take 80% of old value and 20% of new value to smooth the display
+    volt = (0.8 * volt) + (0.2 * temp);
+
     // ignition came back bevor one hour has past, so reset timer
+    // and redraw page, as we have blanked it out Loosing K15
     if (shutdown_timer != 0){
       shutdown_timer = 0;
+      if (temp_page != Data.page){
+        temp_page = Data.page;
+        DrawSelected(Data.page);
+        check_LED();
+      }
     }
     // if we had an power off, we need to put Hold high
     if (digitalRead(PIN_STAY_ON) == false){
       digitalWrite(PIN_STAY_ON, 1);
     }
-    if (temp_page != Data.page){
-      temp_page = Data.page;
-      DrawSelected(Data.page);
-    }
   }
+  // no Current on K15, so switch off display (better sayed just draw black screen)
   else{
     volt = temp;
     if ((shutdown_timer == 0) && (digitalRead(PIN_STAY_ON) == true)){
@@ -55,97 +60,31 @@ void update_values(void){
   // Line 5 = 337
   // Line 6 = 404
 
-  tft.setTextDatum(MR_DATUM); // middle right
-  
-// debug infos
-  door = false;
-  light = true;
-  petrol = true;
-  oil_level = false;
-  oil_presure = false;
-  washer_fluid = false;
-  coolant = false;
-  brakepads = false;
-  brakesystem = false;
+//DEBUG:
+//Serial.println("This is update values");
 
+  tft.setTextDatum(MR_DATUM); // middle right
   switch(Data.page){
 
-    // from start
     case 0:
-      // light control // over CAN
-      if((light == true) && (TEXT_COLOR != NIGHT_TEXT_COLOR)){
-        TEXT_COLOR = NIGHT_TEXT_COLOR;
-        DrawSelected(Data.page);
-        // warnings += 2;
-      }
-      if((light == false) && (TEXT_COLOR != DAY_TEXT_COLOR)){
-        TEXT_COLOR = DAY_TEXT_COLOR;
-        DrawSelected(Data.page);
-      }
+      draw_value_cruise_control(70);
 
+      // // draw_dial needs 181 pixel hight, value may be changes with #define SPRITESIZE and SPRITEPIVOT
+      // // C_last_25_km = 1755.65 ml/25km = 70.226 ml/km => 0,070226 l/km = 7.0226 l/100km 
+      temp = C_last_25_km / 250.0;  // ml/25 km and 100km gives factor 250     
+      draw_dial(75, 108, temp, 1, C_actual, 24.0, F("Ab"), F("Start"));
 
+      // draw oil temp scale
+      draw_bar("Öl", "`C", 15, 115, 102, 0, 160, 60, 130, 140);
 
-      draw_value_average_consumption(316, Data.mode);
-      draw_value_range(372);
+      // draw volt scale
+      draw_bar("V", "V", 269, 115, 12.5, 0, 18, 11, 15, -1);
+
+      draw_value_range(316);
+
+      draw_value_average_consumption(372, Data.mode);
+
       draw_value_out_temp(428);
-
-      if(light == true){
-        tft.drawXBitmap(Icon_Pos_Light[0], Icon_Pos_Light[1], sym_light, 50, 50, TFT_GREEN);
-      }
-      else{
-        tft.fillRect(Icon_Pos_Light[0], Icon_Pos_Light[1], 50, 50, BACK_COLOR);
-      }
-
-      if(coolant == false){
-        tft.drawXBitmap(20, 50, sym_coolant, 50, 50, TFT_RED);
-      }
-      else{
-        tft.fillRect(20, 50, 50, 50, BACK_COLOR);
-      }
-
-      // Second LED place is empty, in my car there is no LED on this place
-
-      if(petrol == true){
-        tft.drawXBitmap(240, 50, sym_petrol, 50, 50, TFT_ORANGE);
-      }
-      else{
-        tft.fillRect(240, 50, 50, 50, BACK_COLOR);
-      }
-
-      if((oil_level == false) || (oil_presure == false)){
-        uint16_t COLOR;
-        if (oil_level == false){
-          COLOR = TFT_ORANGE;
-        }
-        if(oil_presure == false){
-          COLOR = TFT_RED;
-        }
-        tft.drawXBitmap(20, 140, sym_oil, 50, 50, COLOR);
-      }
-      else{
-        tft.fillRect(20, 140, 50, 50, BACK_COLOR);
-      }
-
-      if(brakepads == false){
-        tft.drawXBitmap(135, 140, sym_brakepads, 50, 50, TFT_ORANGE);
-      }
-      else{
-        tft.fillRect(135, 140, 50, 50, BACK_COLOR);
-      }
-
-      if(brakesystem == false){
-        tft.drawXBitmap(135, 50, sym_brakesystem, 50, 50, TFT_RED);
-      }
-      else{
-        tft.fillRect(135, 50, 50, 50, BACK_COLOR);
-      }
-
-      if(washer_fluid == false){
-        tft.drawXBitmap(240, 140, sym_washer_fluid, 50, 50, TFT_ORANGE);
-      }
-      else{
-        tft.fillRect(240, 140, 50, 50, BACK_COLOR);
-      }
 
       break;
     

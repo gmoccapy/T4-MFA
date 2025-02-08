@@ -40,7 +40,8 @@ TFT_eSprite scale = TFT_eSprite(&tft);
 TFT_eSprite needle = TFT_eSprite(&tft);
 // make Sprite for the values (avoid flicker effects)
 TFT_eSprite box = TFT_eSprite(&tft);
-
+TFT_eSprite left_bar = TFT_eSprite(&tft);
+TFT_eSprite right_bar = TFT_eSprite(&tft);
 
 // set up can system
 twai_filter_config_t filter;
@@ -77,13 +78,16 @@ void setup(void) {
 
   // load the Data stored in memory
   load_Data();
-  temp_page = Data.page;
 
 // DEBUG:
   Data.page = 0;
   Data.mode = START;
 
+  temp_page = Data.page;
+
+
   // Create Task on Core 0 to read CAN Messages and not delaying due to TFT Drawing functions
+// DEBUG: uncomment CAN reading
 //  xTaskCreatePinnedToCore(CAN_Loop, "CAN_Loop", 1000, NULL, 0, &EvaluateCAN, 0);
 
 }
@@ -122,7 +126,8 @@ void loop(void) {
     PIN_mode_previous_state = PIN_mode_state;
     previousPressedMode = millis();
     DrawSelected(Data.page);
-    //check_LED();
+    Serial.println("Button");
+    check_LED();
   }
 
   // User reset
@@ -141,7 +146,8 @@ void loop(void) {
 
     DrawSelected(Data.page);
     start = true;
-    //check_LED();
+    Serial.println("Start");
+    check_LED();
   }
 
   // update time every second
@@ -150,9 +156,9 @@ void loop(void) {
     lastMillis = millis();
   }
 
-  // if (check_led == true){
-  //   check_LED();
-  // }
+  if (check_led == true){
+    check_LED();
+  }
 
   // to avoid update values for door warning in full page mode
   if (Data.page == temp_page){
@@ -160,26 +166,6 @@ void loop(void) {
   }
 
   update_volt();
-
-  // Serial.print("door = ");
-  // Serial.print(door);
-  // Serial.print("\t");
-  // Serial.print("light = ");
-  // Serial.print(light);
-  // Serial.print("\t");
-  // Serial.print("petrol = ");
-  // Serial.print(petrol);
-  // Serial.print("\t");
-  // Serial.print("presure = ");
-  // Serial.print(oil_presure);
-  // Serial.print("\t");
-  // Serial.print("level = ");
-  // Serial.print(oil_level);
-  // Serial.print("\t");
-  // Serial.print("counter = ");
-  // Serial.print(counter);
-  // Serial.println("\t");
-  
 
   // stay_on == true after we had one time ignition
   // shutdown_timer will be set switching off ignition 
