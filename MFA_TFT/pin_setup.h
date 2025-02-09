@@ -1,13 +1,12 @@
 // TFT_Setup
 // Pin definition and settings see USER_SETUP_ID 11
-// #define TFT_MISO 19
+// #define TFT_MISO 19 not used, commented out in user_setup
 // #define TFT_MOSI 23
 // #define TFT_SCLK 18
 // #define TFT_CS    5  
 // #define TFT_DC    2  
-// #define TFT_RST  16  // Reset pin (could connect to RST pin)
-// #define TFT_RST  -1  // Set TFT_RST to -1 if display RESET is connected to ESP32 board RST
-//                      // Pin is marked as EN 
+// #define TFT_RST  -1  // Set TFT_RST to -1 as display RESET is connected to 
+                        // ESP32 board RST, Pin is marked as EN 
 
 // set up can system
 // Default for ESP32
@@ -42,13 +41,14 @@
 // Brake Pad PIN ; IN Green connector PIN 7
 #define PIN_BRAKEPADS 34
 // Brake System PIN ; IN Blue connector PIN 29
-#define PIN_BRAKESYSTEM 15
+#define PIN_BRAKESYSTEM 33
 // Coolant PIN ; IN
 #define PIN_coolant 0        
-
 // Wiper Water Warning PIN ; IN Green connector PIN 6
 #define PIN_WASHER_FLUID 32
 
+// Oil Level PWM signal
+#define PIN_OIL_PWM 19
 
 // we get from Can Bus, so we do not need the following PIN
 // Door Left

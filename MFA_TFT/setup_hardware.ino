@@ -19,15 +19,15 @@ void setup_CAN(void){
 void pin_setup(void){
   // MFA Control buttons
   // Mode switch button
-  pinMode(PIN_MODE, INPUT);
+  pinMode(PIN_MODE, INPUT_PULLUP);
   attachInterrupt(digitalPinToInterrupt(PIN_MODE), PIN_mode_changed, CHANGE);
   PIN_mode_state = digitalRead(PIN_MODE);
   // Reset switch button
-  pinMode(PIN_RESET, INPUT);
+  pinMode(PIN_RESET, INPUT_PULLUP);
   attachInterrupt(digitalPinToInterrupt(PIN_RESET), PIN_reset_changed, CHANGE);
   PIN_reset_state = digitalRead(PIN_RESET);
   // Memory switch button
-  pinMode(PIN_MEMORY, INPUT);
+  pinMode(PIN_MEMORY, INPUT_PULLUP);
   attachInterrupt(digitalPinToInterrupt(PIN_MEMORY), PIN_memory_changed, CHANGE);
   PIN_memory_state = digitalRead(PIN_MEMORY);
 
@@ -82,6 +82,9 @@ void pin_setup(void){
   pinMode(PIN_OIL_LEVEL, INPUT_PULLUP);
   attachInterrupt(digitalPinToInterrupt(PIN_OIL_LEVEL), PIN_Oil_Level_changed, CHANGE);
   oil_level = digitalRead(PIN_OIL_LEVEL);
+
+// ToDo:
+  //pinMode(PIN_OIL_PWM, INPUT);
 
 }
 
