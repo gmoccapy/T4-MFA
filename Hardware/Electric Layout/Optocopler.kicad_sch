@@ -1,0 +1,7567 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "8625f482-38b9-4722-90c1-4b27cdac03ba")
+	(paper "A4")
+	(lib_symbols
+		(symbol "Connector:Screw_Terminal_01x01"
+			(pin_names
+				(offset 1.016) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Screw_Terminal_01x01"
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Generic screw terminal, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "screw terminal"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "TerminalBlock*:*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Screw_Terminal_01x01_1_1"
+				(rectangle
+					(start -1.27 1.27)
+					(end 1.27 -1.27)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.5334 0.3302) (xy 0.3302 -0.508)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.3556 0.508) (xy 0.508 -0.3302)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 0)
+					(radius 0.635)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "Device:C"
+			(pin_numbers hide)
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "C"
+				(at 0.635 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0.9652 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Unpolarized capacitor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "cap capacitor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "C_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "C_0_1"
+				(polyline
+					(pts
+						(xy -2.032 -0.762) (xy 2.032 -0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.032 0.762) (xy 2.032 0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.794)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "Device:R"
+			(pin_numbers hide)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "R"
+				(at 2.032 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "R"
+				(at 0 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Resistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "R res resistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "R_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "R_0_1"
+				(rectangle
+					(start -1.016 -2.54)
+					(end 1.016 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "Device:R_Network12"
+			(pin_names
+				(offset 0) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "RN"
+				(at -17.78 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "R_Network12"
+				(at 15.24 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Resistor_THT:R_Array_SIP13"
+				(at 17.145 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "http://www.vishay.com/docs/31509/csc.pdf"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "12 resistor network, star topology, bussed resistors, small symbol"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "R network star-topology"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "R?Array?SIP*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "R_Network12_0_1"
+				(rectangle
+					(start -16.51 -3.175)
+					(end 13.97 3.175)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -16.002 1.524)
+					(end -14.478 -2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center -15.24 2.286)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start -13.462 1.524)
+					(end -11.938 -2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center -12.7 2.286)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start -10.922 1.524)
+					(end -9.398 -2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center -10.16 2.286)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start -8.382 1.524)
+					(end -6.858 -2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center -7.62 2.286)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start -5.842 1.524)
+					(end -4.318 -2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center -5.08 2.286)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start -3.302 1.524)
+					(end -1.778 -2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center -2.54 2.286)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start -0.762 1.524)
+					(end 0.762 -2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -15.24 -2.54) (xy -15.24 -3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -12.7 -2.54) (xy -12.7 -3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -10.16 -2.54) (xy -10.16 -3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -7.62 -2.54) (xy -7.62 -3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.08 -2.54) (xy -5.08 -3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 -2.54) (xy -2.54 -3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.54) (xy 0 -3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -2.54) (xy 2.54 -3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 -2.54) (xy 5.08 -3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 -2.54) (xy 7.62 -3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 10.16 -2.54) (xy 10.16 -3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 12.7 -2.54) (xy 12.7 -3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -15.24 1.524) (xy -15.24 2.286) (xy -12.7 2.286) (xy -12.7 1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -12.7 1.524) (xy -12.7 2.286) (xy -10.16 2.286) (xy -10.16 1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -10.16 1.524) (xy -10.16 2.286) (xy -7.62 2.286) (xy -7.62 1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -7.62 1.524) (xy -7.62 2.286) (xy -5.08 2.286) (xy -5.08 1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.08 1.524) (xy -5.08 2.286) (xy -2.54 2.286) (xy -2.54 1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 1.524) (xy -2.54 2.286) (xy 0 2.286) (xy 0 1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.524) (xy 0 2.286) (xy 2.54 2.286) (xy 2.54 1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 1.524) (xy 2.54 2.286) (xy 5.08 2.286) (xy 5.08 1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 1.524) (xy 5.08 2.286) (xy 7.62 2.286) (xy 7.62 1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 1.524) (xy 7.62 2.286) (xy 10.16 2.286) (xy 10.16 1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 10.16 1.524) (xy 10.16 2.286) (xy 12.7 2.286) (xy 12.7 1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 2.286)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 1.778 1.524)
+					(end 3.302 -2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.54 2.286)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 4.318 1.524)
+					(end 5.842 -2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 5.08 2.286)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 6.858 1.524)
+					(end 8.382 -2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 7.62 2.286)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 9.398 1.524)
+					(end 10.922 -2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 10.16 2.286)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 11.938 1.524)
+					(end 13.462 -2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_Network12_1_1"
+				(pin passive line
+					(at -15.24 5.08 270)
+					(length 2.54)
+					(name "common"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -5.08 90)
+					(length 1.27)
+					(name "R9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 -5.08 90)
+					(length 1.27)
+					(name "R10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 10.16 -5.08 90)
+					(length 1.27)
+					(name "R11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 12.7 -5.08 90)
+					(length 1.27)
+					(name "R12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -15.24 -5.08 90)
+					(length 1.27)
+					(name "R1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -12.7 -5.08 90)
+					(length 1.27)
+					(name "R2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -10.16 -5.08 90)
+					(length 1.27)
+					(name "R3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -7.62 -5.08 90)
+					(length 1.27)
+					(name "R4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -5.08 90)
+					(length 1.27)
+					(name "R5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -2.54 -5.08 90)
+					(length 1.27)
+					(name "R6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -5.08 90)
+					(length 1.27)
+					(name "R7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -5.08 90)
+					(length 1.27)
+					(name "R8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "Isolator:6N137"
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at -4.064 8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "6N137"
+				(at 0 -8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Package_DIP:DIP-8_W7.62mm"
+				(at 0 -12.7 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://docs.broadcom.com/docs/AV02-0940EN"
+				(at -21.59 13.97 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Single High Speed LSTTL/TTL Compatible Optocoupler with enable, dV/dt 1000/us, VCM 10, max 7V VCC, DIP-8"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "High speed optically coupled gates enable"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "DIP*W7.62mm*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "6N137_0_1"
+				(polyline
+					(pts
+						(xy 0 -6.35) (xy -2.286 -6.35) (xy -2.286 -4.064)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.08 -2.54) (xy -3.937 -2.54) (xy -3.937 2.54) (xy -5.08 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -5.08) (xy 1.27 -6.35) (xy 0 -6.35) (xy 0 -7.62)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.175 -2.667) (xy 0.635 -4.445) (xy 0.635 -0.889) (xy 3.175 -2.667)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.794 -1.016) (xy -1.717 -2.093) (xy -2.076 -1.914) (xy -1.896 -1.734) (xy -1.717 -2.093)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.794 -0.254) (xy -1.717 -1.331) (xy -2.076 -1.152) (xy -1.896 -0.972) (xy -1.717 -1.331)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "6N137_1_1"
+				(rectangle
+					(start -5.08 7.62)
+					(end 5.08 -7.62)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(circle
+					(center 0 -6.35)
+					(radius 0.127)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy -4.572 -0.635) (xy -3.302 -0.635)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.286 -1.778) (xy -2.286 -3.048)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.286 0.508) (xy -2.286 -0.762)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.286 2.794) (xy -2.286 1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.286 5.08) (xy -2.286 3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.286 7.366) (xy -2.286 6.096)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -1.905) (xy 0 -1.905)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.635 -3.302) (xy -0.635 -3.683) (xy 0.635 -3.683)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.635 -1.905) (xy -0.635 -1.524) (xy 0.508 -1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -4.064) (xy 1.27 -6.35) (xy 4.445 -6.35)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.175 -2.667) (xy 4.445 -3.302) (xy 4.445 -6.35)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -3.937 -0.635) (xy -4.572 0.635) (xy -3.302 0.635) (xy -3.937 -0.635)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.635 -1.905) (xy -1.27 -3.175) (xy 0 -3.175) (xy -0.635 -1.905)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -1.27) (xy 1.27 1.27) (xy 0 1.27) (xy 0 7.62)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.1844 -1.1684) (xy 2.413 -0.889) (xy 2.413 2.54) (xy 5.08 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.175 -2.667) (xy 3.175 -4.318) (xy 2.667 -4.318) (xy 2.667 -3.937)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.175 -2.667) (xy 3.175 -1.016) (xy 3.683 -1.016) (xy 3.683 -1.397)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.175 -2.667) (xy 4.445 -2.032) (xy 4.445 0) (xy 5.08 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.445 -3.302) (xy 4.161 -3.018) (xy 4.047 -3.246) (xy 4.445 -3.302)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 1.27 -6.35)
+					(radius 0.127)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 2.032 -1.397)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -7.62 5.08 0)
+					(length 2.54)
+					(name "NC"
+						(effects
+							(font
+								(size 0.635 0.635)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -7.62 2.54 0)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 0.635 0.635)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -7.62 -2.54 0)
+					(length 2.54)
+					(name "C"
+						(effects
+							(font
+								(size 0.635 0.635)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -7.62 -5.08 0)
+					(length 2.54)
+					(name "NC"
+						(effects
+							(font
+								(size 0.635 0.635)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -10.16 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 0.635 0.635)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin open_collector line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name "VO"
+						(effects
+							(font
+								(size 0.635 0.635)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 7.62 2.54 180)
+					(length 2.54)
+					(name "EN"
+						(effects
+							(font
+								(size 0.635 0.635)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 10.16 270)
+					(length 2.54)
+					(name "VCC"
+						(effects
+							(font
+								(size 0.635 0.635)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "Isolator:ILQ74"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at -5.08 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "ILQ74"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at -5.08 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.vishay.com/docs/83640/ild74.pdf"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Description" "Quad Optocoupler, NPN Phototransistor Output, TTL compatible, DIP16/SMD16"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "NPN DC Dual Optocoupler"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "DIP*W7.62mm* DIP*W10.16mm* SMDIP*W9.53mm*Clearance8mm*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "ILQ74_0_1"
+				(rectangle
+					(start -5.08 3.81)
+					(end 5.08 -3.81)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -3.175 -0.635) (xy -1.905 -0.635)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 0.635) (xy 4.445 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.445 -2.54) (xy 2.54 -0.635)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.445 -2.54) (xy 5.08 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.445 2.54) (xy 5.08 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.08 2.54) (xy -2.54 2.54) (xy -2.54 0.635)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 1.905) (xy 2.54 -1.905) (xy 2.54 -1.905)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 -0.635) (xy -3.175 0.635) (xy -1.905 0.635) (xy -2.54 -0.635)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 -0.635) (xy -2.54 1.27) (xy -2.54 -2.54) (xy -5.08 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.508 -0.508) (xy 0.762 -0.508) (xy 0.381 -0.635) (xy 0.381 -0.381) (xy 0.762 -0.508)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.508 0.508) (xy 0.762 0.508) (xy 0.381 0.381) (xy 0.381 0.635) (xy 0.762 0.508)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.048 -1.651) (xy 3.556 -1.143) (xy 4.064 -2.159) (xy 3.048 -1.651) (xy 3.048 -1.651)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+			)
+			(symbol "ILQ74_1_1"
+				(pin passive line
+					(at -7.62 2.54 0)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 2.54 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "15"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 -2.54 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "16"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -7.62 -2.54 0)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "ILQ74_2_1"
+				(pin passive line
+					(at 7.62 -2.54 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 2.54 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -7.62 -2.54 0)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -7.62 2.54 0)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "ILQ74_3_1"
+				(pin passive line
+					(at 7.62 2.54 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 -2.54 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -7.62 2.54 0)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -7.62 -2.54 0)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "ILQ74_4_1"
+				(pin passive line
+					(at 7.62 2.54 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -7.62 -2.54 0)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -7.62 2.54 0)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 -2.54 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+	)
+	(junction
+		(at 215.9 153.67)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "14989eb0-c960-44bb-bf69-4afd0e5e4e5c")
+	)
+	(junction
+		(at 215.9 97.79)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3f247a66-1ab0-48cb-a4ed-0df54bfa2ec4")
+	)
+	(junction
+		(at 215.9 118.11)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3f34faec-8b5c-487c-8891-c4d8402c0499")
+	)
+	(junction
+		(at 215.9 53.34)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "49165492-6816-42d2-993f-69c7eac4904c")
+	)
+	(junction
+		(at 215.9 135.89)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "54610d1d-e07a-4bd1-a384-fc3fd410291b")
+	)
+	(junction
+		(at 215.9 33.02)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8366d140-c851-4e1f-ba01-435c8d91a5b6")
+	)
+	(junction
+		(at 260.35 77.47)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a90c4320-e2d4-4cf3-9f6d-26b9d061ae5d")
+	)
+	(junction
+		(at 215.9 71.12)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ada7613b-87e7-48fc-97e6-de04d65c3ad2")
+	)
+	(junction
+		(at 260.35 33.02)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bc7416dd-3835-4360-999b-6bf1f3cbf515")
+	)
+	(junction
+		(at 215.9 44.45)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bdb77c0e-34a3-4f2b-8c99-ccc8e17d9961")
+	)
+	(junction
+		(at 215.9 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c3de4257-e611-4d01-ad44-df80072fddf5")
+	)
+	(junction
+		(at 215.9 80.01)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d2266f15-2a8e-423e-94ab-eef5f91e64a3")
+	)
+	(junction
+		(at 215.9 62.23)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f0581904-2b28-4a76-bd82-b661a397b99e")
+	)
+	(wire
+		(pts
+			(xy 260.35 77.47) (xy 260.35 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "018b6e87-e4b5-49c4-a652-cdfda0ab0b32")
+	)
+	(wire
+		(pts
+			(xy 118.11 107.95) (xy 71.12 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "023031fa-6aa0-472e-99fc-45e86f5d2fa1")
+	)
+	(wire
+		(pts
+			(xy 120.65 127) (xy 71.12 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "04ea3970-4014-4c56-9f48-e380ed67e22f")
+	)
+	(wire
+		(pts
+			(xy 215.9 135.89) (xy 215.9 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "04fc2296-3fe5-49da-94ae-7d8a511938be")
+	)
+	(wire
+		(pts
+			(xy 86.36 171.45) (xy 170.18 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0587ffad-8438-43aa-a4ac-a7faf4b1e92d")
+	)
+	(wire
+		(pts
+			(xy 71.12 127) (xy 71.12 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "07a3eb4e-ffd6-44b4-8329-f530e14bfdec")
+	)
+	(wire
+		(pts
+			(xy 172.72 93.98) (xy 175.26 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "137afbed-baa5-4581-80eb-e1e7b6a67c9a")
+	)
+	(wire
+		(pts
+			(xy 43.18 62.23) (xy 72.39 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "15f71f72-9c84-4aaa-acfb-cfadd321ede8")
+	)
+	(wire
+		(pts
+			(xy 107.95 26.67) (xy 107.95 31.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1626686b-2b1b-4063-b497-d35d85b44805")
+	)
+	(wire
+		(pts
+			(xy 120.65 26.67) (xy 120.65 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1e8863ad-b2e1-4a6a-8876-d2b4fd59afb6")
+	)
+	(wire
+		(pts
+			(xy 71.12 147.32) (xy 71.12 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "233cc36c-b2c6-48bd-b246-756ec21fadee")
+	)
+	(wire
+		(pts
+			(xy 71.12 49.53) (xy 72.39 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "23b06fb1-2edf-485a-b5d5-7fb1edbe162d")
+	)
+	(wire
+		(pts
+			(xy 87.63 80.01) (xy 215.9 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "25bdbff9-5819-4d1b-a695-0119920f159a")
+	)
+	(wire
+		(pts
+			(xy 38.1 97.79) (xy 72.39 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "266f5b25-5624-40c3-91a9-4fb34a7e7856")
+	)
+	(wire
+		(pts
+			(xy 133.35 26.67) (xy 133.35 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "28724191-6169-4df8-979c-b7eb46bb3ca9")
+	)
+	(wire
+		(pts
+			(xy 71.12 107.95) (xy 71.12 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2ba7f1f6-4387-4dd8-963e-c209f63a73a3")
+	)
+	(wire
+		(pts
+			(xy 113.03 26.67) (xy 113.03 36.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2c73dca8-f492-4881-bcd5-55715dc74e5c")
+	)
+	(wire
+		(pts
+			(xy 125.73 162.56) (xy 71.12 162.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2d08ac45-9ed4-4925-8cb1-8069a6e5cd21")
+	)
+	(wire
+		(pts
+			(xy 260.35 33.02) (xy 274.32 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "32d83f91-c10e-4177-8bb5-4553ff695e19")
+	)
+	(wire
+		(pts
+			(xy 72.39 140.97) (xy 71.12 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "32dabeac-d2ad-408a-a3d1-33a8411ecafc")
+	)
+	(wire
+		(pts
+			(xy 215.9 33.02) (xy 260.35 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3478e7d9-7471-4250-a289-063cb1e4261f")
+	)
+	(wire
+		(pts
+			(xy 215.9 161.29) (xy 215.9 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "354adfd2-962c-4b82-8a0c-6e8a23a35271")
+	)
+	(wire
+		(pts
+			(xy 175.26 88.9) (xy 128.27 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "37a8f338-5dec-4163-8956-85ff743ef323")
+	)
+	(wire
+		(pts
+			(xy 215.9 71.12) (xy 215.9 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "388163e9-ea46-402b-be91-e3bee8344fae")
+	)
+	(wire
+		(pts
+			(xy 245.11 77.47) (xy 260.35 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "39723976-f5ec-4d0e-a62c-0444e36695a4")
+	)
+	(wire
+		(pts
+			(xy 215.9 153.67) (xy 215.9 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "39ba9493-eb85-4724-9e75-bb4e976260ef")
+	)
+	(wire
+		(pts
+			(xy 245.11 58.42) (xy 245.11 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3add7da5-aad8-43bc-9e20-64c305819318")
+	)
+	(wire
+		(pts
+			(xy 87.63 118.11) (xy 215.9 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3c3e1356-addd-4109-880e-69d3efac4f82")
+	)
+	(wire
+		(pts
+			(xy 170.18 161.29) (xy 215.9 161.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "439edceb-a413-4de1-98ca-ecd0f7b5fdea")
+	)
+	(wire
+		(pts
+			(xy 43.18 36.83) (xy 43.18 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "450eb3f1-7206-44be-961a-fbf830eb14d3")
+	)
+	(wire
+		(pts
+			(xy 175.26 76.2) (xy 172.72 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "45784b86-3313-48b9-b6fd-eabc7dce286c")
+	)
+	(wire
+		(pts
+			(xy 71.12 153.67) (xy 72.39 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "45874d3e-840f-4452-9e41-c271ca287420")
+	)
+	(wire
+		(pts
+			(xy 190.5 53.34) (xy 215.9 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "49a92519-ef9d-4e3d-9645-0e8eff75b778")
+	)
+	(wire
+		(pts
+			(xy 110.49 34.29) (xy 40.64 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4b5def5f-5d0b-40da-ad6c-72b670d4c892")
+	)
+	(wire
+		(pts
+			(xy 71.12 102.87) (xy 72.39 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5076f383-7d92-498f-a198-c6eadb1c7424")
+	)
+	(wire
+		(pts
+			(xy 72.39 39.37) (xy 72.39 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "554ba44c-04b3-411f-b17c-a484675bcb25")
+	)
+	(wire
+		(pts
+			(xy 115.57 39.37) (xy 72.39 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "56e163e8-f2d4-493b-aaed-c79c02d7796d")
+	)
+	(wire
+		(pts
+			(xy 135.89 33.02) (xy 175.26 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "59c5332d-67dc-44bb-a046-b1ab56db5782")
+	)
+	(wire
+		(pts
+			(xy 274.32 33.02) (xy 274.32 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5e1f8fbb-aecb-4572-8aef-9d2448abe653")
+	)
+	(wire
+		(pts
+			(xy 130.81 71.12) (xy 130.81 26.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "600391e4-c5e0-4836-81a9-30a352fdbaaa")
+	)
+	(wire
+		(pts
+			(xy 123.19 147.32) (xy 71.12 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "62170ae1-ce70-4780-b0ec-5b232e06ec25")
+	)
+	(wire
+		(pts
+			(xy 107.95 15.24) (xy 107.95 16.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "693a4b57-4970-45cf-98a4-239f6f2fcfda")
+	)
+	(wire
+		(pts
+			(xy 246.38 53.34) (xy 245.11 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "72b3985a-134b-4ef8-978c-739ad309ec62")
+	)
+	(wire
+		(pts
+			(xy 128.27 88.9) (xy 128.27 26.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "767f310a-3b32-43e3-a69d-a272e6d8e752")
+	)
+	(wire
+		(pts
+			(xy 170.18 171.45) (xy 170.18 161.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7a6a7be0-edca-4b77-ba1d-4e83a611faea")
+	)
+	(wire
+		(pts
+			(xy 71.12 118.11) (xy 72.39 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7a72c1d6-70a6-4936-bbaf-8fc6aa857fe7")
+	)
+	(wire
+		(pts
+			(xy 113.03 36.83) (xy 43.18 36.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7b4648a3-71a7-4e5e-8acc-b3a79c337e36")
+	)
+	(wire
+		(pts
+			(xy 110.49 26.67) (xy 110.49 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7b6b4f18-95d2-4539-830d-b80382a118f3")
+	)
+	(wire
+		(pts
+			(xy 190.5 33.02) (xy 215.9 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "847bb0a8-b34a-4a45-a914-de73513365c9")
+	)
+	(wire
+		(pts
+			(xy 215.9 118.11) (xy 215.9 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "86b1fb98-a874-482d-8d47-c34c59f4a116")
+	)
+	(wire
+		(pts
+			(xy 87.63 153.67) (xy 215.9 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "883b9325-40a2-4385-a6ea-9716233a1e0d")
+	)
+	(wire
+		(pts
+			(xy 38.1 31.75) (xy 38.1 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "88f6c8ef-e1a4-41a9-89fc-f92bc9ed7a88")
+	)
+	(wire
+		(pts
+			(xy 87.63 44.45) (xy 215.9 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "91bf1071-4d0b-4c57-9a18-c77b0595633a")
+	)
+	(wire
+		(pts
+			(xy 68.58 67.31) (xy 72.39 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9207bba7-37dd-45aa-99c5-b9b1d0517e13")
+	)
+	(wire
+		(pts
+			(xy 76.2 15.24) (xy 107.95 15.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9413fa36-3c97-48fe-a5bc-aa9be78bf663")
+	)
+	(wire
+		(pts
+			(xy 133.35 53.34) (xy 175.26 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9e6b2a79-7118-4b91-83bc-16d90dd574ae")
+	)
+	(wire
+		(pts
+			(xy 115.57 26.67) (xy 115.57 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a401e359-51e2-40c9-8492-02f234944cb1")
+	)
+	(wire
+		(pts
+			(xy 215.9 44.45) (xy 215.9 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a8745aa0-671c-4245-a2c9-b28e21a0e4c2")
+	)
+	(wire
+		(pts
+			(xy 215.9 62.23) (xy 215.9 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a9135b24-991b-4d2e-b394-a59337f28c20")
+	)
+	(wire
+		(pts
+			(xy 215.9 22.86) (xy 215.9 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b2ac13d2-7721-483a-b9e6-9cf1ef8d5c25")
+	)
+	(wire
+		(pts
+			(xy 87.63 62.23) (xy 215.9 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b3f8c757-2568-4c6d-80d0-5af6892341ba")
+	)
+	(wire
+		(pts
+			(xy 40.64 34.29) (xy 40.64 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b9576563-e8aa-4b2e-b66a-c9b5b6de841f")
+	)
+	(wire
+		(pts
+			(xy 260.35 33.02) (xy 260.35 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b9828b2a-4c66-485f-af8b-4256f79249ba")
+	)
+	(wire
+		(pts
+			(xy 87.63 135.89) (xy 215.9 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ba025045-72e1-4764-8f3f-35092cf79335")
+	)
+	(wire
+		(pts
+			(xy 172.72 38.1) (xy 175.26 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ba24f456-2cd8-40f0-9f4d-d2e1ceb1176c")
+	)
+	(wire
+		(pts
+			(xy 267.97 55.88) (xy 280.67 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bc8c07d3-4fcf-4d03-bf3c-da07d868e4ab")
+	)
+	(wire
+		(pts
+			(xy 190.5 88.9) (xy 215.9 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c3b0350f-b4a1-4e57-b835-d9947eee5724")
+	)
+	(wire
+		(pts
+			(xy 215.9 33.02) (xy 215.9 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c940b545-4e2e-456f-a3ed-fa81310da320")
+	)
+	(wire
+		(pts
+			(xy 71.12 162.56) (xy 71.12 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ccf60ce1-52d3-4dcc-ae0a-d7dd9d560887")
+	)
+	(wire
+		(pts
+			(xy 274.32 77.47) (xy 260.35 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d0532f5e-54e3-47dc-9d9a-da7811103716")
+	)
+	(wire
+		(pts
+			(xy 260.35 66.04) (xy 260.35 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d2ed85d3-bd96-4232-8d54-aa9f94cafe18")
+	)
+	(wire
+		(pts
+			(xy 123.19 26.67) (xy 123.19 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d43b6b45-1af6-4206-adea-66d6671771df")
+	)
+	(wire
+		(pts
+			(xy 107.95 31.75) (xy 38.1 31.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d76f005a-b3fb-46e9-a5dd-59f46f51ef9e")
+	)
+	(wire
+		(pts
+			(xy 118.11 26.67) (xy 118.11 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d7d87299-58ee-499d-ace3-bf787c3070b7")
+	)
+	(wire
+		(pts
+			(xy 215.9 80.01) (xy 215.9 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "daacf266-49d6-4bd2-b0a9-1ad0b51803ec")
+	)
+	(wire
+		(pts
+			(xy 40.64 80.01) (xy 72.39 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "db4b591c-1a62-4e5d-b031-7a03173238da")
+	)
+	(wire
+		(pts
+			(xy 71.12 85.09) (xy 72.39 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dd67e8bf-8537-4b9f-b49d-d1c8d65e6734")
+	)
+	(wire
+		(pts
+			(xy 172.72 58.42) (xy 175.26 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ddb3fdd3-c95d-4ccc-972b-d41f25990d9d")
+	)
+	(wire
+		(pts
+			(xy 135.89 26.67) (xy 135.89 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dec2324e-597c-46fa-9895-fe928c766353")
+	)
+	(wire
+		(pts
+			(xy 215.9 88.9) (xy 215.9 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e2a9fdd9-20b9-436c-a8f1-6b81505245cd")
+	)
+	(wire
+		(pts
+			(xy 71.12 135.89) (xy 72.39 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ed119a39-88f1-4ec7-82f2-341df4cac665")
+	)
+	(wire
+		(pts
+			(xy 87.63 97.79) (xy 215.9 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ee40e6f6-bbf7-4ecb-943d-5d342a822488")
+	)
+	(wire
+		(pts
+			(xy 125.73 26.67) (xy 125.73 162.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ef894b86-0281-451b-8704-a49fa57dd032")
+	)
+	(wire
+		(pts
+			(xy 175.26 71.12) (xy 130.81 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "efb9a3a7-096d-4a25-9434-b74357a399ac")
+	)
+	(wire
+		(pts
+			(xy 71.12 158.75) (xy 72.39 158.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f2a37470-bca8-4697-adaa-1b6b692a045d")
+	)
+	(wire
+		(pts
+			(xy 280.67 55.88) (xy 280.67 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f5905114-1a4d-4861-b8f6-13c3239134e3")
+	)
+	(wire
+		(pts
+			(xy 190.5 71.12) (xy 215.9 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f6cad409-5fe5-4b95-8f3a-37deb62e0a61")
+	)
+	(wire
+		(pts
+			(xy 274.32 50.8) (xy 274.32 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f7a446f3-86d2-4492-91a6-f20f97a2fda8")
+	)
+	(wire
+		(pts
+			(xy 71.12 123.19) (xy 72.39 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f8876aff-3a13-48ac-97d5-05d26e631b49")
+	)
+	(wire
+		(pts
+			(xy 252.73 58.42) (xy 245.11 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fe278b6d-5c7b-4a24-8d08-604edecdca8b")
+	)
+	(wire
+		(pts
+			(xy 215.9 53.34) (xy 215.9 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ff66333a-4ac4-4a03-8b9c-07f561f327df")
+	)
+	(global_label "ESP32 GPIO32 (PIN 7)"
+		(shape output)
+		(at 93.98 85.09 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "15b51b3f-004e-45b4-9af2-29e8f9d2dbd8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 118.918 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "DoorRight (GND)"
+		(shape input)
+		(at 64.77 123.19 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "2e876df6-94c1-4ef6-bffc-9b6fc2029876")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 46.0006 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BrakeFluid (GND)"
+		(shape input)
+		(at 64.77 102.87 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "3dfc74c3-adc1-4970-9f79-6be5594e9cd0")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 45.2748 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "ResetButton (GND)"
+		(shape input)
+		(at 166.37 93.98 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "47d993ed-3a06-4731-9ebc-fc6045aae524")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 145.4839 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "WhiperWater (GND)"
+		(shape input)
+		(at 64.77 85.09 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "496e759e-608f-4988-abe7-15736aea9e0b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 43.8234 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "ESP32 GPIO19 (PIN 31)"
+		(shape output)
+		(at 274.32 97.79 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "4a04298a-86a7-4168-b6be-f5e484968a1f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 248.1725 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "ESP32 GPIO26 (PIN 10)"
+		(shape output)
+		(at 93.98 123.19 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4c0f3e91-66f9-4c38-a56e-7164bac3036b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 120.1275 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "CoolantLevel (GND)"
+		(shape input)
+		(at 64.77 176.53 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "4d33c8cd-3763-48ce-8bdd-7203e38b8caa")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 43.1583 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "OilLevelSenor (PWM)"
+		(shape input)
+		(at 240.03 53.34 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "4e2a7c74-4b6f-4306-bdfb-bb1e5ddecb4a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 217.3901 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "ESP32 GPIO33 (PIN 8)"
+		(shape output)
+		(at 93.98 102.87 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "5e39eb9f-8b93-4a67-b4df-7c8670d9af20")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 118.918 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "ESP32 GPIO0 (PIN 25)"
+		(shape output)
+		(at 92.71 176.53 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "67693f4f-209d-4475-bfae-033e790ea3d6")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 117.648 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BrakePads (GND)"
+		(shape input)
+		(at 64.77 49.53 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "680bfd2d-0f8e-4871-9b0f-83fafb3fc8e8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 45.3353 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Trunk (GND)"
+		(shape input)
+		(at 166.37 38.1 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6a1b699a-c532-4cc0-8c71-2527551fb447")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 151.7734 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "OilPresure (GND)"
+		(shape input)
+		(at 64.77 158.75 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "8ce8fb19-4151-4283-8b29-3c674c9d8d36")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 45.4561 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "ESP32 GPIO14 (PIN 12)"
+		(shape output)
+		(at 196.85 93.98 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "9f5f3dfc-1dfc-4c83-bc8d-000ebe635390")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 222.9975 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "MotorCap (GND)"
+		(shape input)
+		(at 62.23 67.31 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a1fce052-0cd4-4d24-b827-b7f5a90a8128")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 43.884 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "ESP32 GPIO34 (PIN 5)"
+		(shape output)
+		(at 93.98 49.53 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a22d6601-f0fb-4eba-bb0d-d17d1a1a4c6b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 118.918 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "ESP32 GPIO16 (PIN 27)"
+		(shape output)
+		(at 196.85 76.2 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "afcf9c78-58e3-4bfb-a183-18e46843a93f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 222.9975 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "K15 (12 V)"
+		(shape input)
+		(at 69.85 15.24 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "bea377fe-abc2-4a6d-8161-95bc5f154e76")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 56.0396 15.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "+3,3 V from ESP32"
+		(shape input)
+		(at 217.17 17.78 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "beb13e96-69f6-4a12-811a-071f78e8900d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 239.1445 17.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "MemoryButton (GND)"
+		(shape input)
+		(at 166.37 76.2 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c8b87b1f-9028-44ad-8bab-dcbfb928dc9f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 143.5488 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "ESP32 GPIO35 (PIN 6)"
+		(shape output)
+		(at 93.98 67.31 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "cb2d60de-ca93-4dbb-8da1-b1af078e7f95")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 118.918 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape input)
+		(at 261.62 88.9 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d2c9636b-3a1a-4bdb-939a-33d6d1e18ac7")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 268.4757 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "ESP32 GPIO13 (PIN 15)"
+		(shape output)
+		(at 196.85 58.42 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "da544291-d495-44f4-84f0-b676083e0162")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 222.9975 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "ESP32 GPIO4 (PIN 26)"
+		(shape output)
+		(at 196.85 38.1 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e0ca8498-0608-4387-b6de-52b080a60da7")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 221.788 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "SlidingDoor (GND)"
+		(shape input)
+		(at 64.77 140.97 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ecdb27ed-5659-47cb-a89d-4d37a37f923d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 44.3678 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "ESP32 GPIO27 (PIN 11)"
+		(shape output)
+		(at 93.98 140.97 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ed468513-6fd6-4ed8-b2be-de2270f90119")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 120.1275 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "ModeButton (GND)"
+		(shape input)
+		(at 166.37 58.42 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ef4a1892-5972-4728-a0d1-4d5a46e3f4b1")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 145.8469 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "ESP32 GPIO17 (PIN 28)"
+		(shape output)
+		(at 93.98 158.75 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f65a36d5-b2d3-40c7-a277-c829e9af60e6")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 120.1275 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x01")
+		(at 92.71 85.09 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "009b08a3-6dff-48ae-9107-dadb51a33ac4")
+		(property "Reference" "J24"
+			(at 94.234 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "GPIO 32"
+			(at 91.4401 87.63 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_Pin:Pin_D1.0mm_L10.0mm"
+			(at 92.71 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 92.71 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 92.71 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f9b46197-d0fd-42bd-a178-d71c056d1396")
+		)
+		(instances
+			(project "Optocopler"
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "J24")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Isolator:ILQ74")
+		(at 182.88 91.44 0)
+		(unit 4)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "134e79ef-e750-428d-9154-f64697814a5f")
+		(property "Reference" "U3"
+			(at 182.88 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "ILQ74"
+			(at 182.88 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_DIP:DIP-16_W7.62mm_Socket"
+			(at 177.8 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.vishay.com/docs/83640/ild74.pdf"
+			(at 182.88 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "Quad Optocoupler, NPN Phototransistor Output, TTL compatible, DIP16/SMD16"
+			(at 182.88 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "11"
+			(uuid "0335343b-fa86-424b-8a3a-9e03403d8a60")
+		)
+		(pin "12"
+			(uuid "26d31f5c-cf31-4342-a76f-5840dd1361ca")
+		)
+		(pin "9"
+			(uuid "70e10bf1-5c6a-4968-859b-c5f68ac1f76c")
+		)
+		(pin "3"
+			(uuid "ab4d6f94-73d8-42be-93e0-1bdae6ebae1e")
+		)
+		(pin "10"
+			(uuid "ac533e0e-7d7e-4cfc-b8f0-ab80416b6634")
+		)
+		(pin "6"
+			(uuid "c57f29e6-0cb6-42bd-8b60-375e97e53663")
+		)
+		(pin "5"
+			(uuid "c3827a7c-6be2-4b8c-a61f-79a2b7392691")
+		)
+		(pin "13"
+			(uuid "7e65aa5e-f002-44cb-ad72-e25fc1594f73")
+		)
+		(pin "14"
+			(uuid "c3579a04-4856-46c5-a21e-b1d688f70c22")
+		)
+		(pin "1"
+			(uuid "463638e0-d9ec-4500-957c-4ec5c1015548")
+		)
+		(pin "7"
+			(uuid "dfbed4ec-384f-46bb-b4d4-6b0fe128be29")
+		)
+		(pin "16"
+			(uuid "9f85d6a9-7877-4810-aee4-ae90d9495e37")
+		)
+		(pin "8"
+			(uuid "b6845f80-6e85-4443-8082-450a8f3425a9")
+		)
+		(pin "15"
+			(uuid "a64a7aa8-de11-4af1-a315-ec12ff85f378")
+		)
+		(pin "4"
+			(uuid "f2bcd30c-a75f-4739-a9e7-40aba0ce907f")
+		)
+		(pin "2"
+			(uuid "523d8020-7ff9-446f-bfaa-04c0127c5b56")
+		)
+		(instances
+			(project "Optocopler"
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "U3")
+					(unit 4)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x01")
+		(at 195.58 58.42 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1767c476-60fe-4c39-9f18-953c3f1250c1")
+		(property "Reference" "J19"
+			(at 197.104 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "GPIO 13"
+			(at 194.3101 60.96 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_Pin:Pin_D1.0mm_L10.0mm"
+			(at 195.58 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 195.58 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 195.58 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "008ad39f-a681-4432-8166-117a4fcd164e")
+		)
+		(instances
+			(project "Optocopler"
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "J19")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x01")
+		(at 260.35 88.9 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "25f1f345-8a4b-4c93-8061-194563a0dc4d")
+		(property "Reference" "J16"
+			(at 261.874 91.44 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "GND"
+			(at 257.81 87.6301 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_Pin:Pin_D1.0mm_L10.0mm"
+			(at 260.35 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 260.35 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 260.35 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b4162170-e4e9-459f-9555-6ae166690b5c")
+		)
+		(instances
+			(project "Optocopler"
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "J16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x01")
+		(at 92.71 49.53 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "27c35344-5975-42d4-87e7-5a56aab47a57")
+		(property "Reference" "J22"
+			(at 94.234 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "GPIO 34"
+			(at 91.4401 52.07 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_Pin:Pin_D1.0mm_L10.0mm"
+			(at 92.71 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 92.71 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 92.71 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "cad6720b-df27-4465-8c46-77cdc62debeb")
+		)
+		(instances
+			(project "Optocopler"
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "J22")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x01")
+		(at 195.58 93.98 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2e62aa24-3bcb-45a2-bb32-fe323e99e225")
+		(property "Reference" "J21"
+			(at 197.104 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "GPIO 14"
+			(at 194.3101 96.52 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_Pin:Pin_D1.0mm_L10.0mm"
+			(at 195.58 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 195.58 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 195.58 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "cd3c2088-f0ab-4467-90ec-eca40174f234")
+		)
+		(instances
+			(project "Optocopler"
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "J21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Isolator:ILQ74")
+		(at 182.88 55.88 0)
+		(unit 2)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "34d371b6-aaa7-43e2-8b48-7534ab045308")
+		(property "Reference" "U3"
+			(at 182.88 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "ILQ74"
+			(at 182.88 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_DIP:DIP-16_W7.62mm_Socket"
+			(at 177.8 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.vishay.com/docs/83640/ild74.pdf"
+			(at 182.88 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "Quad Optocoupler, NPN Phototransistor Output, TTL compatible, DIP16/SMD16"
+			(at 182.88 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "11"
+			(uuid "0335343b-fa86-424b-8a3a-9e03403d8a5e")
+		)
+		(pin "12"
+			(uuid "26d31f5c-cf31-4342-a76f-5840dd1361c8")
+		)
+		(pin "9"
+			(uuid "2f73c34c-ffd0-4306-beed-f9b8bb16aa97")
+		)
+		(pin "3"
+			(uuid "608094fb-becd-41a0-9917-5290e33c5532")
+		)
+		(pin "10"
+			(uuid "4d471e51-cc99-459d-869a-4945ef7de1e9")
+		)
+		(pin "6"
+			(uuid "c57f29e6-0cb6-42bd-8b60-375e97e53661")
+		)
+		(pin "5"
+			(uuid "c3827a7c-6be2-4b8c-a61f-79a2b739268f")
+		)
+		(pin "13"
+			(uuid "2a049203-b082-4134-9487-2ee868b9a4fd")
+		)
+		(pin "14"
+			(uuid "959dce4c-05a9-4bfb-94cb-df2efda0b776")
+		)
+		(pin "1"
+			(uuid "463638e0-d9ec-4500-957c-4ec5c1015546")
+		)
+		(pin "7"
+			(uuid "f7878528-263d-4106-a43b-76fc5fdd0964")
+		)
+		(pin "16"
+			(uuid "9f85d6a9-7877-4810-aee4-ae90d9495e35")
+		)
+		(pin "8"
+			(uuid "43814885-1cc5-4503-9422-5c46dc7960d0")
+		)
+		(pin "15"
+			(uuid "a64a7aa8-de11-4af1-a315-ec12ff85f376")
+		)
+		(pin "4"
+			(uuid "f17458de-3d21-4ecb-827d-2a11f2cc5e4d")
+		)
+		(pin "2"
+			(uuid "523d8020-7ff9-446f-bfaa-04c0127c5b54")
+		)
+		(instances
+			(project "Optocopler"
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "U3")
+					(unit 2)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Isolator:ILQ74")
+		(at 78.74 173.99 0)
+		(unit 4)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "49b5708a-8122-40cd-8f9f-fd938ad93af9")
+		(property "Reference" "U2"
+			(at 78.74 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "ILQ74"
+			(at 78.74 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_DIP:DIP-16_W7.62mm_Socket"
+			(at 73.66 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.vishay.com/docs/83640/ild74.pdf"
+			(at 78.74 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "Quad Optocoupler, NPN Phototransistor Output, TTL compatible, DIP16/SMD16"
+			(at 78.74 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "11"
+			(uuid "0335343b-fa86-424b-8a3a-9e03403d8a60")
+		)
+		(pin "12"
+			(uuid "26d31f5c-cf31-4342-a76f-5840dd1361ca")
+		)
+		(pin "9"
+			(uuid "02f685b6-62f7-4070-bd5f-d91b82a9d117")
+		)
+		(pin "3"
+			(uuid "ab4d6f94-73d8-42be-93e0-1bdae6ebae1e")
+		)
+		(pin "10"
+			(uuid "a6efeab6-a28d-42a6-b690-074b410f2c1f")
+		)
+		(pin "6"
+			(uuid "c57f29e6-0cb6-42bd-8b60-375e97e53663")
+		)
+		(pin "5"
+			(uuid "c3827a7c-6be2-4b8c-a61f-79a2b7392691")
+		)
+		(pin "13"
+			(uuid "7e65aa5e-f002-44cb-ad72-e25fc1594f73")
+		)
+		(pin "14"
+			(uuid "c3579a04-4856-46c5-a21e-b1d688f70c22")
+		)
+		(pin "1"
+			(uuid "463638e0-d9ec-4500-957c-4ec5c1015548")
+		)
+		(pin "7"
+			(uuid "7a4c6b8b-595e-481a-92e4-08cdc6fe81dd")
+		)
+		(pin "16"
+			(uuid "9f85d6a9-7877-4810-aee4-ae90d9495e37")
+		)
+		(pin "8"
+			(uuid "609fe0d2-98ce-4056-b30b-9e5211475dd1")
+		)
+		(pin "15"
+			(uuid "a64a7aa8-de11-4af1-a315-ec12ff85f378")
+		)
+		(pin "4"
+			(uuid "f2bcd30c-a75f-4739-a9e7-40aba0ce907f")
+		)
+		(pin "2"
+			(uuid "523d8020-7ff9-446f-bfaa-04c0127c5b56")
+		)
+		(instances
+			(project "Optocopler"
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "U2")
+					(unit 4)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Isolator:ILQ74")
+		(at 80.01 64.77 0)
+		(unit 2)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4af92fbb-439f-4d7c-bd09-4c98f1e85a81")
+		(property "Reference" "U1"
+			(at 80.01 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "ILQ74"
+			(at 80.01 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_DIP:DIP-16_W7.62mm_Socket"
+			(at 74.93 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.vishay.com/docs/83640/ild74.pdf"
+			(at 80.01 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "Quad Optocoupler, NPN Phototransistor Output, TTL compatible, DIP16/SMD16"
+			(at 80.01 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "11"
+			(uuid "0335343b-fa86-424b-8a3a-9e03403d8a5e")
+		)
+		(pin "12"
+			(uuid "26d31f5c-cf31-4342-a76f-5840dd1361c8")
+		)
+		(pin "9"
+			(uuid "2f73c34c-ffd0-4306-beed-f9b8bb16aa97")
+		)
+		(pin "3"
+			(uuid "5c75839b-3dda-437a-91ef-ebcfc49b9c27")
+		)
+		(pin "10"
+			(uuid "4d471e51-cc99-459d-869a-4945ef7de1e9")
+		)
+		(pin "6"
+			(uuid "c57f29e6-0cb6-42bd-8b60-375e97e53661")
+		)
+		(pin "5"
+			(uuid "c3827a7c-6be2-4b8c-a61f-79a2b739268f")
+		)
+		(pin "13"
+			(uuid "d84d50ee-e844-40c3-8b7a-50317ce59bac")
+		)
+		(pin "14"
+			(uuid "0cfc828c-7887-4485-8b86-2a6eea550e85")
+		)
+		(pin "1"
+			(uuid "463638e0-d9ec-4500-957c-4ec5c1015546")
+		)
+		(pin "7"
+			(uuid "f7878528-263d-4106-a43b-76fc5fdd0964")
+		)
+		(pin "16"
+			(uuid "9f85d6a9-7877-4810-aee4-ae90d9495e35")
+		)
+		(pin "8"
+			(uuid "43814885-1cc5-4503-9422-5c46dc7960d0")
+		)
+		(pin "15"
+			(uuid "a64a7aa8-de11-4af1-a315-ec12ff85f376")
+		)
+		(pin "4"
+			(uuid "20b5a15d-480d-4338-9541-5f95a8915810")
+		)
+		(pin "2"
+			(uuid "523d8020-7ff9-446f-bfaa-04c0127c5b54")
+		)
+		(instances
+			(project "Optocopler"
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "U1")
+					(unit 2)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x01")
+		(at 241.3 53.34 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "527899b1-cf1b-4ddc-bb4a-61ccac4e0fcd")
+		(property "Reference" "J15"
+			(at 239.522 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "OilLevelSensor"
+			(at 242.5699 50.8 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_Pin:Pin_D1.0mm_L10.0mm"
+			(at 241.3 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 241.3 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 241.3 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9b14e2b8-8025-40f6-b480-fd00fe59c191")
+		)
+		(instances
+			(project "Optocopler"
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "J15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x01")
+		(at 167.64 76.2 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "54ae8f04-3fb1-473c-a164-ca5ba889ebdc")
+		(property "Reference" "J12"
+			(at 167.64 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Memory"
+			(at 167.64 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_Pin:Pin_D1.0mm_L10.0mm"
+			(at 167.64 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 167.64 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 167.64 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d5b1f284-53fe-4372-afa8-aeb9d28bbd5d")
+		)
+		(instances
+			(project "Optocopler"
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "J12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Isolator:ILQ74")
+		(at 182.88 73.66 0)
+		(unit 3)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "551dfec9-c925-4bda-adb6-c97549accfb4")
+		(property "Reference" "U3"
+			(at 182.88 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "ILQ74"
+			(at 182.88 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_DIP:DIP-16_W7.62mm_Socket"
+			(at 177.8 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.vishay.com/docs/83640/ild74.pdf"
+			(at 182.88 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "Quad Optocoupler, NPN Phototransistor Output, TTL compatible, DIP16/SMD16"
+			(at 182.88 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "11"
+			(uuid "49bb82a0-fdb3-473b-84ad-0b14430d2b2c")
+		)
+		(pin "12"
+			(uuid "fb1e626a-b950-42a5-86ff-14f6983174d9")
+		)
+		(pin "9"
+			(uuid "2f73c34c-ffd0-4306-beed-f9b8bb16aa96")
+		)
+		(pin "3"
+			(uuid "ab4d6f94-73d8-42be-93e0-1bdae6ebae1b")
+		)
+		(pin "10"
+			(uuid "4d471e51-cc99-459d-869a-4945ef7de1e8")
+		)
+		(pin "6"
+			(uuid "79f20028-6979-47b7-a834-804fd9f62d46")
+		)
+		(pin "5"
+			(uuid "63fb96bc-46bc-477e-9d07-2f70f285d324")
+		)
+		(pin "13"
+			(uuid "7e65aa5e-f002-44cb-ad72-e25fc1594f70")
+		)
+		(pin "14"
+			(uuid "c3579a04-4856-46c5-a21e-b1d688f70c1f")
+		)
+		(pin "1"
+			(uuid "463638e0-d9ec-4500-957c-4ec5c1015545")
+		)
+		(pin "7"
+			(uuid "f7878528-263d-4106-a43b-76fc5fdd0963")
+		)
+		(pin "16"
+			(uuid "9f85d6a9-7877-4810-aee4-ae90d9495e34")
+		)
+		(pin "8"
+			(uuid "43814885-1cc5-4503-9422-5c46dc7960cf")
+		)
+		(pin "15"
+			(uuid "a64a7aa8-de11-4af1-a315-ec12ff85f375")
+		)
+		(pin "4"
+			(uuid "f2bcd30c-a75f-4739-a9e7-40aba0ce907c")
+		)
+		(pin "2"
+			(uuid "523d8020-7ff9-446f-bfaa-04c0127c5b53")
+		)
+		(instances
+			(project "Optocopler"
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "U3")
+					(unit 3)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x01")
+		(at 66.04 176.53 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "55a0cde1-e0f4-4ef4-a6dc-ec343d14f9af")
+		(property "Reference" "J10"
+			(at 66.294 173.736 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "CoolantLevel"
+			(at 66.04 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_Pin:Pin_D1.0mm_L10.0mm"
+			(at 66.04 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 66.04 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 66.04 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4de498dc-b308-4525-b277-434ece830473")
+		)
+		(instances
+			(project "Optocopler"
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "J10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x01")
+		(at 66.04 49.53 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5a3807f1-3549-4b5b-a410-db6fb1d87241")
+		(property "Reference" "J2"
+			(at 66.04 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Brakepads"
+			(at 65.532 52.832 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_Pin:Pin_D1.0mm_L10.0mm"
+			(at 66.04 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 66.04 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 66.04 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d052faae-40dd-4317-8243-b5e973d0e32f")
+		)
+		(instances
+			(project "Optocopler"
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "J2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x01")
+		(at 71.12 15.24 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "613b511d-f25f-498a-8e16-016e9fc628b8")
+		(property "Reference" "J1"
+			(at 70.104 18.288 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "+12 V K15"
+			(at 72.3899 12.7 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_Pin:Pin_D1.0mm_L10.0mm"
+			(at 71.12 15.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 71.12 15.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 71.12 15.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5bbea6a0-7460-450a-89da-b0d1dc2c6578")
+		)
+		(instances
+			(project ""
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "J1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Isolator:ILQ74")
+		(at 80.01 138.43 0)
+		(unit 2)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6509ff5f-da36-4cd1-bba9-c741dc1d22f2")
+		(property "Reference" "U2"
+			(at 80.01 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "ILQ74"
+			(at 80.01 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_DIP:DIP-16_W7.62mm_Socket"
+			(at 74.93 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.vishay.com/docs/83640/ild74.pdf"
+			(at 80.01 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "Quad Optocoupler, NPN Phototransistor Output, TTL compatible, DIP16/SMD16"
+			(at 80.01 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "11"
+			(uuid "0335343b-fa86-424b-8a3a-9e03403d8a5e")
+		)
+		(pin "12"
+			(uuid "26d31f5c-cf31-4342-a76f-5840dd1361c8")
+		)
+		(pin "9"
+			(uuid "2f73c34c-ffd0-4306-beed-f9b8bb16aa97")
+		)
+		(pin "3"
+			(uuid "e2c54481-bfaf-40a8-8a61-922d6483edcc")
+		)
+		(pin "10"
+			(uuid "4d471e51-cc99-459d-869a-4945ef7de1e9")
+		)
+		(pin "6"
+			(uuid "c57f29e6-0cb6-42bd-8b60-375e97e53661")
+		)
+		(pin "5"
+			(uuid "c3827a7c-6be2-4b8c-a61f-79a2b739268f")
+		)
+		(pin "13"
+			(uuid "0ac1db5f-651d-4fe8-a2f7-0361694fb84a")
+		)
+		(pin "14"
+			(uuid "8d87342f-be80-44ba-8763-1a730bad71ab")
+		)
+		(pin "1"
+			(uuid "463638e0-d9ec-4500-957c-4ec5c1015546")
+		)
+		(pin "7"
+			(uuid "f7878528-263d-4106-a43b-76fc5fdd0964")
+		)
+		(pin "16"
+			(uuid "9f85d6a9-7877-4810-aee4-ae90d9495e35")
+		)
+		(pin "8"
+			(uuid "43814885-1cc5-4503-9422-5c46dc7960d0")
+		)
+		(pin "15"
+			(uuid "a64a7aa8-de11-4af1-a315-ec12ff85f376")
+		)
+		(pin "4"
+			(uuid "47dff95a-3645-4e6a-8a8a-cc0f3e2ef57e")
+		)
+		(pin "2"
+			(uuid "523d8020-7ff9-446f-bfaa-04c0127c5b54")
+		)
+		(instances
+			(project "Optocopler"
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "U2")
+					(unit 2)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x01")
+		(at 66.04 140.97 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "65c7634e-3f22-422e-a509-0996ed83573e")
+		(property "Reference" "J8"
+			(at 66.04 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SlidingDoor"
+			(at 66.04 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_Pin:Pin_D1.0mm_L10.0mm"
+			(at 66.04 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 66.04 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 66.04 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d52f1a24-652e-42e1-932c-e8d89f4238f0")
+		)
+		(instances
+			(project "Optocopler"
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "J8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 248.92 53.34 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "766c3cbf-c32f-43d7-a08f-e81410ce31a9")
+		(property "Reference" "R1"
+			(at 248.92 46.99 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "4,7k"
+			(at 248.92 49.53 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
+			(at 248.92 55.118 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 248.92 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 248.92 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "7c2414c2-929c-4f1e-a7b8-7cf1dc52d625")
+		)
+		(pin "1"
+			(uuid "7a49535c-8185-4381-a6bf-b07de9f239b3")
+		)
+		(instances
+			(project ""
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "R1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Isolator:ILQ74")
+		(at 80.01 82.55 0)
+		(unit 3)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "76a6b87c-18e4-40ce-b7a3-55f59d5a5dc0")
+		(property "Reference" "U1"
+			(at 80.01 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "ILQ74"
+			(at 80.01 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_DIP:DIP-16_W7.62mm_Socket"
+			(at 74.93 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.vishay.com/docs/83640/ild74.pdf"
+			(at 80.01 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "Quad Optocoupler, NPN Phototransistor Output, TTL compatible, DIP16/SMD16"
+			(at 80.01 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "11"
+			(uuid "e38d15cd-2e89-45c5-a988-004d2dc0ba80")
+		)
+		(pin "12"
+			(uuid "9d01b570-f6fc-4179-973f-aa2bd5c5ccaa")
+		)
+		(pin "9"
+			(uuid "2f73c34c-ffd0-4306-beed-f9b8bb16aa96")
+		)
+		(pin "3"
+			(uuid "ab4d6f94-73d8-42be-93e0-1bdae6ebae1b")
+		)
+		(pin "10"
+			(uuid "4d471e51-cc99-459d-869a-4945ef7de1e8")
+		)
+		(pin "6"
+			(uuid "0d74dcc7-e4c4-44cd-bcc3-ba6a6f6dd726")
+		)
+		(pin "5"
+			(uuid "e6d925ea-0ecf-47ef-bd9e-af7a73409c9d")
+		)
+		(pin "13"
+			(uuid "7e65aa5e-f002-44cb-ad72-e25fc1594f70")
+		)
+		(pin "14"
+			(uuid "c3579a04-4856-46c5-a21e-b1d688f70c1f")
+		)
+		(pin "1"
+			(uuid "463638e0-d9ec-4500-957c-4ec5c1015545")
+		)
+		(pin "7"
+			(uuid "f7878528-263d-4106-a43b-76fc5fdd0963")
+		)
+		(pin "16"
+			(uuid "9f85d6a9-7877-4810-aee4-ae90d9495e34")
+		)
+		(pin "8"
+			(uuid "43814885-1cc5-4503-9422-5c46dc7960cf")
+		)
+		(pin "15"
+			(uuid "a64a7aa8-de11-4af1-a315-ec12ff85f375")
+		)
+		(pin "4"
+			(uuid "f2bcd30c-a75f-4739-a9e7-40aba0ce907c")
+		)
+		(pin "2"
+			(uuid "523d8020-7ff9-446f-bfaa-04c0127c5b53")
+		)
+		(instances
+			(project "Optocopler"
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "U1")
+					(unit 3)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Isolator:ILQ74")
+		(at 80.01 100.33 0)
+		(unit 4)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7e54a9c4-8d9e-4d0d-a06d-0763121d2c3b")
+		(property "Reference" "U1"
+			(at 80.01 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "ILQ74"
+			(at 80.01 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_DIP:DIP-16_W7.62mm_Socket"
+			(at 74.93 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.vishay.com/docs/83640/ild74.pdf"
+			(at 80.01 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "Quad Optocoupler, NPN Phototransistor Output, TTL compatible, DIP16/SMD16"
+			(at 80.01 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "11"
+			(uuid "0335343b-fa86-424b-8a3a-9e03403d8a60")
+		)
+		(pin "12"
+			(uuid "26d31f5c-cf31-4342-a76f-5840dd1361ca")
+		)
+		(pin "9"
+			(uuid "1a806016-bdaa-4b99-b01b-1c078ce516fd")
+		)
+		(pin "3"
+			(uuid "ab4d6f94-73d8-42be-93e0-1bdae6ebae1e")
+		)
+		(pin "10"
+			(uuid "f36b9a36-703e-49e3-8218-5d1d35b6993d")
+		)
+		(pin "6"
+			(uuid "c57f29e6-0cb6-42bd-8b60-375e97e53663")
+		)
+		(pin "5"
+			(uuid "c3827a7c-6be2-4b8c-a61f-79a2b7392691")
+		)
+		(pin "13"
+			(uuid "7e65aa5e-f002-44cb-ad72-e25fc1594f73")
+		)
+		(pin "14"
+			(uuid "c3579a04-4856-46c5-a21e-b1d688f70c22")
+		)
+		(pin "1"
+			(uuid "463638e0-d9ec-4500-957c-4ec5c1015548")
+		)
+		(pin "7"
+			(uuid "f1108248-1d26-41aa-b0d6-19ef7de4927b")
+		)
+		(pin "16"
+			(uuid "9f85d6a9-7877-4810-aee4-ae90d9495e37")
+		)
+		(pin "8"
+			(uuid "1eb4eb4f-a545-4e07-b7e8-45af365d2e2f")
+		)
+		(pin "15"
+			(uuid "a64a7aa8-de11-4af1-a315-ec12ff85f378")
+		)
+		(pin "4"
+			(uuid "f2bcd30c-a75f-4739-a9e7-40aba0ce907f")
+		)
+		(pin "2"
+			(uuid "523d8020-7ff9-446f-bfaa-04c0127c5b56")
+		)
+		(instances
+			(project "Optocopler"
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "U1")
+					(unit 4)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x01")
+		(at 92.71 67.31 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8303e6a3-76ad-4ef3-a176-20c4c1225c37")
+		(property "Reference" "J23"
+			(at 94.234 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "GPIO 35"
+			(at 91.4401 69.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_Pin:Pin_D1.0mm_L10.0mm"
+			(at 92.71 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 92.71 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 92.71 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "bedd6e53-9e7e-43dd-a218-e625254b9476")
+		)
+		(instances
+			(project "Optocopler"
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "J23")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Isolator:ILQ74")
+		(at 80.01 156.21 0)
+		(unit 3)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8580e808-de44-47c9-a3d9-2e707811f944")
+		(property "Reference" "U2"
+			(at 80.01 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "ILQ74"
+			(at 80.01 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_DIP:DIP-16_W7.62mm_Socket"
+			(at 74.93 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.vishay.com/docs/83640/ild74.pdf"
+			(at 80.01 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "Quad Optocoupler, NPN Phototransistor Output, TTL compatible, DIP16/SMD16"
+			(at 80.01 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "11"
+			(uuid "2a74a16b-937e-438a-8d40-3362edf0b6c9")
+		)
+		(pin "12"
+			(uuid "6bbd4fa0-6c1b-4d40-b13a-25ec19895dcf")
+		)
+		(pin "9"
+			(uuid "2f73c34c-ffd0-4306-beed-f9b8bb16aa96")
+		)
+		(pin "3"
+			(uuid "ab4d6f94-73d8-42be-93e0-1bdae6ebae1b")
+		)
+		(pin "10"
+			(uuid "4d471e51-cc99-459d-869a-4945ef7de1e8")
+		)
+		(pin "6"
+			(uuid "e8222bf8-de17-4601-aa53-e5b96e539014")
+		)
+		(pin "5"
+			(uuid "c163ae18-f54e-4527-a9cb-4c21cddc9941")
+		)
+		(pin "13"
+			(uuid "7e65aa5e-f002-44cb-ad72-e25fc1594f70")
+		)
+		(pin "14"
+			(uuid "c3579a04-4856-46c5-a21e-b1d688f70c1f")
+		)
+		(pin "1"
+			(uuid "463638e0-d9ec-4500-957c-4ec5c1015545")
+		)
+		(pin "7"
+			(uuid "f7878528-263d-4106-a43b-76fc5fdd0963")
+		)
+		(pin "16"
+			(uuid "9f85d6a9-7877-4810-aee4-ae90d9495e34")
+		)
+		(pin "8"
+			(uuid "43814885-1cc5-4503-9422-5c46dc7960cf")
+		)
+		(pin "15"
+			(uuid "a64a7aa8-de11-4af1-a315-ec12ff85f375")
+		)
+		(pin "4"
+			(uuid "f2bcd30c-a75f-4739-a9e7-40aba0ce907c")
+		)
+		(pin "2"
+			(uuid "523d8020-7ff9-446f-bfaa-04c0127c5b53")
+		)
+		(instances
+			(project "Optocopler"
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "U2")
+					(unit 3)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x01")
+		(at 195.58 76.2 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "85f1aa3d-6e29-4d4f-97bc-f0095f3753a6")
+		(property "Reference" "J20"
+			(at 197.104 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "GPIO 16"
+			(at 194.3101 78.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_Pin:Pin_D1.0mm_L10.0mm"
+			(at 195.58 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 195.58 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 195.58 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3fed642e-294d-406b-9885-f7b668b8bd1f")
+		)
+		(instances
+			(project "Optocopler"
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "J20")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x01")
+		(at 275.59 97.79 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "86ed703f-4777-40a4-ac7a-d6f8e4ef5de2")
+		(property "Reference" "J17"
+			(at 273.812 94.742 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "GPIO 19"
+			(at 276.8599 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_Pin:Pin_D1.0mm_L10.0mm"
+			(at 275.59 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 275.59 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 275.59 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9a11eebc-8334-45f6-a4c3-69432a8f530a")
+		)
+		(instances
+			(project "Optocopler"
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "J17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x01")
+		(at 66.04 158.75 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8abe1adf-479a-468b-ac40-b7cd9f1bfb4f")
+		(property "Reference" "J9"
+			(at 66.04 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "OilPresure"
+			(at 66.04 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_Pin:Pin_D1.0mm_L10.0mm"
+			(at 66.04 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 66.04 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 66.04 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "bd896af7-4e2a-4426-b4dc-cf2368f05272")
+		)
+		(instances
+			(project "Optocopler"
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "J9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x01")
+		(at 66.04 85.09 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8f2967e5-e534-4739-ab77-a48c6a7529af")
+		(property "Reference" "J4"
+			(at 66.04 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "WhiperWater"
+			(at 66.04 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_Pin:Pin_D1.0mm_L10.0mm"
+			(at 66.04 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 66.04 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 66.04 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "dda96c51-c26a-4da8-9a8f-e6bf94b1ee9d")
+		)
+		(instances
+			(project "Optocopler"
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "J4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Isolator:6N137")
+		(at 260.35 55.88 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "945d8285-0942-479d-b66d-d691577d8579")
+		(property "Reference" "U5"
+			(at 267.462 64.262 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "6N137"
+			(at 265.684 66.802 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_DIP:DIP-8_W7.62mm"
+			(at 260.35 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://docs.broadcom.com/docs/AV02-0940EN"
+			(at 238.76 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Single High Speed LSTTL/TTL Compatible Optocoupler with enable, dV/dt 1000/us, VCM 10, max 7V VCC, DIP-8"
+			(at 260.35 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "081f2e97-bda1-409b-88f4-bcb7dd1cf5b9")
+		)
+		(pin "6"
+			(uuid "47e56bc2-0b60-4534-8843-38e787e95800")
+		)
+		(pin "7"
+			(uuid "338244d9-f877-4649-8178-85234b5570ee")
+		)
+		(pin "5"
+			(uuid "1e580475-4730-480a-b8d4-3a091633c5e9")
+		)
+		(pin "3"
+			(uuid "933085a5-544a-4b12-865a-d74d69565e60")
+		)
+		(pin "8"
+			(uuid "aebc82c4-6948-4654-8da5-e62cd7698ce9")
+		)
+		(pin "1"
+			(uuid "ad708fe9-1875-40ab-8bc9-ffe8db265e9f")
+		)
+		(pin "2"
+			(uuid "9073bdf4-ecaf-4664-bc26-53e58f43aac8")
+		)
+		(instances
+			(project ""
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "U5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x01")
+		(at 195.58 38.1 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a02fa8ea-4df2-49cb-b656-ee638b2a526b")
+		(property "Reference" "J18"
+			(at 197.104 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "GPIO 4"
+			(at 194.3101 40.64 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_Pin:Pin_D1.0mm_L10.0mm"
+			(at 195.58 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 195.58 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 195.58 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d15706b0-18d2-4664-8176-6e0b7dbf5cff")
+		)
+		(instances
+			(project "Optocopler"
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "J18")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x01")
+		(at 92.71 140.97 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a98aa164-d7e2-4c0b-91d0-a159103d8b01")
+		(property "Reference" "J27"
+			(at 94.234 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "GPIO 27"
+			(at 91.4401 143.51 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_Pin:Pin_D1.0mm_L10.0mm"
+			(at 92.71 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 92.71 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 92.71 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b42c266c-6222-46c4-b862-c431f1d4aa32")
+		)
+		(instances
+			(project "Optocopler"
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "J27")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x01")
+		(at 215.9 17.78 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ae3aa683-f085-418d-beac-73095a57d4cf")
+		(property "Reference" "J14"
+			(at 214.376 15.24 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "+ 3,3 V"
+			(at 218.44 19.0499 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_Pin:Pin_D1.0mm_L10.0mm"
+			(at 215.9 17.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 215.9 17.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 215.9 17.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9f010d06-b11a-4743-9b26-8b24f4846dc7")
+		)
+		(instances
+			(project "Optocopler"
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "J14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 274.32 46.99 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b3726647-e050-4102-9d11-ba2cd5a046b5")
+		(property "Reference" "C1"
+			(at 280.416 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 278.892 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_THT:CP_Radial_D5.0mm_P2.50mm"
+			(at 275.2852 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 274.32 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 274.32 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9e9153df-91c2-4eab-9f34-006e559e2e6b")
+		)
+		(pin "2"
+			(uuid "15beb61f-c701-4b59-baa9-9be4a758e562")
+		)
+		(instances
+			(project ""
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "C1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x01")
+		(at 92.71 123.19 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b4f47779-61cc-4312-b04a-dbd6c404df8d")
+		(property "Reference" "J26"
+			(at 94.234 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "GPIO 26"
+			(at 91.4401 125.73 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_Pin:Pin_D1.0mm_L10.0mm"
+			(at 92.71 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 92.71 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 92.71 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a0b93b55-263d-4ec4-8905-446072009343")
+		)
+		(instances
+			(project "Optocopler"
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "J26")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x01")
+		(at 66.04 102.87 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "bd0d6822-a083-48be-b3ff-a9e63e8eb6fe")
+		(property "Reference" "J5"
+			(at 66.294 100.076 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "BrakeFluid"
+			(at 66.04 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_Pin:Pin_D1.0mm_L10.0mm"
+			(at 66.04 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 66.04 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 66.04 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8d67f5a5-e677-4735-944c-f1b66bfb12e9")
+		)
+		(instances
+			(project "Optocopler"
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "J5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x01")
+		(at 167.64 58.42 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c15448b0-b419-4926-af6f-871334b9f16f")
+		(property "Reference" "J11"
+			(at 167.64 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Mode"
+			(at 167.132 61.722 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_Pin:Pin_D1.0mm_L10.0mm"
+			(at 167.64 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 167.64 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 167.64 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2c29d21e-d2f8-4736-b364-e600c981212e")
+		)
+		(instances
+			(project "Optocopler"
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "J11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x01")
+		(at 63.5 67.31 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "cba3cf26-e82e-4e31-9bb7-111d9ade772c")
+		(property "Reference" "J3"
+			(at 63.5 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "MotorCap"
+			(at 63.5 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_Pin:Pin_D1.0mm_L10.0mm"
+			(at 63.5 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 63.5 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 63.5 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1e916929-57cb-4151-98af-f6e69a44eb9c")
+		)
+		(instances
+			(project "Optocopler"
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "J3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Isolator:ILQ74")
+		(at 80.01 46.99 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d0e7a7d0-db75-43ab-ab2b-7cc56e1284ec")
+		(property "Reference" "U1"
+			(at 80.01 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "ILQ74"
+			(at 80.01 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_DIP:DIP-16_W7.62mm_Socket"
+			(at 74.93 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.vishay.com/docs/83640/ild74.pdf"
+			(at 80.01 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "Quad Optocoupler, NPN Phototransistor Output, TTL compatible, DIP16/SMD16"
+			(at 80.01 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "11"
+			(uuid "0335343b-fa86-424b-8a3a-9e03403d8a5f")
+		)
+		(pin "12"
+			(uuid "26d31f5c-cf31-4342-a76f-5840dd1361c9")
+		)
+		(pin "9"
+			(uuid "2f73c34c-ffd0-4306-beed-f9b8bb16aa98")
+		)
+		(pin "3"
+			(uuid "ab4d6f94-73d8-42be-93e0-1bdae6ebae1d")
+		)
+		(pin "10"
+			(uuid "4d471e51-cc99-459d-869a-4945ef7de1ea")
+		)
+		(pin "6"
+			(uuid "c57f29e6-0cb6-42bd-8b60-375e97e53662")
+		)
+		(pin "5"
+			(uuid "c3827a7c-6be2-4b8c-a61f-79a2b7392690")
+		)
+		(pin "13"
+			(uuid "7e65aa5e-f002-44cb-ad72-e25fc1594f72")
+		)
+		(pin "14"
+			(uuid "c3579a04-4856-46c5-a21e-b1d688f70c21")
+		)
+		(pin "1"
+			(uuid "c18a282d-e5c5-40d6-9ba9-6edcff60b0a1")
+		)
+		(pin "7"
+			(uuid "f7878528-263d-4106-a43b-76fc5fdd0965")
+		)
+		(pin "16"
+			(uuid "fa64331d-54d4-46b7-9295-ca67e7e90b86")
+		)
+		(pin "8"
+			(uuid "43814885-1cc5-4503-9422-5c46dc7960d1")
+		)
+		(pin "15"
+			(uuid "feed8b49-8d0c-4b32-b33f-001d663d7cc6")
+		)
+		(pin "4"
+			(uuid "f2bcd30c-a75f-4739-a9e7-40aba0ce907e")
+		)
+		(pin "2"
+			(uuid "8660df73-8a25-431d-a1b4-691fe12b53ac")
+		)
+		(instances
+			(project "Optocopler"
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "U1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Isolator:ILQ74")
+		(at 80.01 120.65 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d65d07c3-1e0f-43ab-8847-c878dea135a5")
+		(property "Reference" "U2"
+			(at 80.01 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "ILQ74"
+			(at 80.01 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_DIP:DIP-16_W7.62mm_Socket"
+			(at 74.93 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.vishay.com/docs/83640/ild74.pdf"
+			(at 80.01 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "Quad Optocoupler, NPN Phototransistor Output, TTL compatible, DIP16/SMD16"
+			(at 80.01 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "11"
+			(uuid "0335343b-fa86-424b-8a3a-9e03403d8a5f")
+		)
+		(pin "12"
+			(uuid "26d31f5c-cf31-4342-a76f-5840dd1361c9")
+		)
+		(pin "9"
+			(uuid "2f73c34c-ffd0-4306-beed-f9b8bb16aa98")
+		)
+		(pin "3"
+			(uuid "ab4d6f94-73d8-42be-93e0-1bdae6ebae1d")
+		)
+		(pin "10"
+			(uuid "4d471e51-cc99-459d-869a-4945ef7de1ea")
+		)
+		(pin "6"
+			(uuid "c57f29e6-0cb6-42bd-8b60-375e97e53662")
+		)
+		(pin "5"
+			(uuid "c3827a7c-6be2-4b8c-a61f-79a2b7392690")
+		)
+		(pin "13"
+			(uuid "7e65aa5e-f002-44cb-ad72-e25fc1594f72")
+		)
+		(pin "14"
+			(uuid "c3579a04-4856-46c5-a21e-b1d688f70c21")
+		)
+		(pin "1"
+			(uuid "ecddee01-4882-45bb-8e6d-a1d82fa69e98")
+		)
+		(pin "7"
+			(uuid "f7878528-263d-4106-a43b-76fc5fdd0965")
+		)
+		(pin "16"
+			(uuid "a0338758-946f-4639-b3c7-c8f6c9c2bcd0")
+		)
+		(pin "8"
+			(uuid "43814885-1cc5-4503-9422-5c46dc7960d1")
+		)
+		(pin "15"
+			(uuid "bce03cc7-c739-4b8d-9788-a73bcf21cd40")
+		)
+		(pin "4"
+			(uuid "f2bcd30c-a75f-4739-a9e7-40aba0ce907e")
+		)
+		(pin "2"
+			(uuid "dc8bb054-9448-49a2-9479-2fee05148223")
+		)
+		(instances
+			(project "Optocopler"
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "U2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x01")
+		(at 91.44 176.53 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "db7e0d89-fcd5-4495-816c-5a251dfe7754")
+		(property "Reference" "J29"
+			(at 92.964 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "GPIO 0"
+			(at 90.1701 179.07 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_Pin:Pin_D1.0mm_L10.0mm"
+			(at 91.44 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 91.44 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 91.44 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "44fae07f-b59d-4eaa-a4c4-d4811bf88401")
+		)
+		(instances
+			(project "Optocopler"
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "J29")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x01")
+		(at 92.71 158.75 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e18c67db-57ce-4485-9f5a-fe34d01abcfa")
+		(property "Reference" "J28"
+			(at 94.234 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "GPIO 17"
+			(at 91.4401 161.29 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_Pin:Pin_D1.0mm_L10.0mm"
+			(at 92.71 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 92.71 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 92.71 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5ff95155-4545-4ede-bf37-1f64b04f5fa0")
+		)
+		(instances
+			(project "Optocopler"
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "J28")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x01")
+		(at 167.64 93.98 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e19863e9-7887-45a6-ae0c-d54ffe0acbce")
+		(property "Reference" "J13"
+			(at 167.64 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "RESET"
+			(at 167.64 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_Pin:Pin_D1.0mm_L10.0mm"
+			(at 167.64 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 167.64 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 167.64 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "00323f96-e433-41e3-9a3c-1ff37d81748e")
+		)
+		(instances
+			(project "Optocopler"
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "J13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x01")
+		(at 92.71 102.87 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e693fe8c-bcf0-481c-8b5c-66002b39635e")
+		(property "Reference" "J25"
+			(at 94.234 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "GPIO 33"
+			(at 91.4401 105.41 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_Pin:Pin_D1.0mm_L10.0mm"
+			(at 92.71 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 92.71 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 92.71 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "abac272e-18f9-4fa3-bfcb-4b09f1b0c0e3")
+		)
+		(instances
+			(project "Optocopler"
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "J25")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x01")
+		(at 66.04 123.19 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ed0128db-1049-495c-8d57-a3cb6369c736")
+		(property "Reference" "J7"
+			(at 66.04 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "DoorRight"
+			(at 65.532 126.492 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_Pin:Pin_D1.0mm_L10.0mm"
+			(at 66.04 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 66.04 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 66.04 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5ccc865c-2cef-40c4-a00a-4c50b8e07dd2")
+		)
+		(instances
+			(project "Optocopler"
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "J7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x01")
+		(at 167.64 38.1 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "eee01ae4-1a5f-4228-92eb-193b315b7343")
+		(property "Reference" "J6"
+			(at 167.894 35.306 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Trunk"
+			(at 167.64 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_Pin:Pin_D1.0mm_L10.0mm"
+			(at 167.64 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 167.64 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 167.64 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "05d7f0e8-df72-4fb0-a2ae-570d08a0a266")
+		)
+		(instances
+			(project "Optocopler"
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "J6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Isolator:ILQ74")
+		(at 182.88 35.56 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f8210cca-5113-4594-a469-adc0694bbe6d")
+		(property "Reference" "U3"
+			(at 182.88 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "ILQ74"
+			(at 182.88 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_DIP:DIP-16_W7.62mm_Socket"
+			(at 177.8 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.vishay.com/docs/83640/ild74.pdf"
+			(at 182.88 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "Quad Optocoupler, NPN Phototransistor Output, TTL compatible, DIP16/SMD16"
+			(at 182.88 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "11"
+			(uuid "0335343b-fa86-424b-8a3a-9e03403d8a5f")
+		)
+		(pin "12"
+			(uuid "26d31f5c-cf31-4342-a76f-5840dd1361c9")
+		)
+		(pin "9"
+			(uuid "2f73c34c-ffd0-4306-beed-f9b8bb16aa98")
+		)
+		(pin "3"
+			(uuid "ab4d6f94-73d8-42be-93e0-1bdae6ebae1d")
+		)
+		(pin "10"
+			(uuid "4d471e51-cc99-459d-869a-4945ef7de1ea")
+		)
+		(pin "6"
+			(uuid "c57f29e6-0cb6-42bd-8b60-375e97e53662")
+		)
+		(pin "5"
+			(uuid "c3827a7c-6be2-4b8c-a61f-79a2b7392690")
+		)
+		(pin "13"
+			(uuid "7e65aa5e-f002-44cb-ad72-e25fc1594f72")
+		)
+		(pin "14"
+			(uuid "c3579a04-4856-46c5-a21e-b1d688f70c21")
+		)
+		(pin "1"
+			(uuid "e4a7d3a6-a78e-439e-a607-5ef4ed07f363")
+		)
+		(pin "7"
+			(uuid "f7878528-263d-4106-a43b-76fc5fdd0965")
+		)
+		(pin "16"
+			(uuid "317d2871-2a40-4512-bfc5-4705cc41df9a")
+		)
+		(pin "8"
+			(uuid "43814885-1cc5-4503-9422-5c46dc7960d1")
+		)
+		(pin "15"
+			(uuid "8fc5b5f0-275b-46a7-aad0-a176044fc0f1")
+		)
+		(pin "4"
+			(uuid "f2bcd30c-a75f-4739-a9e7-40aba0ce907e")
+		)
+		(pin "2"
+			(uuid "17980c0d-32a7-4124-b6ec-e6a6cd435e09")
+		)
+		(instances
+			(project "Optocopler"
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "U3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Network12")
+		(at 123.19 21.59 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fe6e348b-1988-4f02-83a5-583b4c06be13")
+		(property "Reference" "RN1"
+			(at 105.41 20.5739 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "4,7k"
+			(at 105.41 23.1139 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Array_SIP13"
+			(at 140.335 21.59 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.vishay.com/docs/31509/csc.pdf"
+			(at 123.19 21.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "12 resistor network, star topology, bussed resistors, small symbol"
+			(at 123.19 21.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "6"
+			(uuid "ef028801-a901-4054-a8fe-0f1d67ce50a5")
+		)
+		(pin "13"
+			(uuid "fedbd10e-f8d1-40a7-baab-70ef495ce957")
+		)
+		(pin "11"
+			(uuid "a7efc533-859e-4419-80e5-902d30773d88")
+		)
+		(pin "10"
+			(uuid "55ec9596-a70b-44c1-8e51-2a07a506735d")
+		)
+		(pin "3"
+			(uuid "5afcde95-c29a-42c5-a0d3-26bc25fc9761")
+		)
+		(pin "2"
+			(uuid "9b45080e-b62a-4377-9c38-6dcf056ecd86")
+		)
+		(pin "8"
+			(uuid "92a8058c-af69-46ab-9fcb-9c5a52d5a155")
+		)
+		(pin "12"
+			(uuid "7d6fa833-294a-4f21-98c1-f55402acf8df")
+		)
+		(pin "7"
+			(uuid "53046159-0719-402c-9f41-0fa5c23abf4a")
+		)
+		(pin "1"
+			(uuid "1512a252-0a59-4fdd-a91b-a304a2c81b79")
+		)
+		(pin "9"
+			(uuid "12778618-6de0-45da-ad57-9ad9b9ca1cb6")
+		)
+		(pin "5"
+			(uuid "2e92eef1-0a08-470c-a072-18fd1d18406b")
+		)
+		(pin "4"
+			(uuid "582e72ba-8418-4a21-8bfe-f326ac21d8e8")
+		)
+		(instances
+			(project ""
+				(path "/8625f482-38b9-4722-90c1-4b27cdac03ba"
+					(reference "RN1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+)
