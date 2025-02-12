@@ -1,0 +1,39 @@
+
+# Common options
+metric=true
+metricoutput=true
+g64=0.005
+zsafe=5.0
+zchange=10.0000
+software=LinuxCNC
+zero-start=true
+cut-infeed=0.2
+
+# You may want to uncomment and change those in local project files
+front=Optocopler-F_Cu.gbr
+back=Optocopler-B_Cu.gbr
+drill=Optocopler-PTH.drl
+#drill=Optocopler-NPTH.drl
+outline=Optocopler-Edge_Cuts.gbr
+#verbose
+
+# parameters for isolation routing / engraving / etching
+zwork=-0.02
+mill-feed=600
+mill-speed=3000
+
+# parameters for cutting out boards
+cutter-diameter=1.5
+zcut=-0.8
+cut-feed=300
+cut-speed=2000
+
+# drilling parameters
+zdrill=-0.8
+drill-feed=300
+drill-speed=2000
+offset=0.25
+
+
+
+

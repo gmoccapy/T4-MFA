@@ -1,0 +1,8 @@
+"ID";"Bezeichner";"Footprint";"Stückzahl";"Bezeichnung";"Anbieter und Referenz";
+1;"J22,J25,J24,J23,J15,J29,J28,J27,J26,J21,J20,J19,J18,J17,J16,J14,J13,J12,J11,J10,J9,J8,J7,J6,J5,J4,J3,J2,J1";"SolderWire-0.5sqmm_1x01_D0.9mm_OD2.1mm";29;"+12 V K15";;;
+2;"RN4,RN6";"R_Array_SIP5";2;"Pull Up 10k";;;
+3;"RN1,RN3,RN2";"R_Array_SIP5";3;"4,7k";;;
+4;"U5";"DIP-4_W7.62mm";1;"LVT 817";;;
+5;"U6,U4,U1";"DIP-16_W7.62mm";3;"LTV-847";;;
+6;"R1";"R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal";1;"4,7k";;;
+7;"RN5";"R_Array_SIP6";1;"Pull Up 10k";;;
