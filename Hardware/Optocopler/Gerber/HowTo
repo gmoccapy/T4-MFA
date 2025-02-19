@@ -1,6 +1,0 @@
-- Make Gerber Files with KiCAD
-- Goto Gerber Files Folder (must contain also the millprojekt file)
-- Edit File Names in millproject
-run /usr/local/bin/pcb2gcode <GerberFileName.gbr>
-
-Find files NGC in folder
