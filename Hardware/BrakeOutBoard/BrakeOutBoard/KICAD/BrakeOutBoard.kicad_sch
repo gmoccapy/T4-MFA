@@ -7221,6 +7221,16 @@
 	)
 	(wire
 		(pts
+			(xy 265.43 91.44) (xy 279.4 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "34e8f444-bc37-4fa2-848d-90eeb25b4ecf")
+	)
+	(wire
+		(pts
 			(xy 39.37 113.03) (xy 68.58 113.03)
 		)
 		(stroke
@@ -9591,7 +9601,7 @@
 	)
 	(global_label "directly from Oil LED"
 		(shape input)
-		(at 273.05 91.44 180)
+		(at 259.08 91.44 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9601,7 +9611,7 @@
 		)
 		(uuid "527bee24-7da9-4c9e-980d-dc9f08b3737c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 249.6845 91.44 0)
+			(at 235.7145 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17640,6 +17650,73 @@
 			(project "BrakeOutBoard"
 				(path "/c67af5fc-5bb1-4753-93c7-831b7a5a7d41"
 					(reference "J28")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 260.35 91.44 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "99a6fe0e-c809-45ab-be2c-30b93300c0b7")
+		(property "Reference" "J101"
+			(at 257.302 88.646 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "O_Lev_LED"
+			(at 261.6199 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_Wire:SolderWire-0.5sqmm_1x01_D0.9mm_OD2.1mm"
+			(at 260.35 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 260.35 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 260.35 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "83171f7a-2926-4748-b471-45d98ed60964")
+		)
+		(instances
+			(project "BrakeOutBoard"
+				(path "/c67af5fc-5bb1-4753-93c7-831b7a5a7d41"
+					(reference "J101")
 					(unit 1)
 				)
 			)
