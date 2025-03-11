@@ -2871,8 +2871,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_01x19_Socket")
-		(at 186.69 88.9 0)
-		(mirror y)
+		(at 186.69 88.9 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2880,7 +2879,7 @@
 		(dnp no)
 		(uuid "58735ce0-532a-4624-bfe9-17a710bcc22d")
 		(property "Reference" "J20"
-			(at 189.484 61.468 0)
+			(at 189.484 116.332 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2888,7 +2887,7 @@
 			)
 		)
 		(property "Value" "Conn_01x19_Socket"
-			(at 187.325 114.3 0)
+			(at 187.325 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
