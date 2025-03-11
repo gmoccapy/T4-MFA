@@ -95,14 +95,10 @@ char TFT_String[12];                  // convert values to string to print on th
 float temp = 0.0;                     // holds temporarily different values 
 
 // variables for the button pin
-unsigned long debounce = 150;
-unsigned int previousPressedMode = 0;
-bool PIN_mode_state = true;
-bool PIN_mode_previous_state = true;
-bool PIN_reset_state = true;
-bool PIN_reset_previous_state = true;
-bool PIN_memory_state = true;
-bool PIN_memory_previous_state = true;
+int IO_STATUS[16];
+int PREVIOUS_IO_STATUS = 0;
+unsigned int Mode_Button_pressed = 0;
+bool Page_Switch_Done = true;
 int reset = 0;                        // Set to 1 to reset from start, 2 to reset refuel and 3 to reset period
 
 bool start = false;                   // is needed for initial screen display

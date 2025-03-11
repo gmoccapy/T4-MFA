@@ -16,136 +16,95 @@ void setup_CAN(void){
   ESP32Can.begin(ESP32Can.convertSpeed(500), CAN_TX, CAN_RX, 0, 20, &filter);
 }
 
+void setup_MCP(void){
+  Wire.begin(26, 27);
+
+  if (!mcp.begin_I2C(0x20)) {
+    tft.fillScreen(TFT_BLACK);
+    tft.drawString("Error MCP Start.", 50, 200, FONT4);
+  }
+
+}
 void pin_setup(void){
-  // MFA Control buttons
-  // Mode switch button
-  pinMode(PIN_MODE, INPUT_PULLUP);
-  attachInterrupt(digitalPinToInterrupt(PIN_MODE), PIN_mode_changed, CHANGE);
-  PIN_mode_state = digitalRead(PIN_MODE);
-  // Reset switch button
-  pinMode(PIN_RESET, INPUT_PULLUP);
-  attachInterrupt(digitalPinToInterrupt(PIN_RESET), PIN_reset_changed, CHANGE);
-  PIN_reset_state = digitalRead(PIN_RESET);
-  // Memory switch button
-  pinMode(PIN_MEMORY, INPUT_PULLUP);
-  attachInterrupt(digitalPinToInterrupt(PIN_MEMORY), PIN_memory_changed, CHANGE);
-  PIN_memory_state = digitalRead(PIN_MEMORY);
+
+  // Stay On PIN ; OUT
+  pinMode(PIN_STAY_ON, OUTPUT);
+
+  // configure MCP pin that will read INTA/B state
+  pinMode(INT_PIN, INPUT);
+  attachInterrupt(digitalPinToInterrupt(INT_PIN), ISR_INT_PIN, CHANGE);
+
+  // pinMode(MCP_RESET, OUTPUT);
+  // digitalWrite(MCP_RESET, HIGH);
+
+  // OPTIONAL - call this to override defaults
+  // mirror INTA/B so only one wire required
+  // active drive so INTA/B will not be floating
+  // INTA/B will be signaled with a LOW
+  mcp.setupInterrupts(true, false, LOW);
+
+  // configure button pin for input with pull up
+  for (byte i = 0; i < 16; i++){
+    mcp.pinMode(i, INPUT_PULLUP);
+    // enable interrupt on button_pin
+    mcp.setupInterruptPin(i, CHANGE);
+  }
+
 
   // Analog and digital PIN
   // Voltage PIN ; IN
   //pinMode(PIN_Volt, INPUT); Not needed for analog read
 
-  // Stay On PIN ; OUT
-  pinMode(PIN_STAY_ON, OUTPUT);
 
-  // Door right PIN ; IN
-  pinMode(PIN_R_DOOR, INPUT_PULLUP);
-  attachInterrupt(digitalPinToInterrupt(PIN_R_DOOR), PIN_R_Door_changed, CHANGE);
-  door_r = digitalRead(PIN_R_DOOR);
+  // // Door right PIN ; IN
+  // pinMode(PIN_R_DOOR, INPUT_PULLUP);
+  // attachInterrupt(digitalPinToInterrupt(PIN_R_DOOR), PIN_R_Door_changed, CHANGE);
+  // door_r = digitalRead(PIN_R_DOOR);
 
-  // Door Sliding PIN ; IN
-  pinMode(PIN_S_DOOR, INPUT_PULLUP);
-  attachInterrupt(digitalPinToInterrupt(PIN_S_DOOR), PIN_S_Door_changed, CHANGE);
-  door_s = digitalRead(PIN_S_DOOR);
+  // // Door Sliding PIN ; IN
+  // pinMode(PIN_S_DOOR, INPUT_PULLUP);
+  // attachInterrupt(digitalPinToInterrupt(PIN_S_DOOR), PIN_S_Door_changed, CHANGE);
+  // door_s = digitalRead(PIN_S_DOOR);
 
-  // Motor Cap PIN ; IN
-  pinMode(PIN_MOTOR_CAP, INPUT_PULLUP);
-  attachInterrupt(digitalPinToInterrupt(PIN_MOTOR_CAP), PIN_motor_cap_changed, CHANGE);
-  motor_cap = digitalRead(PIN_MOTOR_CAP);
+  // // Motor Cap PIN ; IN
+  // pinMode(PIN_MOTOR_CAP, INPUT_PULLUP);
+  // attachInterrupt(digitalPinToInterrupt(PIN_MOTOR_CAP), PIN_motor_cap_changed, CHANGE);
+  // motor_cap = digitalRead(PIN_MOTOR_CAP);
 
-  // Trunk PIN ; IN
-  pinMode(PIN_TRUNK, INPUT_PULLUP);
-  attachInterrupt(digitalPinToInterrupt(PIN_TRUNK), PIN_Trunk_changed, CHANGE);
-  trunk = digitalRead(PIN_TRUNK);
+  // // Trunk PIN ; IN
+  // pinMode(PIN_TRUNK, INPUT_PULLUP);
+  // attachInterrupt(digitalPinToInterrupt(PIN_TRUNK), PIN_Trunk_changed, CHANGE);
+  // trunk = digitalRead(PIN_TRUNK);
 
-  //Wiper Water Warning PIN ; IN
-  pinMode(PIN_WASHER_FLUID, INPUT_PULLUP);
-  attachInterrupt(digitalPinToInterrupt(PIN_WASHER_FLUID), PIN_washer_fluid_changed, CHANGE);
-  washer_fluid = digitalRead(PIN_WASHER_FLUID);
+  // //Wiper Water Warning PIN ; IN
+  // pinMode(PIN_WASHER_FLUID, INPUT_PULLUP);
+  // attachInterrupt(digitalPinToInterrupt(PIN_WASHER_FLUID), PIN_washer_fluid_changed, CHANGE);
+  // washer_fluid = digitalRead(PIN_WASHER_FLUID);
 
-  // Brake Pad PIN ; IN
-  pinMode(PIN_BRAKEPADS, INPUT_PULLUP);
-  attachInterrupt(digitalPinToInterrupt(PIN_BRAKEPADS), PIN_brakepads_changed, CHANGE);
-  brakepads = digitalRead(PIN_BRAKEPADS);
+  // // Brake Pad PIN ; IN
+  // pinMode(PIN_BRAKEPADS, INPUT_PULLUP);
+  // attachInterrupt(digitalPinToInterrupt(PIN_BRAKEPADS), PIN_brakepads_changed, CHANGE);
+  // brakepads = digitalRead(PIN_BRAKEPADS);
 
-  // Brake System PIN ; IN
-  pinMode(PIN_BRAKESYSTEM, INPUT_PULLUP);
-  attachInterrupt(digitalPinToInterrupt(PIN_BRAKESYSTEM), PIN_brakesystem_changed, CHANGE);
-  brakesystem = digitalRead(PIN_BRAKESYSTEM);
+  // // Brake System PIN ; IN
+  // pinMode(PIN_BRAKESYSTEM, INPUT_PULLUP);
+  // attachInterrupt(digitalPinToInterrupt(PIN_BRAKESYSTEM), PIN_brakesystem_changed, CHANGE);
+  // brakesystem = digitalRead(PIN_BRAKESYSTEM);
 
-  // Oil Presure PIN ; IN
-  pinMode(PIN_OIL_PRESURE, INPUT_PULLUP);
-  attachInterrupt(digitalPinToInterrupt(PIN_OIL_PRESURE), PIN_Oil_Presure_changed, CHANGE);
-  oil_presure = digitalRead(PIN_OIL_PRESURE);
+  // // Oil Presure PIN ; IN
+  // pinMode(PIN_OIL_PRESURE, INPUT_PULLUP);
+  // attachInterrupt(digitalPinToInterrupt(PIN_OIL_PRESURE), PIN_Oil_Presure_changed, CHANGE);
+  // oil_presure = digitalRead(PIN_OIL_PRESURE);
 
-  // Oil Level PIN ; IN
-  pinMode(PIN_OIL_LEVEL, INPUT_PULLUP);
-  attachInterrupt(digitalPinToInterrupt(PIN_OIL_LEVEL), PIN_Oil_Level_changed, CHANGE);
-  oil_level = digitalRead(PIN_OIL_LEVEL);
+  // // Oil Level PIN ; IN
+  // pinMode(PIN_OIL_LEVEL, INPUT_PULLUP);
+  // attachInterrupt(digitalPinToInterrupt(PIN_OIL_LEVEL), PIN_Oil_Level_changed, CHANGE);
+  // oil_level = digitalRead(PIN_OIL_LEVEL);
 
 // ToDo:
   //pinMode(PIN_OIL_PWM, INPUT);
 
 }
-
-void PIN_mode_changed(void){
-  PIN_mode_state = digitalRead(PIN_MODE);
-}
-
-void PIN_reset_changed(void){
-  PIN_reset_state = digitalRead(PIN_RESET);
-}
-
-void PIN_memory_changed(void){
-  PIN_memory_state = digitalRead(PIN_MEMORY);
-}
-
-void PIN_R_Door_changed(void){
-  door_r = digitalRead(PIN_R_DOOR);
-  check_led = true;
-}
-
-void PIN_S_Door_changed(void){
-  door_s = digitalRead(PIN_S_DOOR);
-  check_led = true;
-}
-
-void PIN_motor_cap_changed(void){
-  motor_cap = digitalRead(PIN_MOTOR_CAP);
-  check_led = true;
-}
-
-void PIN_Trunk_changed(void){
-  trunk = digitalRead(PIN_TRUNK);
-  check_led = true;
-}
-
-void PIN_washer_fluid_changed(void){
-  washer_fluid = digitalRead(PIN_WASHER_FLUID);
-//  check_led = true;
-}
-
-void PIN_brakepads_changed(void){
-  brakepads = digitalRead(PIN_BRAKEPADS);
-  check_led = true;
-}
-
-void PIN_brakesystem_changed(void){
-  brakesystem = digitalRead(PIN_BRAKESYSTEM);
-  check_led = true;
-}
-
-
-void PIN_Oil_Presure_changed(void){
-  oil_presure = digitalRead(PIN_OIL_PRESURE);
-  check_led = true;
-}
-
-void PIN_Oil_Level_changed(void){
-  oil_level = digitalRead(PIN_OIL_LEVEL);
-  check_led = true;
-}
-
 
 // void pin_init(void){
 //   // Init the button state, as otherwise it will be set only after first press of the button

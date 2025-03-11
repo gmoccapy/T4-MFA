@@ -13,46 +13,67 @@
 #define CAN_RX		21    // Green connector PIN 19
 #define CAN_TX		22    // Green connector PIN 20
 
-// MFA Control PIN
+// MCP Interupt PIN connected to GPIO 33 in this case
+#define INT_PIN 33
+
+ // MFA Control PIN according to MCP Laypot
+ // pins are numbert according to the following table
+ //  0 = mcp.pin_A0
+ //  1 = mcp.pin_A1
+ //  2 = mcp.pin_A2
+ //  3 = mcp.pin_A3
+ //  4 = mcp.pin_A4
+ //  5 = mcp.pin_A5
+ //  6 = mcp.pin_A6
+ //  7 = mcp.pin_A7
+ //  8 = mcp.pin_B0
+ //  9 = mcp.pin_B1
+ // 10 = mcp.pin_B2
+ // 11 = mcp.pin_B3
+ // 12 = mcp.pin_B4
+ // 13 = mcp.pin_B5
+ // 14 = mcp.pin_B6
+ // 15 = mcp.pin_B7
+
 // MODE Switch momentary button
-#define PIN_MODE 13     // Green connector PIN 24
+#define PIN_MODE 11
+// MEMORY Switch selection switch
+#define PIN_MEMORY 12
 // RESET Switch momentary button
-#define PIN_RESET 14    // Green connector PIN 25
-// MEMORY Switch button
-#define PIN_MEMORY 16   // Green connector PIN 23
+#define PIN_RESET 13
+// Trunk PIN ; IN
+#define PIN_TRUNK 10
+// Door right PIN ; IN
+#define PIN_R_DOOR 4
+// Door Sliding PIN ; IN
+#define PIN_S_DOOR 5
+// Motor Cap PIN ; IN Green connector PIN 22
+#define PIN_MOTOR_CAP 1
+// Oil Presure PIN ; IN
+#define PIN_OIL_PRESURE 8 
+// Brake Pad PIN ; IN Green connector PIN 7
+#define PIN_BRAKEPADS 0
+// Brake System PIN ; IN Blue connector PIN 29
+#define PIN_BRAKESYSTEM 2 
+// Coolant PIN ; IN
+#define PIN_COOLANT 9        
+// Wiper Water Warning PIN ; IN Green connector PIN 6
+#define PIN_WASHER_FLUID 3
+
 
 // Analog and digital PIN
 // Voltage PIN ; IN
 #define PIN_Volt 39
 // Stay On PIN ; OUT
 #define PIN_STAY_ON 12 
-// Trunk PIN ; IN
-#define PIN_TRUNK 4
-// Door right PIN ; IN
-#define PIN_R_DOOR 26
-// Door Sliding PIN ; IN
-#define PIN_S_DOOR 27
-// Motor Cap PIN ; IN Green connector PIN 22
-#define PIN_MOTOR_CAP 35
-// Oil Presure PIN ; IN
-#define PIN_OIL_PRESURE 17
 // Oil Level PIN ; IN
 #define PIN_OIL_LEVEL 25
-// Brake Pad PIN ; IN Green connector PIN 7
-#define PIN_BRAKEPADS 34
-// Brake System PIN ; IN Blue connector PIN 29
-#define PIN_BRAKESYSTEM 33
-// Coolant PIN ; IN
-#define PIN_coolant 0        
-// Wiper Water Warning PIN ; IN Green connector PIN 6
-#define PIN_WASHER_FLUID 32
-
 // Oil Level PWM signal
 #define PIN_OIL_PWM 19
 
-// we get from Can Bus, so we do not need the following PIN
-// Door Left
-// petrol warning
+// // we get from Can Bus, so we do not need the following PIN
+// // Door Left
+// // petrol warning
 
 
 

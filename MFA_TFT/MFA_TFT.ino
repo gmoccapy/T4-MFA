@@ -26,6 +26,9 @@
 #include "T4_Image.h"
 #include <ESP32-TWAI-CAN.hpp>
 #include <Preferences.h>
+#include <Wire.h>
+#include <Adafruit_MCP23X17.h>
+
 
 //#include "FreeSansBold24pt7b.h"
 
@@ -53,6 +56,14 @@ Preferences preferences;
 // Use second kernel to evaluate can messages
 TaskHandle_t EvaluateCAN;
 
+bool PIN_INT_state = true;
+int IO;
+bool state;
+byte value;
+
+Adafruit_MCP23X17 mcp;
+
+
 // function defination to handle also default values
 void drawUnits(int Y_Pos, String upper_line, String lower_line = "");
 
@@ -61,8 +72,6 @@ void setup(void) {
   Serial.begin(115200);
 
   // Setup the hardware
-  // PIN setup
-  pin_setup();
 
   // start the TFT Display and set orientation
   setup_TFT();
@@ -72,6 +81,11 @@ void setup(void) {
 
   // need to initialize some PIN, set to default
   //pin_init();
+
+  setup_MCP();
+
+  // PIN setup
+  pin_setup();
 
   // create some sprites to avoid to much screen drawing
   create_sprites();
@@ -85,10 +99,12 @@ void setup(void) {
 
   temp_page = Data.page;
 
-
   // Create Task on Core 0 to read CAN Messages and not delaying due to TFT Drawing functions
 // DEBUG: uncomment CAN reading
-//  xTaskCreatePinnedToCore(CAN_Loop, "CAN_Loop", 1000, NULL, 0, &EvaluateCAN, 0);
+  xTaskCreatePinnedToCore(CAN_Loop, "CAN_Loop", 1000, NULL, 0, &EvaluateCAN, 0);
+
+  Serial.println("Looping...");
+  mcp.clearInterrupts();  // clear
 
 }
 
@@ -105,37 +121,7 @@ void loop(void) {
   if (reset != 0){
     reset_Data(reset);
     //avoid page change
-    PIN_mode_previous_state = PIN_mode_state;
     reset = 0;
-  }
-
-  if ((PIN_mode_state != PIN_mode_previous_state) && (millis() - previousPressedMode > debounce)){
-    if (PIN_mode_state == true){
-      if(reset == 0){
-        Data.page += 1;
-        if (Data.page > 4){
-          Data.page = 0;
-        }
-        temp_page = Data.page;
-      }
-//ToDo : Check if this else is realy needed
-      else{
-        reset = 0;
-      }
-    }
-    PIN_mode_previous_state = PIN_mode_state;
-    previousPressedMode = millis();
-    DrawSelected(Data.page);
-    Serial.println("Button");
-    check_LED();
-  }
-
-  // User reset
-  if(PIN_mode_state == false){
-    if(previousPressedMode + 3000 < millis()){
-      // We do not want to change page, but this will hapen releasing the button, so we set reset
-      reset = Data.mode;
-    }
   }
 
   // initial drawing the screen
@@ -173,6 +159,40 @@ void loop(void) {
     shutdown_timer = 0;
     digitalWrite(PIN_STAY_ON, 0);
   }
+
+  if((Mode_Button_pressed != 0) && (millis() > Mode_Button_pressed + 3000)){
+    reset = Data.mode;
+    Mode_Button_pressed = 0;
+    Page_Switch_Done = true;                // If a reset has been requested, we do not want Page Change
+  }
+
+  if (!PIN_INT_state){
+    volatile int status = mcp.readGPIOAB();
+    volatile int PIN = mcp.getLastInterruptPin();
+    check_IO(PIN, mcp.digitalRead(PIN));
+    for(int i = 0; i < 16; i++){
+      IO_STATUS[i] = bitRead(status, i);
+      if( !bitRead(status, i)){
+        Serial.print("Bit No. ");
+        Serial.print(i);
+        Serial.println(" is active");
+      }
+    }
+    Serial.println("  Checked");
+  }
+  
+}
+
+void switch_page(void){
+  Data.page += 1;
+  if (Data.page > 4){
+    Data.page = 0;
+  }
+  temp_page = Data.page;
+  Page_Switch_Done = true;
+  DrawSelected(Data.page);
+  Serial.println("Button");
+  check_LED();
 }
 
 // This loop runs on Core 0, while the main loop runs on Core 1
@@ -185,3 +205,8 @@ void CAN_Loop (void *parameter){
     }
   }
 }
+
+void ISR_INT_PIN(void){
+  PIN_INT_state = digitalRead(INT_PIN);
+}
+
