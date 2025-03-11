@@ -490,7 +490,7 @@
       "plot": "../Gerber/",
       "pos_files": "../Gerber/",
       "specctra_dsn": "",
-      "step": "BrakeOutBoard.step",
+      "step": "../BrakeOutBoard.step",
       "svg": "",
       "vrml": ""
     },

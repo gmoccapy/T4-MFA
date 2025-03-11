@@ -3254,7 +3254,7 @@
 		)
 	)
 	(global_label "StayOn"
-		(shape input)
+		(shape output)
 		(at 234.95 95.25 0)
 		(fields_autoplaced yes)
 		(effects
@@ -3275,7 +3275,7 @@
 		)
 	)
 	(global_label "VoltMeasurement"
-		(shape input)
+		(shape output)
 		(at 194.31 118.11 0)
 		(fields_autoplaced yes)
 		(effects
