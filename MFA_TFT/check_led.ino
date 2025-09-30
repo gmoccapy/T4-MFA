@@ -53,12 +53,12 @@ void check_LED (void){
       }
 
     // Batterie over voltage measurement
-      if((volt > 4000) || (volt < 1000)){
+      if (batterie == true){
         tft.drawXBitmap(Icon_Pos_Batterie[0], Icon_Pos_Batterie[1], sym_battery, 50, 50, TFT_RED);
-        //warnings += 8;
       }
+      //warnings += 8;
       else {
-        tft.fillRect(256, 50, 50, 50, BACK_COLOR);
+        tft.fillRect(Icon_Pos_Batterie[0], Icon_Pos_Batterie[1], 50, 50, BACK_COLOR);
       }
 
 //       if(coolant == false){
@@ -107,7 +107,7 @@ void check_LED (void){
       // else{
       //   tft.fillRect(Icon_Pos_WasherFluid[0], Icon_Pos_WasherFluid[1], 50, 50, BACK_COLOR);
       // }
-
+  
   }
 
 }

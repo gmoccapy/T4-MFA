@@ -19,7 +19,7 @@ enum memory{
 // position variables and colors to display Infos 5:6:5 Format 1.Letter = red 2 and 3 are Green and 4 is blue
 #define NIGHT_TEXT_COLOR 0x041F
 #define DAY_TEXT_COLOR   TFT_WHITE
-#define BACK_COLOR  TFT_BLACK
+#define BACK_COLOR       TFT_BLACK
 
 float C_actual_filtered = 0;
 float scale_value_filtered = 0;
@@ -112,6 +112,7 @@ bool check_led = false;               // only if true, we will redraw the screen
 bool light = false;                   // light is on or off from Can 0x420
 bool petrol = false;                  // reserve warning controlled by 0x320 can message
 bool door = false;                    // left door is open (true) or closed (false) from can message 0x320
+bool batterie = false;                // avoid flicker of batterie symbol during startup and slow increasing voltage due to filter       
 // bool coolant = true;                  // coolant warning controlled IO Pull Up
 // bool door_r = true;                   // right door is open (false) or closed (true) from IO Pull Up
 // bool door_s = true;                   // sliding door is open (false) or closed (true) from IO Pull Up

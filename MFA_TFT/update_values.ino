@@ -25,6 +25,15 @@ void update_volt(void){
     // take 80% of old value and 20% of new value to smooth the display
     volt = (0.9 * volt) + (0.1 * temp);
 
+    if((volt > 4000) || (volt < 1000)){
+      batterie = true;
+      check_led = true;
+    }
+    else{
+      batterie = false;
+    }
+
+    
     // ignition came back bevor one hour has past, so reset timer
     // and redraw page, as we have blanked it out Loosing K15
     if (shutdown_timer != 0){
@@ -409,7 +418,8 @@ void draw_value_oil_temp(int Y_Pos){
 
 void draw_value_volt(int Y_Pos){
   // Get the Voltage value
-  if(volt > 4000){
+  if(batterie == true){
+    check_led = true;
     String(F("---")).toCharArray(TFT_String, 4);
   }
   else{

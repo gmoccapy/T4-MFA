@@ -107,7 +107,7 @@ void check_IO(int PIN, bool mcp_state){
     
       break;
 
-    default: break;
+    default:break;
   }
 
   mcp.clearInterrupts();  // clear
