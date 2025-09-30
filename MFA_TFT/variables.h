@@ -1,3 +1,9 @@
+// variables for MCP handling
+bool PIN_INT_state = true;
+int IO;
+bool state;
+
+
 // defining the following, reduced the ram space because "100km" has not to be coded on several places 
 #define HUNDERTKM "100km"
 #define LITER     "l"
@@ -20,29 +26,33 @@ enum memory{
 #define DAY_TEXT_COLOR   TFT_WHITE
 #define BACK_COLOR  TFT_BLACK
 
+float C_actual_filtered = 0;
+float scale_value_filtered = 0;
+
+// Voltage calculated from analog in PIN 32
+float volt = 0;                       
 // Voltage divider
 // R1 = 220k ; R2 = 33k
 // as U2 = (Uges * R2) / (R1 + R2)
 // at 12 V we get U2 = 1.565217391 V
 // 3.3V = 4095
 // 1.565217391V = 1943
-// factor 1.1 because reading was wrong
-#define VOLT_FAKTOR (3.3 / 4095.0 ) * ((220.0 + 33.0 ) / 33.0) * 1.12
+// factor 1.07 because reading was wrong
+#define VOLT_FAKTOR (3.3 / 4095.0 ) * ((220.0 + 33.0 ) / 33.0) * 1.07
 
-float volt = 0;                       // Voltage calculated from analog in PIN 32
 unsigned long shutdown_timer = 0;   	// time for update values in msec
 
 uint16_t TEXT_COLOR = DAY_TEXT_COLOR;  // with this we are able to change color with light state
 
-int Icon_Pos_Coolant[2]     = { 20,  50};   // position of LED icon    coolant
-int Icon_Pos_BrakeSystem[2] = {135,  50};   // position of LED icon    brakepads 
-int Icon_Pos_Petrol[2]      = {240,  50};   // position of LED icon    petrol
-int Icon_Pos_Oil[2]         = { 20, 140};   // position of LED icon    oil 
-int Icon_Pos_BrakePads[2]   = {135, 140};   // position of LED icon    brakepads 
-int Icon_Pos_WasherFluid[2] = {240, 140};   // position of LED icon    washer_fluid
-int Icon_Pos_Light[2]       = { 20, 210};   // position of LED icon    light
-int Icon_Pos_Door[2]        = {135, 210};   // position of LED icon    door 
-int Icon_Pos_Batterie[2]    = {240, 210};   // position of LED icon    batterie
+int Icon_Pos_Coolant[2]     = { 20,  50};   // position of LED icon    coolant      red
+int Icon_Pos_BrakeSystem[2] = {135,  50};   // position of LED icon    brakepads    orange
+int Icon_Pos_Petrol[2]      = {240,  50};   // position of LED icon    petrol       orange
+int Icon_Pos_Oil[2]         = { 20, 140};   // position of LED icon    oil          red / orange
+int Icon_Pos_BrakePads[2]   = {135, 140};   // position of LED icon    brakepads    red
+int Icon_Pos_WasherFluid[2] = {240, 140};   // position of LED icon    washer_fluid orange
+int Icon_Pos_Light[2]       = { 20, 210};   // position of LED icon    light        green
+int Icon_Pos_Door[2]        = {135, 210};   // position of LED icon    door         orange
+int Icon_Pos_Batterie[2]    = {240, 210};   // position of LED icon    batterie     red
 
 
 // DEBUG:
@@ -96,7 +106,7 @@ float temp = 0.0;                     // holds temporarily different values
 
 // variables for the button pin
 int IO_STATUS[16];
-int PREVIOUS_IO_STATUS = 0;
+int PREVIOUS_IO_STATUS[16];
 unsigned int Mode_Button_pressed = 0;
 bool Page_Switch_Done = true;
 int reset = 0;                        // Set to 1 to reset from start, 2 to reset refuel and 3 to reset period

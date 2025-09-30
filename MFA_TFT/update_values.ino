@@ -23,7 +23,7 @@ void update_volt(void){
   if (temp > 1000){
     // get rid of noise influence ; high pass filtering 
     // take 80% of old value and 20% of new value to smooth the display
-    volt = (0.8 * volt) + (0.2 * temp);
+    volt = (0.9 * volt) + (0.1 * temp);
 
     // ignition came back bevor one hour has past, so reset timer
     // and redraw page, as we have blanked it out Loosing K15
@@ -67,7 +67,8 @@ void update_values(void){
   switch(Data.page){
 
     case 0:
-      draw_value_cruise_control(70);
+      draw_value_volt(70);
+      //draw_value_cruise_control(70);
 
       // // draw_dial needs 181 pixel hight, value may be changes with #define SPRITESIZE and SPRITEPIVOT
       // // C_last_25_km = 1755.65 ml/25km = 70.226 ml/km => 0,070226 l/km = 7.0226 l/100km 
@@ -82,7 +83,8 @@ void update_values(void){
 
       draw_value_range(316);
 
-      draw_value_average_consumption(372, Data.mode);
+      //draw_value_average_consumption(372, Data.mode);
+      draw_value_actual_consumption(372);
 
       draw_value_out_temp(428);
 
@@ -141,6 +143,7 @@ void update_values(void){
       // draw_dial needs 181 pixel hight, value may be changes with #define SPRITESIZE and SPRITEPIVOT
       // C_last_25_km = 1755.65 ml/25km = 70.226 ml/km => 0,070226 l/km = 7.0226 l/100km 
       temp = C_last_25_km / 250.0;  // ml/25 km and 100km gives factor 250
+
       draw_dial(75, 118, temp, 1, C_actual, 24.0, F("Ab"), F("Start"));
 
       // Line 5 = 337 (range)
@@ -181,12 +184,12 @@ void draw_value_actual_consumption(int Y_Pos){
   // C_actual is l/h
   if(velocity_actual > 5){
     // now want to display now l/100km not l/h as car is moving
-    temp = C_actual * 100.0 / velocity_actual;
+    C_actual_filtered = (0.8 * C_actual_filtered + 0.2 * C_actual);
+    temp = C_actual_filtered * 100.0 / velocity_actual;
   }
   else{
     temp = C_actual;
   }
-
   // only place to display 2 numbers and one digit
   if(temp > 99.0){
     temp = 99.0;

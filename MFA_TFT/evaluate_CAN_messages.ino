@@ -258,6 +258,7 @@ void evaluate_CAN_messages(){
 
         // delta = 0.147 ml ; time_C_period = 95 ms C_actual = 0.0015473 ml/ms = 5.57 l/h
         C_actual = (delta * 3600.0 / time_C_period);  // l/h
+        C_actual = delta;
       }
       break;
     }

@@ -38,7 +38,9 @@ void draw_dial(int X_Pos, int Y_Pos, float DRO_value, int DRO_digits, float scal
   if(velocity_actual > 5){
     //360-45-45 = 270 = max_value
     //             X  = value
-    temp = 45 + (270 * scale_value / scale_max_value);
+    scale_value_filtered = (0.8 * scale_value_filtered + 0.2 * scale_value);
+
+    temp = 45 + (270 * scale_value_filtered / scale_max_value);
     if (temp < 45){
       temp = 45;
     }

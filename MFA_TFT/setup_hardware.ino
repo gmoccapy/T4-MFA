@@ -32,10 +32,9 @@ void pin_setup(void){
 
   // configure MCP pin that will read INTA/B state
   pinMode(INT_PIN, INPUT);
-  attachInterrupt(digitalPinToInterrupt(INT_PIN), ISR_INT_PIN, CHANGE);
 
   // pinMode(MCP_RESET, OUTPUT);
-  // digitalWrite(MCP_RESET, HIGH);
+  //digitalWrite(MCP_RESET, HIGH);
 
   // OPTIONAL - call this to override defaults
   // mirror INTA/B so only one wire required
@@ -45,10 +44,11 @@ void pin_setup(void){
 
   // configure button pin for input with pull up
   for (byte i = 0; i < 16; i++){
-    mcp.pinMode(i, INPUT_PULLUP);
+    mcp.pinMode(i, INPUT);
     // enable interrupt on button_pin
     mcp.setupInterruptPin(i, CHANGE);
   }
+  attachInterrupt(digitalPinToInterrupt(INT_PIN), ISR_INT_PIN, CHANGE);
 
 
   // Analog and digital PIN

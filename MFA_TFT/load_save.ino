@@ -91,7 +91,7 @@ void load_Data(void){
     
   preferences.end();
 
-  print_Data();
+  //print_Data();
   //Serial.println(F("Data loaded"));
 }
 

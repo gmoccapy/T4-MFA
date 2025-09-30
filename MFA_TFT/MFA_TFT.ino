@@ -17,22 +17,24 @@
   All rights reserved.
 */
 
-#include "pin_setup.h"
+// include Arduino libraries
 #include "TFT_eSPI.h"
 #include "Free_Fonts.h"
-#include "variables.h"
-#include "symbols.h"
-//#include "logo.h"
-#include "T4_Image.h"
+//#include "FreeSansBold24pt7b.h"
 #include <ESP32-TWAI-CAN.hpp>
 #include <Preferences.h>
 #include <Wire.h>
 #include <Adafruit_MCP23X17.h>
 
-
-//#include "FreeSansBold24pt7b.h"
-
+// include our own files
 // Pin definition and settings see pin_setup.h
+#include "pin_setup.h"
+#include "variables.h"
+
+// include images and symbols
+#include "symbols.h"
+//#include "logo.h"
+#include "T4_Image.h"
 
 // make TFT instance
 TFT_eSPI tft = TFT_eSPI();
@@ -53,16 +55,11 @@ CanFrame rxFrame;
 // need preferences to store values in NVS (non volatile storage)
 Preferences preferences;
 
-// Use second kernel to evaluate can messages
-TaskHandle_t EvaluateCAN;
-
-bool PIN_INT_state = true;
-int IO;
-bool state;
-byte value;
-
+// define MCP instance
 Adafruit_MCP23X17 mcp;
 
+// Use second kernel to evaluate can messages
+TaskHandle_t EvaluateCAN;
 
 // function defination to handle also default values
 void drawUnits(int Y_Pos, String upper_line, String lower_line = "");
@@ -71,17 +68,13 @@ void setup(void) {
 
   Serial.begin(115200);
 
-  // Setup the hardware
-
   // start the TFT Display and set orientation
   setup_TFT();
 
   // Set up can system
   setup_CAN();
 
-  // need to initialize some PIN, set to default
-  //pin_init();
-
+  // setup the IO expansion board
   setup_MCP();
 
   // PIN setup
@@ -100,16 +93,24 @@ void setup(void) {
   temp_page = Data.page;
 
   // Create Task on Core 0 to read CAN Messages and not delaying due to TFT Drawing functions
-// DEBUG: uncomment CAN reading
   xTaskCreatePinnedToCore(CAN_Loop, "CAN_Loop", 1000, NULL, 0, &EvaluateCAN, 0);
 
   Serial.println("Looping...");
   mcp.clearInterrupts();  // clear
-
 }
 
 // Main loop running on Core 1 handles all drawing of TFT and IO Stuff
 void loop(void) {
+
+// DEBUG
+  // Serial.print(time_C_period);
+  // Serial.print("\t");
+  // Serial.print(C_actual * 100.0 / velocity_actual);
+  // Serial.print("\t");
+  // Serial.print(C_motor_value);
+  // Serial.print("\t");
+  // Serial.println(velocity_actual);
+
 
   // we are not able to do any hardware stuff on the second task, as it will lead to crashes
   // That's the reason we are doing it in main loop
@@ -133,7 +134,13 @@ void loop(void) {
     DrawSelected(Data.page);
     start = true;
     Serial.println("Start");
-    check_LED();
+    
+    // We do an initial check for the mccp state, as we may have unatendet IO's
+    for (byte i = 0; i < 16; i++){
+      check_IO(i, mcp.digitalRead(i));
+    }
+
+    //check_LED();
   }
 
   // update time every second
@@ -167,20 +174,22 @@ void loop(void) {
   }
 
   if (!PIN_INT_state){
-    volatile int status = mcp.readGPIOAB();
     volatile int PIN = mcp.getLastInterruptPin();
-    check_IO(PIN, mcp.digitalRead(PIN));
-    for(int i = 0; i < 16; i++){
-      IO_STATUS[i] = bitRead(status, i);
-      if( !bitRead(status, i)){
-        Serial.print("Bit No. ");
-        Serial.print(i);
-        Serial.println(" is active");
-      }
-    }
+    volatile int mcp_state = mcp.getCapturedInterrupt();
+
+    Serial.print("Interupted PIN = ");
+    Serial.println(PIN);
+    Serial.print("Pin states at time of interrupt: ");
+    //Serial.println(mcp.getCapturedInterrupt(), 2);
+    
+    Serial.println(bitRead(mcp.getCapturedInterrupt(), PIN));
+
+    check_IO(PIN, bitRead(mcp.getCapturedInterrupt(), PIN));
+
     Serial.println("  Checked");
+
   }
-  
+
 }
 
 void switch_page(void){
