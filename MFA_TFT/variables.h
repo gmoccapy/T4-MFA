@@ -1,8 +1,3 @@
-// variables for MCP handling
-bool PIN_INT_state = true;
-int IO;
-bool state;
-
 
 // defining the following, reduced the ram space because "100km" has not to be coded on several places 
 #define HUNDERTKM "100km"
@@ -54,11 +49,6 @@ int Icon_Pos_Light[2]       = { 20, 210};   // position of LED icon    light    
 int Icon_Pos_Door[2]        = {135, 210};   // position of LED icon    door         orange
 int Icon_Pos_Batterie[2]    = {240, 210};   // position of LED icon    batterie     red
 
-
-// DEBUG:
-// float debug = 0;
-// float bitValue [8];
-
 struct values_to_save {           // Data to be stored permanetly, 
     int page; 				            // Page to display
     int mode;                     // Mode is on of START, REFUEL, PERIOD
@@ -104,9 +94,10 @@ float C_last_25_km;                   // consumption over the last 25 km in ml
 char TFT_String[12];                  // convert values to string to print on the screen
 float temp = 0.0;                     // holds temporarily different values 
 
+// variables for MCP handling
+bool PIN_INT_state = true;
+
 // variables for the button pin
-int IO_STATUS[16];
-int PREVIOUS_IO_STATUS[16];
 unsigned int Mode_Button_pressed = 0;
 bool Page_Switch_Done = true;
 int reset = 0;                        // Set to 1 to reset from start, 2 to reset refuel and 3 to reset period
@@ -117,20 +108,21 @@ bool save = false;				            // Save is set to true if motor_on = true, aft
 bool check_led = false;               // only if true, we will redraw the screen painting or deleting the LED icon
                                       // avoid redrawing the screen every llop cycle
 
-bool light = false;                   // light is on or off
-bool door = false;                    // left door is open (true) or closed (false) from can message
-bool door_r = true;                   // right door is open (false) or closed (true) from IO Pull Up
-bool door_s = true;                   // sliding door is open (false) or closed (true) from IO Pull Up
-bool trunk = true;                    // trunk is open (false) or closed (true) from IO Pull Up
-bool motor_cap = true;                // motor cap is open (false) or closed (true) from IO Pull Up
+// We get some LED information from Can BUS 
+bool light = false;                   // light is on or off from Can 0x420
 bool petrol = false;                  // reserve warning controlled by 0x320 can message
-bool oil_presure = true;              // oil presure warning controlled by IO Pull Up 
-bool oil_level = true;                // oil level warning controlled by IO Pull Up
-bool washer_fluid = true;             // washer_fluid warning controlled IO Pull Up
-bool coolant = true;                  // coolant warning controlled IO Pull Up
-bool brakepads = true;                // Brakepads warning controlled IO Pull Up
-bool brakesystem = true;              // Brakefluid warning controlled IO Pull Up
-int warnings = false;                 // we count infos, warnings and critical infos
+bool door = false;                    // left door is open (true) or closed (false) from can message 0x320
+// bool coolant = true;                  // coolant warning controlled IO Pull Up
+// bool door_r = true;                   // right door is open (false) or closed (true) from IO Pull Up
+// bool door_s = true;                   // sliding door is open (false) or closed (true) from IO Pull Up
+// bool trunk = true;                    // trunk is open (false) or closed (true) from IO Pull Up
+// bool motor_cap = true;                // motor cap is open (false) or closed (true) from IO Pull Up
+// bool oil_presure = true;              // oil presure warning controlled by IO Pull Up 
+// bool oil_level = true;                // oil level warning controlled by IO Pull Up
+// bool washer_fluid = true;             // washer_fluid warning controlled IO Pull Up
+// bool brakepads = true;                // Brakepads warning controlled IO Pull Up
+// bool brakesystem = true;              // Brakefluid warning controlled IO Pull Up
+// int warnings = false;                 // we count infos, warnings and critical infos
 
 int speed;                            // rpm of the motor
 unsigned int km_total = 0;            // total km driven by the vehicle / control the change of this value to recalculate values

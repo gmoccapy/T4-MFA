@@ -71,9 +71,9 @@
 // Oil Level PWM signal
 #define PIN_OIL_PWM 19
 
-// // we get from Can Bus, so we do not need the following PIN
-// // Door Left
-// // petrol warning
+// we get from Can Bus, so we do not need the following PIN
+// Door Left
+// petrol warning
 
 
 

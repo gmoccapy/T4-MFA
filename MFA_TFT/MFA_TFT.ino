@@ -150,7 +150,7 @@ void loop(void) {
   }
 
   if (check_led == true){
-    check_LED();
+     check_LED();
   }
 
   // to avoid update values for door warning in full page mode
