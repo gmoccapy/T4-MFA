@@ -140,7 +140,6 @@ void loop(void) {
       check_IO(i, mcp.digitalRead(i));
     }
 
-    //check_LED();
   }
 
   // update time every second
@@ -148,6 +147,8 @@ void loop(void) {
     update_time();
     lastMillis = millis();
   }
+
+  update_volt();
 
   if (check_led == true){
      check_LED();
@@ -158,8 +159,6 @@ void loop(void) {
   if (Data.page == temp_page){
     update_values();
   }
-
-  update_volt();
 
   // stay_on == true after we had one time ignition
   // shutdown_timer will be set switching off ignition 
@@ -188,8 +187,8 @@ void loop(void) {
     check_IO(PIN, bitRead(mcp.getCapturedInterrupt(), PIN));
 
     Serial.println("  Checked");
-
   }
+
 
 }
 

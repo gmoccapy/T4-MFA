@@ -70,6 +70,8 @@
 #define PIN_OIL_LEVEL 25
 // Oil Level PWM signal
 #define PIN_OIL_PWM 19
+// OIL LED directly from instrument
+#define PIN_OIL_LED 25
 
 // we get from Can Bus, so we do not need the following PIN
 // Door Left

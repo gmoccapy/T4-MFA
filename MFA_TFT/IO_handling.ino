@@ -1,7 +1,13 @@
 void check_IO(int PIN, bool mcp_state){
-  
+
+
+// DEBUG : There shoud never be print statements on interupt routines!
+//         We need to delete them at the end of testing
+  warnings = 0;
+
+
   switch(PIN){
-  
+
     case PIN_MODE:
       Serial.print("PIN_MODE IO has changed to ");
       Serial.println(mcp_state);
@@ -34,18 +40,21 @@ void check_IO(int PIN, bool mcp_state){
     case PIN_TRUNK:
       Serial.print("PIN_TRUNK IO has changed to ");
       Serial.println(mcp_state);
+      warnings += 1;
 
       break;
 
     case PIN_R_DOOR:
       Serial.print("PIN_R_DOOR IO has changed to");
       Serial.println(mcp_state);
+      warnings += 2;
 
       break;
 
     case PIN_S_DOOR:
       Serial.print("PIN_S_DOOR IO has changed to ");
       Serial.println(mcp_state);
+      warnings += 4;
 
       break;
 
@@ -53,17 +62,20 @@ void check_IO(int PIN, bool mcp_state){
       Serial.print("PIN_OIL_PRESURE IO has changed to ");
       Serial.println(mcp_state);
       if(mcp_state == true){
-        tft.drawXBitmap(Icon_Pos_Oil[0], Icon_Pos_Oil[1], sym_oil, 50, 50, TFT_RED);
+        warnings += 8;
+        oil_presure = true;
       }
       else{
-        tft.fillRect(Icon_Pos_Oil[0], Icon_Pos_Oil[1], 50, 50, BACK_COLOR);
+        oil_presure = false;
       }
+
       break;
 
     case PIN_COOLANT:
       Serial.print("PIN_COOLANT IO has changed to ");
       Serial.println(mcp_state);
       if(mcp_state == true){
+        warnings += 16;
         tft.drawXBitmap(Icon_Pos_Coolant[0], Icon_Pos_Coolant[1], sym_coolant, 50, 50, TFT_RED);
       }
       else{
@@ -75,6 +87,7 @@ void check_IO(int PIN, bool mcp_state){
       Serial.print("PIN_BRAKEPADS IO has changed to ");
       Serial.println(mcp_state);
       if(mcp_state == true){
+        warnings += 32;
         tft.drawXBitmap(Icon_Pos_BrakePads[0], Icon_Pos_BrakePads[1], sym_brakepads, 50, 50, TFT_ORANGE);
       }
       else{
@@ -85,9 +98,10 @@ void check_IO(int PIN, bool mcp_state){
     case PIN_MOTOR_CAP:
       Serial.print("PIN_MOTOR_CAP IO has changed to ");
       Serial.println(mcp_state);
-      // if(mcp_state == true){
+      if(mcp_state == true){
+        warnings += 64;
       //   tft.drawXBitmap(Icon_Pos_BrakePads[0], Icon_Pos_BrakePads[1], sym_brakepads, 50, 50, TFT_ORANGE);
-      // }
+      }
       // else{
       //   tft.fillRect(Icon_Pos_BrakePads[0], Icon_Pos_BrakePads[1], 50, 50, BACK_COLOR);
       // }
@@ -97,6 +111,7 @@ void check_IO(int PIN, bool mcp_state){
       Serial.print("PIN_WASHER_FLUID IO has changed to ");
       Serial.println(mcp_state);
       if(mcp_state == true){
+        warnings += 128;
         tft.drawXBitmap(Icon_Pos_WasherFluid[0], Icon_Pos_WasherFluid[1], sym_washer_fluid, 50, 50, TFT_ORANGE);
       }
       else{
@@ -108,6 +123,7 @@ void check_IO(int PIN, bool mcp_state){
       Serial.print("PIN_BRAKESYSTEM IO has changed to ");
       Serial.println(mcp_state);
       if(mcp_state == true){
+        warnings += 256;
         tft.drawXBitmap(Icon_Pos_BrakeSystem[0], Icon_Pos_BrakeSystem[1], sym_brakesystem, 50, 50, TFT_RED);
       }
       else{
@@ -115,7 +131,9 @@ void check_IO(int PIN, bool mcp_state){
       }
       break;
 
-    // case PIN_OIL_LEVEL:
+
+// DEBUG INFO . This need to be done in a separate way, as we will get an PWN Signal from sensor
+    // case PIN_OIL_LEVEL: 
     //   Serial.print("PIN_OIL_LEVEL IO has changed to ");
     //   Serial.println(mcp_state);
     //   if(mcp_state == true){
@@ -126,10 +144,15 @@ void check_IO(int PIN, bool mcp_state){
     //   }
     //   break;
 
+// DEBUG INFO: OIL_LED / showing low oil level or old oil, this one is connected direktly to
+// PIN 11 of ESP32, that correspond to GPIO 25
+// Attantion, do not apply 12 V to this PIN, as it will destoy ESP32
 
 
     default:break;
   }
+
+  check_led = true;
 
   mcp.clearInterrupts();  // clear
   PIN_INT_state = true;

@@ -16,7 +16,7 @@ void update_time(void){
 }
 
 void update_volt(void){
-  // Get the Voltage value
+  // Get the Voltage value from PIN 4 from ESP32 coresponds to ADC1_CH3
   temp = analogRead(PIN_Volt);      
 
   // ignition is on! K15 with 12 V
@@ -76,19 +76,25 @@ void update_values(void){
   switch(Data.page){
 
     case 0:
-      draw_value_volt(70);
-      //draw_value_cruise_control(70);
+      //draw_value_volt(70);
+      draw_value_cruise_control(70);
 
-      // // draw_dial needs 181 pixel hight, value may be changes with #define SPRITESIZE and SPRITEPIVOT
-      // // C_last_25_km = 1755.65 ml/25km = 70.226 ml/km => 0,070226 l/km = 7.0226 l/100km 
-      temp = C_last_25_km / 250.0;  // ml/25 km and 100km gives factor 250     
-      draw_dial(75, 108, temp, 1, C_actual, 24.0, F("Ab"), F("Start"));
+//      Serial.println(warnings);
+      if (warnings){
+        // do nothing
+      }
+      else{
+        // // draw_dial needs 181 pixel hight, value may be changes with #define SPRITESIZE and SPRITEPIVOT
+        // // C_last_25_km = 1755.65 ml/25km = 70.226 ml/km => 0,070226 l/km = 7.0226 l/100km 
+        temp = C_last_25_km / 250.0;  // ml/25 km and 100km gives factor 250     
+        draw_dial(75, 108, temp, 1, C_actual, 24.0, F("Ab"), F("Start"));
+      }
 
       // draw oil temp scale
-      draw_bar("Öl", "`C", 15, 115, 102, 0, 160, 60, 130, 140);
+      draw_bar("Öl", "`C", 15, 115, temp_oil, 0, 160, 60, 130, 140);
 
       // draw volt scale
-      draw_bar("V", "V", 269, 115, 12.5, 0, 18, 11, 15, -1);
+      draw_bar("V", "V", 269, 115, volt * VOLT_FAKTOR, 0, 18, 11, 15, -1);
 
       draw_value_range(316);
 
