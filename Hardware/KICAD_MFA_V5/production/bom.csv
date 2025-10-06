@@ -1,0 +1,49 @@
+﻿Designator,Footprint,Quantity,Value,LCSC Part #
+5V,SolderWire-0.5sqmm_1x01_D0.9mm_OD2.1mm,1,TFT_5V,
+BF1,SolderWire-0.5sqmm_1x01_D0.9mm_OD2.1mm,1,BrakeFluid,
+BME_280,PinSocket_1x04_P2.54mm_Vertical,1,BME280_conn,
+BP1,SolderWire-0.5sqmm_1x01_D0.9mm_OD2.1mm,1,BrakePads,
+"C1, C2",C_0402,2,100nF,C1525
+CAN_H,SolderWire-0.5sqmm_1x01_D0.9mm_OD2.1mm,1,Can_H,
+CAN_L,SolderWire-0.5sqmm_1x01_D0.9mm_OD2.1mm,1,Can_L,
+COOL1,SolderWire-0.5sqmm_1x01_D0.9mm_OD2.1mm,1,Coolant,
+CS,SolderWire-0.5sqmm_1x01_D0.9mm_OD2.1mm,1,TFT_CS,
+"D1, D2",D_SMB,2,S3MB,C18199102
+DC,SolderWire-0.5sqmm_1x01_D0.9mm_OD2.1mm,1,TFT_DC,
+GND,SolderWire-0.5sqmm_1x01_D0.9mm_OD2.1mm,1,TFT_GND,
+GPS,PinSocket_1x04_P2.54mm_Vertical,1,GPS Modul expansion port,
+"HOLE_1, HOLE_2, HOLE_3, HOLE_4",MountingHole_3.2mm_M3,4,MountingHole_3.2mm_M3,
+"J1, J2",PinSocket_1x19_P2.54mm_Vertical,2,Conn_01x19_Socket,
+K15,SolderWire-0.5sqmm_1x01_D0.9mm_OD2.1mm,1,K15,
+K3,SolderWire-0.5sqmm_1x01_D0.9mm_OD2.1mm,1,K31,
+K30,SolderWire-0.5sqmm_1x01_D0.9mm_OD2.1mm,1,K30,
+MC1,SolderWire-0.5sqmm_1x01_D0.9mm_OD2.1mm,1,MotorCap,
+MEM1,SolderWire-0.5sqmm_1x01_D0.9mm_OD2.1mm,1,Memory,
+MODE1,SolderWire-0.5sqmm_1x01_D0.9mm_OD2.1mm,1,Mode,
+MOSI,SolderWire-0.5sqmm_1x01_D0.9mm_OD2.1mm,1,TFT_MOSI,
+OL_LED1,SolderWire-0.5sqmm_1x01_D0.9mm_OD2.1mm,1,O_Lev_LED,
+OP1,SolderWire-0.5sqmm_1x01_D0.9mm_OD2.1mm,1,OilPresure,
+OS1,SolderWire-0.5sqmm_1x01_D0.9mm_OD2.1mm,1,oilSensor,
+Q1,Q_SOT-23,1,LBSS84LT1G,C8492
+Q2,SOT-363_SC-70-6,1,MMDT3904,
+"R1, R14, R15, R16",R_0603,4,10kΩ,C25804
+"R10, R13, R9",R_0603x4,3,10kΩ,C29718
+"R11, R7, R8",R_0603x4,3,4.7kΩ,C1980
+R12,R_0603,1,4.7kΩ,C23162
+"R17, R18",R_0603,2,"4,7k",C25804
+R2,R_0603,1,220kΩ,C22961
+"R3, R5",R_0603,2,100kΩ,C25803
+R4,R_0603,1,33kΩ,C4216
+R6,R_0603,1,220Ω,C22962
+RD1,SolderWire-0.5sqmm_1x01_D0.9mm_OD2.1mm,1,Door_R,
+RESET1,SolderWire-0.5sqmm_1x01_D0.9mm_OD2.1mm,1,Reset,
+RST,SolderWire-0.5sqmm_1x01_D0.9mm_OD2.1mm,1,TFT_RST,
+SD1,SolderWire-0.5sqmm_1x01_D0.9mm_OD2.1mm,1,Door_S,
+SLK,SolderWire-0.5sqmm_1x01_D0.9mm_OD2.1mm,1,TFT_SLK,
+TR1,SolderWire-0.5sqmm_1x01_D0.9mm_OD2.1mm,1,Trunk,
+"U1, U2, U3",DIP-16_W7.62mm,3,LTV-847,
+U4,DIP-4_L6.5-W4.6-P2.54-LS7.6-BL-1,1,EL817(B)-F,
+U5,SOIC-8_L4.9-W3.9-P1.27-LS6.0-BL,1,SN65HVD230DR,C12084
+U6,QFN-28-1EP_6x6mm_P0.65mm_EP4.25x4.25mm,1,MCP23017_ML,
+USB_OUT1,"PHOENIX_1729128_2x2,54",1,To USB converter,
+WW1,SolderWire-0.5sqmm_1x01_D0.9mm_OD2.1mm,1,WhiperWater,
