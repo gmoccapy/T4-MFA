@@ -19,21 +19,22 @@ void update_volt(void){
   // Get the Voltage value from PIN 4 from ESP32 coresponds to ADC1_CH3
   temp = analogRead(PIN_Volt);      
 
+  // Check if over or undervoltage, to turn on the LED
+  if((temp > 4000) || (temp < 1000)){
+    Serial.println(temp);
+    batterie = true;
+    check_led = true;
+  }
+  else{
+    batterie = false;
+  }
+
   // ignition is on! K15 with 12 V
   if (temp > 1000){
     // get rid of noise influence ; high pass filtering 
     // take 80% of old value and 20% of new value to smooth the display
     volt = (0.9 * volt) + (0.1 * temp);
 
-    if((volt > 4000) || (volt < 1000)){
-      batterie = true;
-      check_led = true;
-    }
-    else{
-      batterie = false;
-    }
-
-    
     // ignition came back bevor one hour has past, so reset timer
     // and redraw page, as we have blanked it out Loosing K15
     if (shutdown_timer != 0){
@@ -79,8 +80,8 @@ void update_values(void){
       //draw_value_volt(70);
       draw_value_cruise_control(70);
 
-//      Serial.println(warnings);
-      if (warnings){
+      //Serial.println(warnings);
+      if ((warnings) || (batterie)){
         // do nothing
       }
       else{

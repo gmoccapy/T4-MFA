@@ -40,21 +40,39 @@ void check_IO(int PIN, bool mcp_state){
     case PIN_TRUNK:
       Serial.print("PIN_TRUNK IO has changed to ");
       Serial.println(mcp_state);
-      warnings += 1;
+      if (mcp_state == true){
+        warnings += 1;
+        trunk = true;
+      }
+      else{
+        trunk = false;
+      }
 
       break;
 
     case PIN_R_DOOR:
       Serial.print("PIN_R_DOOR IO has changed to");
       Serial.println(mcp_state);
-      warnings += 2;
+      if (mcp_state == true){
+        warnings += 2;
+        door_r = true;
+      }
+      else{
+        door_r = false;
+      }
 
       break;
 
     case PIN_S_DOOR:
       Serial.print("PIN_S_DOOR IO has changed to ");
       Serial.println(mcp_state);
-      warnings += 4;
+      if (mcp_state == true){
+        warnings += 4;
+        door_s = true;
+      }
+      else{
+        door_s = false;
+      }
 
       break;
 
@@ -76,10 +94,10 @@ void check_IO(int PIN, bool mcp_state){
       Serial.println(mcp_state);
       if(mcp_state == true){
         warnings += 16;
-        tft.drawXBitmap(Icon_Pos_Coolant[0], Icon_Pos_Coolant[1], sym_coolant, 50, 50, TFT_RED);
+        coolant = true;
       }
       else{
-        tft.fillRect(Icon_Pos_Coolant[0], Icon_Pos_Coolant[1], 50, 50, BACK_COLOR);
+        coolant = false;
       }
       break;
 
@@ -88,10 +106,10 @@ void check_IO(int PIN, bool mcp_state){
       Serial.println(mcp_state);
       if(mcp_state == true){
         warnings += 32;
-        tft.drawXBitmap(Icon_Pos_BrakePads[0], Icon_Pos_BrakePads[1], sym_brakepads, 50, 50, TFT_ORANGE);
+        brakepads = true;
       }
       else{
-        tft.fillRect(Icon_Pos_BrakePads[0], Icon_Pos_BrakePads[1], 50, 50, BACK_COLOR);
+        brakepads = false;
       }
       break;
 
@@ -100,11 +118,11 @@ void check_IO(int PIN, bool mcp_state){
       Serial.println(mcp_state);
       if(mcp_state == true){
         warnings += 64;
-      //   tft.drawXBitmap(Icon_Pos_BrakePads[0], Icon_Pos_BrakePads[1], sym_brakepads, 50, 50, TFT_ORANGE);
+        motor_cap = true;
       }
-      // else{
-      //   tft.fillRect(Icon_Pos_BrakePads[0], Icon_Pos_BrakePads[1], 50, 50, BACK_COLOR);
-      // }
+      else{
+        motor_cap = false;
+      }
       break;
 
     case PIN_WASHER_FLUID:
@@ -112,10 +130,10 @@ void check_IO(int PIN, bool mcp_state){
       Serial.println(mcp_state);
       if(mcp_state == true){
         warnings += 128;
-        tft.drawXBitmap(Icon_Pos_WasherFluid[0], Icon_Pos_WasherFluid[1], sym_washer_fluid, 50, 50, TFT_ORANGE);
+        washer_fluid = true;
       }
       else{
-        tft.fillRect(Icon_Pos_WasherFluid[0], Icon_Pos_WasherFluid[1], 50, 50, BACK_COLOR);
+        washer_fluid = false;
       }
       break;
 
@@ -124,10 +142,10 @@ void check_IO(int PIN, bool mcp_state){
       Serial.println(mcp_state);
       if(mcp_state == true){
         warnings += 256;
-        tft.drawXBitmap(Icon_Pos_BrakeSystem[0], Icon_Pos_BrakeSystem[1], sym_brakesystem, 50, 50, TFT_RED);
+        brakesystem = true;
       }
       else{
-        tft.fillRect(Icon_Pos_BrakeSystem[0], Icon_Pos_BrakeSystem[1], 50, 50, BACK_COLOR);
+        brakesystem = false;
       }
       break;
 

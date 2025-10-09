@@ -35,20 +35,20 @@ float volt = 0;
 // factor 1.07 because reading was wrong
 #define VOLT_FAKTOR (3.3 / 4095.0 ) * ((220.0 + 33.0 ) / 33.0) * 1.07
 
-unsigned long shutdown_timer = 0;   	// time for update values in msec
+unsigned long shutdown_timer = 0;          	// time for update values in msec
 
-uint16_t TEXT_COLOR = DAY_TEXT_COLOR;  // with this we are able to change color with light state
+uint16_t TEXT_COLOR = DAY_TEXT_COLOR;       // with this we are able to change color with light state
 
 // DEBUG : Need to get suitable places for th LED, May be we hide the dial to show them
 int Icon_Pos_Coolant[2]     = { 20,  50};   // position of LED icon    coolant      red
 int Icon_Pos_BrakeSystem[2] = {135,  50};   // position of LED icon    brakepads    orange
 int Icon_Pos_Petrol[2]      = {240,  50};   // position of LED icon    petrol       orange
-int Icon_Pos_Oil[2]         = { 70, 140};   // 20 / 140 position of LED icon    oil          red / orange
+int Icon_Pos_Oil[2]         = { 70, 120};   // 20 / 140 position of LED icon    oil          red / orange
 int Icon_Pos_BrakePads[2]   = {135, 140};   // position of LED icon    brakepads    red
 int Icon_Pos_WasherFluid[2] = {240, 140};   // position of LED icon    washer_fluid orange
 int Icon_Pos_Light[2]       = { 20, 210};   // position of LED icon    light        green
 int Icon_Pos_Door[2]        = {135, 210};   // position of LED icon    door         orange
-int Icon_Pos_Batterie[2]    = {240, 210};   // position of LED icon    batterie     red
+int Icon_Pos_Batterie[2]    = {210, 230};   // 240 / 210 position of LED icon    batterie     red
 
 struct values_to_save {           // Data to be stored permanetly, 
     int page; 				            // Page to display
@@ -115,16 +115,16 @@ bool petrol = false;                  // reserve warning controlled by 0x320 can
 bool door = false;                    // left door is open (true) or closed (false) from can message 0x320
 bool batterie = false;                // avoid flicker of batterie symbol during startup and slow increasing voltage due to filter       
 // we get from MCP port expander
-// bool coolant = true;                  // coolant warning controlled IO Pull Up
-// bool door_r = true;                   // right door is open (false) or closed (true) from IO Pull Up
-// bool door_s = true;                   // sliding door is open (false) or closed (true) from IO Pull Up
-// bool trunk = true;                    // trunk is open (false) or closed (true) from IO Pull Up
-// bool motor_cap = true;                // motor cap is open (false) or closed (true) from IO Pull Up
-bool oil_presure = false;              // oil presure warning controlled by IO Pull Up 
+bool coolant = false;                 // coolant warning controlled IO Pull Up
+bool door_r = false;                  // right door is open (false) or closed (true) from IO Pull Up
+bool door_s = false;                  // sliding door is open (false) or closed (true) from IO Pull Up
+bool trunk = false;                   // trunk is open (false) or closed (true) from IO Pull Up
+bool motor_cap = false;               // motor cap is open (false) or closed (true) from IO Pull Up
+bool oil_presure = false;             // oil presure warning controlled by IO Pull Up 
 // bool oil_level = true;                // oil level warning controlled by IO Pull Up
-// bool washer_fluid = true;             // washer_fluid warning controlled IO Pull Up
-// bool brakepads = true;                // Brakepads warning controlled IO Pull Up
-// bool brakesystem = true;              // Brakefluid warning controlled IO Pull Up
+bool washer_fluid = true;             // washer_fluid warning controlled IO Pull Up
+bool brakepads = false;               // Brakepads warning controlled IO Pull Up
+bool brakesystem = false;             // Brakefluid warning controlled IO Pull Up
 int warnings = false;                 // we count infos, warnings and critical infos
 
 int speed;                            // rpm of the motor
