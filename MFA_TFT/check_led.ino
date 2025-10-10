@@ -17,11 +17,13 @@
 
 void check_LED (void){
   Serial.println("this is check LED");
-  tft.drawRect(51, 107, 217, 173, TFT_RED);
-  tft.fillRect(52, 108, 215, 171, BACK_COLOR);
-
 
   if(Data.page == 0){
+
+    tft.drawRect(51, 107, 217, 173, TFT_RED);
+    tft.fillRect(52, 108, 215, 171, BACK_COLOR);
+
+// DEBUG: no place for light symbol, light on/off signaled by TEXT_COLOR
       // light control // over CAN
       if((light == true) && (TEXT_COLOR != NIGHT_TEXT_COLOR)){
         TEXT_COLOR = NIGHT_TEXT_COLOR;
@@ -32,7 +34,6 @@ void check_LED (void){
         DrawSelected(Data.page);
       }
 
-// DEBUG: no place for light symbol, light on/off signaled by TEXT_COLOR
       // if(light == true){
       //   tft.drawXBitmap(Icon_Pos_Light[0], Icon_Pos_Light[1], sym_light, 50, 50, TFT_GREEN);
       // }

@@ -20,8 +20,8 @@ void update_volt(void){
   temp = analogRead(PIN_Volt);      
 
   // Check if over or undervoltage, to turn on the LED
-  if((temp > 4000) || (temp < 1500)){
-    Serial.println(temp);
+  if((temp > 4000) || (temp < 1800)){
+//    Serial.println(temp);
     if (batterie == false) {
       batterie = true;
       check_led = true;
@@ -86,7 +86,7 @@ void update_values(void){
       draw_value_cruise_control(70);
 
       //Serial.println(warnings);
-      if ((warnings) || (batterie) ){
+      if ((warnings) || (batterie) || (motor_on == false)){
         // do nothing
       }
       else{

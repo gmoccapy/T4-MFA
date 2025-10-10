@@ -149,14 +149,22 @@ void loop(void) {
   }
 
   // DEBUG : Check LED behavior
-  //petrol = true;
+  motor_on = false;
+  petrol = true;
+  //batterie = true;
+  brakepads = true;
+  brakesystem = true;
+  washer_fluid = true;
+  oil_presure = true;
+  door = true;
+  coolant = true;
 
   // let the symbol blink, so we do not need a special place for the LED
   // can not be done in check LED, as it will lead to a blinking dial in this case line is 316
   // and should not been done if shutdown timer is running
   if (shutdown_timer == 0){
     if(petrol == true){
-      if(Data.time_start % 2 == 0){
+      if(Data.time_start % 2 != 0){
         temp_color = TFT_ORANGE;
       }
       else{

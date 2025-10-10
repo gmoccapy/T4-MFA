@@ -170,16 +170,24 @@ void draw_bar(String label, String unit, int X_Pos, int Y_Pos, float value, int 
 
   temp = map(value, min_value, max_value, 0, 120); // 120 = Hight of 158 - 19 - 19 (label and value)
 
-  uint32_t color = TEXT_COLOR;
+  temp_color = TEXT_COLOR;
 
   if ((value < lower_limit) || (value > upper_limit)){
-    color = TFT_ORANGE;
+    temp_color = TFT_ORANGE;
     if(max_limit < 0){
-      color = TFT_RED;
+      temp_color = TFT_RED;
     }
   }
   if ((value > max_limit) && (max_limit > 0)){
-    color = TFT_RED;
+    temp_color = TFT_RED;
+  }
+  if (batterie == true){
+    if (Data.time_start % 2 == 0){
+      temp_color = TFT_RED;
+    }
+    else{
+      temp_color = TEXT_COLOR;
+    }
   }
   box.setColorDepth(8);
   box.createSprite(width, height);
@@ -196,10 +204,10 @@ void draw_bar(String label, String unit, int X_Pos, int Y_Pos, float value, int 
   // MAX Oil Temp = 160°C and bar is 158 - 19 - 19  Pixel hight
   // 88°C is then 120 x 88 / 160
   if(X_Pos < 160){
-    box.fillRect(12, height - 19 - temp, width - 20, temp, color);
+    box.fillRect(12, height - 19 - temp, width - 20, temp, temp_color);
   }
   else{
-    box.fillRect(8, height - 19 - temp, width - 20, temp, color);
+    box.fillRect(8, height - 19 - temp, width - 20, temp, temp_color);
   }
 
   box.setTextColor(TEXT_COLOR, BACK_COLOR);
