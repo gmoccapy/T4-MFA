@@ -51,9 +51,9 @@ void evaluate_CAN_messages(){
         if (deposit > (Data.deposit_last + 5) ){ 
           reset = REFUEL;   
         }
-        //portENTER_CRITICAL(&dataMux);
+        portENTER_CRITICAL(&dataMux);
           Data.deposit_last = deposit;
-        //portEXIT_CRITICAL(&dataMux);
+        portEXIT_CRITICAL(&dataMux);
       }
 
 
@@ -117,7 +117,7 @@ void evaluate_CAN_messages(){
       // we can do a complete recalculation of the petrol consumption, as we are now sure one km has been driven
       if(value != km_total){
         km_total = value;
-        //portENTER_CRITICAL(&dataMux);
+        portENTER_CRITICAL(&dataMux);
           Data.km_start += 1;
           Data.km_refuel += 1;
           Data.km_long_period += 1;
@@ -143,7 +143,7 @@ void evaluate_CAN_messages(){
           if ((counter < 24) && (counter != 0)){
             C_last_25_km = C_last_25_km / float(counter) * 25.0;
           }
-        //portEXIT_CRITICAL(&dataMux);
+        portEXIT_CRITICAL(&dataMux);
 
       }
       break;
@@ -171,13 +171,13 @@ void evaluate_CAN_messages(){
     {
       velocity_actual = rxFrame.data[3] * 1.28;
   
-      //portENTER_CRITICAL(&dataMux);
+      portENTER_CRITICAL(&dataMux);
         if(Data.velocity_max < velocity_actual){
           Data.velocity_max = velocity_actual;
         }
 
         velocity_cruise_control = rxFrame.data[4] * 1.28;
-      //portEXIT_CRITICAL(&dataMux);
+      portEXIT_CRITICAL(&dataMux);
 
 // ToDo : 
 // Check if we need to control not only on off, but also active and not active
@@ -256,12 +256,12 @@ void evaluate_CAN_messages(){
         C_last = C_motor_value;                // µl
 
         delta = delta / 1000.0;                // µl in ml
-        //portENTER_CRITICAL(&dataMux);
+        portENTER_CRITICAL(&dataMux);
           Data.C_last_km += delta;               // ml
           Data.C_start += delta;                 // ml
           Data.C_refuel += delta;                // ml
           Data.C_long_period += delta / 1000.0;  // ml in l
-        //portEXIT_CRITICAL(&dataMux);
+        portEXIT_CRITICAL(&dataMux);
 
         time_C_period = millis() - time_C_period_last;
         time_C_period_last = millis();

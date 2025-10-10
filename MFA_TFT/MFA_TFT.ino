@@ -31,6 +31,8 @@
 #include "pin_setup.h"
 #include "variables.h"
 
+portMUX_TYPE dataMux = portMUX_INITIALIZER_UNLOCKED;
+
 // include images and symbols
 #include "symbols.h"
 //#include "logo.h"
