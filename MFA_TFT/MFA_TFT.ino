@@ -149,15 +149,16 @@ void loop(void) {
   }
 
   // DEBUG : Check LED behavior
-  motor_on = false;
-  petrol = true;
-  //batterie = true;
-  brakepads = true;
-  brakesystem = true;
-  washer_fluid = true;
-  oil_presure = true;
-  door = true;
-  coolant = true;
+  motor_on = true;
+  // petrol = true;
+  // batterie = true;
+  // brakepads = true;
+  // brakesystem = true;
+  // washer_fluid = true;
+  // oil_presure = true;
+  // door = true;
+  // coolant = true;
+  //warnings = 511;
 
   // let the symbol blink, so we do not need a special place for the LED
   // can not be done in check LED, as it will lead to a blinking dial in this case line is 316
@@ -207,16 +208,19 @@ void loop(void) {
     volatile int PIN = mcp.getLastInterruptPin();
     volatile int mcp_state = mcp.getCapturedInterrupt();
 
-    Serial.print("Interupted PIN = ");
-    Serial.println(PIN);
-    Serial.print("Pin states at time of interrupt: ");
+    // Serial.print("Interupted PIN = ");
+    // Serial.println(PIN);
+    // Serial.print("Pin states at time of interrupt: ");
     //Serial.println(mcp.getCapturedInterrupt(), 2);
     
-    Serial.println(bitRead(mcp.getCapturedInterrupt(), PIN));
+    // Serial.println(bitRead(mcp.getCapturedInterrupt(), PIN));
 
     check_IO(PIN, bitRead(mcp.getCapturedInterrupt(), PIN));
 
-    Serial.println("  Checked");
+    // Serial.println("  Checked");
+    // Serial.print("Data.mode = ");
+    // Serial.println(Data.mode);
+  
   }
 
 

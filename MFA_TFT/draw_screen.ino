@@ -19,6 +19,7 @@ void DrawSelected(int page){
   // This is the visible area
   tft.drawRect(10, 40, 300, 417, TFT_RED);
 
+//      Data.mode = START;
       drawCruiseControl(70);
       //drawVolt(70);
       tft.drawFastHLine(0, 100, 320, TEXT_COLOR);
@@ -32,7 +33,7 @@ void DrawSelected(int page){
       break;
     
     case 1:
-      Data.mode = REFUEL;
+//      Data.mode = REFUEL;
       drawTrip(72);
       drawActualConsumption(138);
       drawRange(204);
@@ -45,7 +46,7 @@ void DrawSelected(int page){
       break;
     
     case 2:
-      Data.mode = PERIOD;
+//      Data.mode = PERIOD;
       drawTrip(72);
       drawActualConsumption(138);
       drawRange(204);

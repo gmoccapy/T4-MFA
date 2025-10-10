@@ -91,9 +91,41 @@ void update_values(void){
       }
       else{
         // // draw_dial needs 181 pixel hight, value may be changes with #define SPRITESIZE and SPRITEPIVOT
-        // // C_last_25_km = 1755.65 ml/25km = 70.226 ml/km => 0,070226 l/km = 7.0226 l/100km 
-        temp = C_last_25_km / 250.0;  // ml/25 km and 100km gives factor 250     
-        draw_dial(75, 108, temp, 1, C_actual, 24.0, F("Ab"), F("Start"));
+        switch(Data.mode){
+
+          case START:  
+            // C_last_25_km = 1755.65 ml/25km = 70.226 ml/km => 0,070226 l/km = 7.0226 l/100km 
+            if (Data.km_start > 0 ){
+              // temp = C_last_25_km / 250.0;  // ml/25 km and 100km gives factor 250   
+              temp = (Data.C_start / float(Data.km_start)) / 10.0 ; // 1000 ml/l and 100 km gives factor 10
+            }
+            else{
+              temp = 0.0;
+            }
+              draw_dial(75, 108, temp, 1, C_actual, 24.0, F("Ab"), F("Start"));
+            break;
+
+          case REFUEL:
+            if (Data.km_start > 0 ){
+              temp = (Data.C_refuel / float(Data.km_refuel)) / 10.0 ; // 1000 ml/l and 100 km gives factor 10
+            }
+            else{
+              temp = 0.0;
+            }
+            draw_dial(75, 108, temp, 1, C_actual, 24.0, F("Ab"), F("Tanken"));
+            break;
+
+          case PERIOD:
+            if (Data.km_start > 0 ){
+              temp = (Data.C_long_period / float(Data.km_long_period)) * 100.0; // l / km *100
+            }
+            else{
+              temp = 0.0;
+            }
+            draw_dial(75, 108, temp, 1, C_actual, 24.0, F(""), F("Langzeit"));
+            break;
+
+        }
       }
 
       // draw oil temp scale
@@ -105,7 +137,7 @@ void update_values(void){
       draw_value_range(316);
 
       //draw_value_average_consumption(372, Data.mode);
-      draw_value_actual_consumption(372);
+      draw_value_average_consumption(372, Data.mode);
 
       draw_value_out_temp(428);
 
@@ -326,7 +358,7 @@ void draw_value_average_consumption(int Y_Pos, int _case){
   
   switch(_case){
 
-    case 1: // average consumption from start
+    case START: // average consumption from start
       if(Data.km_start > 0){
         // C_start = 2100 ml and km_start = 35 km => 2100 ml / 35 km => 60 ml / 1 km => 6000 ml / 100 km => 6,0 l / 100 km 
         temp = (Data.C_start / float(Data.km_start)) / 10.0 ; // 1000 ml/l and 100 km gives factor 10
@@ -337,7 +369,7 @@ void draw_value_average_consumption(int Y_Pos, int _case){
       }  
       break;
 
-    case 2: // average consumption since refule
+    case REFUEL: // average consumption since refule
       if(Data.km_refuel > 0){
         // C_refuel = 2100 ml and km_refuel = 35 km => 2100 ml / 35 km => 60 ml / 1 km => 6000 ml / 100 km => 6,0 l / 100 km 
         temp = (Data.C_refuel / float(Data.km_refuel)) / 10.0 ; // 1000 ml/l and 100 km gives factor 10
@@ -348,7 +380,7 @@ void draw_value_average_consumption(int Y_Pos, int _case){
       }  
       break;
 
-    case 3: // average consumption long period
+    case PERIOD: // average consumption long period
       if(Data.km_long_period > 0){
         // C_period = 2.100 l and km_period = 35 km => 2.1 l / 35 km => 0.06 l/km => 6.0 l/100 km  
         temp = (Data.C_long_period / float(Data.km_long_period)) * 100.0; // l / km *100

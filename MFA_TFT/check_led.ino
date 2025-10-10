@@ -16,7 +16,7 @@
 
 
 void check_LED (void){
-  Serial.println("this is check LED");
+  //Serial.println("this is check LED");
 
   if(Data.page == 0){
 
