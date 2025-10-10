@@ -119,10 +119,10 @@ void loop(void) {
     save = false;
   }
 
-  if (reset != 0){
-    reset_Data(reset);
+  if (reset == true){
+    reset_Data(Data.mode);
     //avoid page change
-    reset = 0;
+    reset = false;
   }
 
   // initial drawing the screen
@@ -198,10 +198,9 @@ void loop(void) {
     digitalWrite(PIN_STAY_ON, 0);
   }
 
-  if((Mode_Button_pressed != 0) && (millis() > Mode_Button_pressed + 3000)){
-    reset = Data.mode;
-    Mode_Button_pressed = 0;
-    Page_Switch_Done = true;                // If a reset has been requested, we do not want Page Change
+  if((Reset_Button_pressed != 0) && (millis() > Reset_Button_pressed + 3000)){
+    reset = true;
+    Reset_Button_pressed = 0;
   }
 
   if (!PIN_INT_state){
@@ -232,7 +231,7 @@ void switch_page(void){
     Data.page = 0;
   }
   temp_page = Data.page;
-  Page_Switch_Done = true;
+  //Page_Switch_Done = true;
   DrawSelected(Data.page);
   Serial.println("Button");
   check_LED();

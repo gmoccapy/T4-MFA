@@ -9,32 +9,15 @@ void check_IO(int PIN, bool mcp_state){
   switch(PIN){
 
     case PIN_MODE:
-      // Serial.print("PIN_MODE IO has changed to ");
-      // Serial.println(mcp_state);
+      Serial.print("PIN_MODE IO has changed to ");
+      Serial.println(mcp_state);
       if (mcp_state == true){               // releasing the button will change the page
         Data.mode += 1;
         if (Data.mode > 2){
           Data.mode = 0;
         }
-        Serial.print("Data Mode == ");
-        Serial.println(Data.mode);
-        Serial.print("Data KM == ");
-        Serial.println(Data.km_long_period);
-        Serial.print("Data Cons. == ");
-        Serial.println(Data.C_long_period);
-
-        DrawSelected(Data.page);
-      //   Mode_Button_pressed = 0;
-      //   if (Page_Switch_Done == false){
-      //     switch_page();
-      //   }
       }
-      // else{
-      //   Mode_Button_pressed = millis();
-      //   if (Page_Switch_Done == true){
-      //     Page_Switch_Done = false;
-      //   }
-      // }
+
       break;
 
     case PIN_MEMORY:
@@ -46,7 +29,12 @@ void check_IO(int PIN, bool mcp_state){
     case PIN_RESET:
       Serial.print("PIN_RESET IO has changed to ");
       Serial.println(mcp_state);
-
+      if (mcp_state == true){
+        Reset_Button_pressed = millis();
+      }
+      else{
+        Reset_Button_pressed = 0;
+      }
       break;
 
     case PIN_TRUNK:

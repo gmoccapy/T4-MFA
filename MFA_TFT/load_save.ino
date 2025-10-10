@@ -101,11 +101,11 @@ void reset_Data(int mode){
   // But we need to find a solution for that, may be can be realized with deep sleep
 
 
-  //Serial.print("User reset off ");
-  //Serial.print("\t");
+  Serial.print("User reset off ");
+  Serial.print("\t");
 
   if(mode == START){
-    //Serial.println("START");
+    Serial.println("START");
     Data.C_start = 0.0;
     Data.km_start = 0;
     C_last = 0.0;
@@ -114,7 +114,7 @@ void reset_Data(int mode){
 //    String(F("R_START")).toCharArray(TFT_String, 12);
   }
   else if (mode == REFUEL){
-    //Serial.println("REFUEL");
+    Serial.println("REFUEL");
     Data.C_refuel = 0.0;
     Data.km_refuel = 0;
     Data.time_refuel = 0;
@@ -123,7 +123,7 @@ void reset_Data(int mode){
 //    String(F("R_REFUEL")).toCharArray(TFT_String, 12);
   }
   else if (mode == PERIOD){
-    //Serial.println("PERIOD");
+    Serial.println("PERIOD");
     Data.C_long_period = 0.0;
     Data.km_long_period = 0;
     Data.time_long_period = 0;

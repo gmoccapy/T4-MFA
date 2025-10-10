@@ -1,4 +1,4 @@
-#include <sys/_stdint.h>
+//#include <sys/_stdint.h>
 
 // defining the following, reduced the ram space because "100km" has not to be coded on several places 
 #define HUNDERTKM "100km"
@@ -101,9 +101,11 @@ float temp = 0.0;                     // holds temporarily different values
 bool PIN_INT_state = true;
 
 // variables for the button pin
-unsigned int Mode_Button_pressed = 0;
-bool Page_Switch_Done = true;
-int reset = 0;                        // Set to 1 to reset from start, 2 to reset refuel and 3 to reset period
+//unsigned int Mode_Button_pressed = 0;
+//unsigned int Memory_Button_pressed = 0;
+unsigned int Reset_Button_pressed = 0;
+//bool Page_Switch_Done = true;
+bool reset = false;                   // Set to Data.mode to reset values : start, refuel and period
 
 bool start = false;                   // is needed for initial screen display
 bool motor_on	= false;                // Speed has been over 900 U/min than motor_on = true
