@@ -86,7 +86,7 @@ void update_values(void){
       draw_value_cruise_control(70);
 
       //Serial.println(warnings);
-      if ((warnings) || (batterie)){
+      if ((warnings) || (batterie) ){
         // do nothing
       }
       else{

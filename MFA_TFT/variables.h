@@ -1,3 +1,4 @@
+#include <sys/_stdint.h>
 
 // defining the following, reduced the ram space because "100km" has not to be coded on several places 
 #define HUNDERTKM "100km"
@@ -38,17 +39,18 @@ float volt = 0;
 unsigned long shutdown_timer = 0;          	// time for update values in msec
 
 uint16_t TEXT_COLOR = DAY_TEXT_COLOR;       // with this we are able to change color with light state
+uint16_t temp_color;                        // we use this temporäry color to let LED blink
 
 // DEBUG : Need to get suitable places for th LED, May be we hide the dial to show them
-int Icon_Pos_Coolant[2]     = { 70, 170};   // position of LED icon    coolant      red
-int Icon_Pos_BrakeSystem[2] = {140, 170};   // position of LED icon    brakepads    orange
-int Icon_Pos_Petrol[2]      = {210, 170};   // position of LED icon    petrol       orange
+int Icon_Pos_Coolant[2]     = { 70, 165};   // position of LED icon    coolant      red
+int Icon_Pos_BrakeSystem[2] = {140, 165};   // position of LED icon    brakepads    orange
+int Icon_Pos_Petrol[2]      = { 19, 316 - 25};   // 210 / 165 position of LED icon    petrol       orange
 int Icon_Pos_Oil[2]         = { 70, 110};   // position of LED icon    oil          red / orange
 int Icon_Pos_BrakePads[2]   = {140, 110};   // position of LED icon    brakepads    red
 int Icon_Pos_WasherFluid[2] = {210, 110};   // position of LED icon    washer_fluid orange
-int Icon_Pos_Light[2]       = { 70, 230};   // position of LED icon    light        green
-int Icon_Pos_Door[2]        = {140, 230};   // position of LED icon    door         orange
-int Icon_Pos_Batterie[2]    = {210, 230};   // position of LED icon    batterie     red
+int Icon_Pos_Light[2]       = { 70, 220};   // position of LED icon    light        green
+int Icon_Pos_Door[2]        = {140, 220};   // position of LED icon    door         orange
+int Icon_Pos_Batterie[2]    = {210, 220};   // position of LED icon    batterie     red
 
 struct values_to_save {           // Data to be stored permanetly, 
     int page; 				            // Page to display

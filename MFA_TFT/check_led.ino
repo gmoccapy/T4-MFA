@@ -32,19 +32,26 @@ void check_LED (void){
         DrawSelected(Data.page);
       }
 
-      if(light == true){
-        tft.drawXBitmap(Icon_Pos_Light[0], Icon_Pos_Light[1], sym_light, 50, 50, TFT_GREEN);
-      }
-      else{
-        tft.fillRect(Icon_Pos_Light[0], Icon_Pos_Light[1], 50, 50, BACK_COLOR);
-      }
+// DEBUG: no place for light symbol, light on/off signaled by TEXT_COLOR
+      // if(light == true){
+      //   tft.drawXBitmap(Icon_Pos_Light[0], Icon_Pos_Light[1], sym_light, 50, 50, TFT_GREEN);
+      // }
+      // else{
+      //   tft.fillRect(Icon_Pos_Light[0], Icon_Pos_Light[1], 50, 50, BACK_COLOR);
+      // }
 
-      if(petrol == true){
-        tft.drawXBitmap(Icon_Pos_Petrol[0], Icon_Pos_Petrol[1], sym_petrol, 50, 50, TFT_ORANGE);
-      }
-      else{
-        tft.fillRect(Icon_Pos_Petrol[0], Icon_Pos_Petrol[1], 50, 50, BACK_COLOR);
-      }
+      // if(petrol == true){
+      //   if(Data.time_start % 2 == 0){
+      //     tft.drawXBitmap(19, 316 - 25, sym_petrol, 50, 50, TFT_ORANGE);
+      //   }
+      //   else{
+      //     tft.drawXBitmap(19, 316 - 25, sym_petrol, 50, 50, TEXT_COLOR);
+      //   }
+      //   //tft.drawXBitmap(Icon_Pos_Petrol[0], Icon_Pos_Petrol[1], sym_petrol, 50, 50, TFT_ORANGE);
+      // }
+      // else{
+      //   tft.fillRect(Icon_Pos_Petrol[0], Icon_Pos_Petrol[1], 50, 50, BACK_COLOR);
+      // }
 
       if(door == true){
         tft.drawXBitmap(Icon_Pos_Door[0], Icon_Pos_Door[1], sym_door, 50, 50, TFT_ORANGE);

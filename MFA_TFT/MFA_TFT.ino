@@ -148,8 +148,27 @@ void loop(void) {
     lastMillis = millis();
   }
 
-  // DEBUG : Check Battreie LED behavior
-  //motor_on = true;
+  // DEBUG : Check LED behavior
+  //petrol = true;
+
+  // let the symbol blink, so we do not need a special place for the LED
+  // can not be done in check LED, as it will lead to a blinking dial in this case line is 316
+  // and should not been done if shutdown timer is running
+  if (shutdown_timer == 0){
+    if(petrol == true){
+      if(Data.time_start % 2 == 0){
+        temp_color = TFT_ORANGE;
+      }
+      else{
+        temp_color = TEXT_COLOR;
+      }
+      tft.drawXBitmap(Icon_Pos_Petrol[0], Icon_Pos_Petrol[1], sym_petrol, 50, 50, temp_color);
+    }
+    else if ((petrol == false) && (temp_color == TFT_ORANGE)){
+      tft.drawXBitmap(Icon_Pos_Petrol[0], Icon_Pos_Petrol[1], sym_petrol, 50, 50, TEXT_COLOR);
+    }
+  }
+
 
   update_volt();
 
