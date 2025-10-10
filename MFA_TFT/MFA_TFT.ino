@@ -2,7 +2,7 @@
   This is a Volkswagen MFA adapted to use CAN Bus from T4
   Based on an ESP32 and RPI TFT Color Display
   Data will be collected by a WCMCU-230 CAN Bus Modul
-  
+
   Please note, that the RPI display has 480 x 320 Pixel, but 
   the visible area will only be: (not modifying the plastik parts of the car) 
   min X_Pos = 10 and max X_Pos = 310
@@ -66,6 +66,44 @@ TaskHandle_t EvaluateCAN;
 // function defination to handle also default values
 void drawUnits(int Y_Pos, String upper_line, String lower_line = "");
 
+// -- Helper functions for critical section safe access --
+void get_data_snapshot(int* page, int* mode, float* last25km) {
+  portENTER_CRITICAL(&dataMux);
+  *page = Data.page;
+  *mode = Data.mode;
+  *last25km = C_last_25_km;
+  portEXIT_CRITICAL(&dataMux);
+}
+
+bool fetch_and_clear_check_led() {
+  bool flag;
+  portENTER_CRITICAL(&dataMux);
+  flag = check_led;
+  check_led = false;
+  portEXIT_CRITICAL(&dataMux);
+  return flag;
+}
+
+void safe_update_mode() {
+  portENTER_CRITICAL(&dataMux);
+  Data.mode += 1;
+  if (Data.mode > 2) {
+    Data.mode = 0;
+  }
+  portEXIT_CRITICAL(&dataMux);
+}
+
+void safe_update_page() {
+  portENTER_CRITICAL(&dataMux);
+  Data.page += 1;
+  if (Data.page > 4) {
+    Data.page = 0;
+  }
+  portEXIT_CRITICAL(&dataMux);
+}
+
+// ------------------------------------------------------
+
 void setup(void) {
 
   Serial.begin(115200);
@@ -88,9 +126,11 @@ void setup(void) {
   // load the Data stored in memory
   load_Data();
 
-// DEBUG:
+  // DEBUG:
+  portENTER_CRITICAL(&dataMux);
   Data.page = 0;
   Data.mode = START;
+  portEXIT_CRITICAL(&dataMux);
 
   temp_page = Data.page;
 
@@ -103,49 +143,41 @@ void setup(void) {
 
 // Main loop running on Core 1 handles all drawing of TFT and IO Stuff
 void loop(void) {
-
-// DEBUG
-  // Serial.print(time_C_period);
-  // Serial.print("\t");
-  // Serial.print(C_actual * 100.0 / velocity_actual);
-  // Serial.print("\t");
-  // Serial.print(C_motor_value);
-  // Serial.print("\t");
-  // Serial.println(velocity_actual);
-
+  // Get a safe snapshot of important shared data
+  int page, mode;
+  float last25km;
+  get_data_snapshot(&page, &mode, &last25km);
 
   // we are not able to do any hardware stuff on the second task, as it will lead to crashes
   // That's the reason we are doing it in main loop
-  if (save == true){
+  if (save == true) {
     save_Data();
     save = false;
   }
 
-  if (reset == true){
-    reset_Data(Data.mode);
+  if (reset == true) {
+    reset_Data(mode);
     //avoid page change
     reset = false;
   }
 
   // initial drawing the screen
-  if(start == false){
-    // draw the Starting image
+  if(start == false) {
     draw_InitPage();
     delay(2000);
 
-    DrawSelected(Data.page);
+    DrawSelected(page);
     start = true;
     Serial.println("Start");
-    
+
     // We do an initial check for the mccp state, as we may have unatendet IO's
-    for (byte i = 0; i < 16; i++){
+    for (byte i = 0; i < 16; i++) {
       check_IO(i, mcp.digitalRead(i));
     }
-
   }
 
   // update time every second
-  if (millis() - lastMillis > 1000){
+  if (millis() - lastMillis > 1000) {
     update_time();
     lastMillis = millis();
   }
@@ -165,95 +197,87 @@ void loop(void) {
   // let the symbol blink, so we do not need a special place for the LED
   // can not be done in check LED, as it will lead to a blinking dial in this case line is 316
   // and should not been done if shutdown timer is running
-  if (shutdown_timer == 0){
-    if(petrol == true){
-      if(Data.time_start % 2 != 0){
+  if (shutdown_timer == 0) {
+    bool is_petrol;
+    portENTER_CRITICAL(&dataMux);
+    is_petrol = petrol;
+    portEXIT_CRITICAL(&dataMux);
+
+    if(is_petrol == true){
+      int ts;
+      portENTER_CRITICAL(&dataMux);
+      ts = Data.time_start;
+      portEXIT_CRITICAL(&dataMux);
+
+      if(ts % 2 != 0){
         temp_color = TFT_ORANGE;
-      }
-      else{
+      } else {
         temp_color = TEXT_COLOR;
       }
       tft.drawXBitmap(Icon_Pos_Petrol[0], Icon_Pos_Petrol[1], sym_petrol, 50, 50, temp_color);
     }
-    else if ((petrol == false) && (temp_color == TFT_ORANGE)){
+    else if ((is_petrol == false) && (temp_color == TFT_ORANGE)){
       tft.drawXBitmap(Icon_Pos_Petrol[0], Icon_Pos_Petrol[1], sym_petrol, 50, 50, TEXT_COLOR);
     }
   }
 
-
   update_volt();
 
-  if (check_led == true){
-     check_LED();
-     check_led = false;
+  // Use critical section for check_led read/clear
+  if (fetch_and_clear_check_led()) {
+    check_LED();
   }
 
   // to avoid update values for door warning in full page mode
-  if (Data.page == temp_page){
+  int temp_pg;
+  portENTER_CRITICAL(&dataMux);
+  temp_pg = temp_page;
+  portEXIT_CRITICAL(&dataMux);
+  if (page == temp_pg) {
     update_values();
   }
 
   // stay_on == true after we had one time ignition
   // shutdown_timer will be set switching off ignition 
-  if ((shutdown_timer != 0) && (millis() > shutdown_timer + 3600000)){
+  if ((shutdown_timer != 0) && (millis() > shutdown_timer + 3600000)) {
     shutdown_timer = 0;
     digitalWrite(PIN_STAY_ON, 0);
   }
 
-  if((Mode_Button_pressed != 0) && (millis() > Mode_Button_pressed + 200)){
-    portENTER_CRITICAL(&dataMux);
-      Data.mode += 1;
-      if (Data.mode > 2){
-        Data.mode = 0;
-      }
-    portEXIT_CRITICAL(&dataMux);
+  if((Mode_Button_pressed != 0) && (millis() > Mode_Button_pressed + 200)) {
+    safe_update_mode();
     Mode_Button_pressed = 0;
   }
 
-
-
-
-  if((Reset_Button_pressed != 0) && (millis() > Reset_Button_pressed + 3000)){
+  if((Reset_Button_pressed != 0) && (millis() > Reset_Button_pressed + 3000)) {
     reset = true;
     Reset_Button_pressed = 0;
   }
 
-  if (!PIN_INT_state){
+  if (!PIN_INT_state) {
     volatile int PIN = mcp.getLastInterruptPin();
     volatile int mcp_state = mcp.getCapturedInterrupt();
 
-    // Serial.print("Interupted PIN = ");
-    // Serial.println(PIN);
-    // Serial.print("Pin states at time of interrupt: ");
-    //Serial.println(mcp.getCapturedInterrupt(), 2);
-    
-    // Serial.println(bitRead(mcp.getCapturedInterrupt(), PIN));
-
     check_IO(PIN, bitRead(mcp.getCapturedInterrupt(), PIN));
-
     Serial.println("Checked Interupted PIN");
-  
   }
 }
 
-void switch_page(void){
-
+void switch_page(void) {
+  safe_update_page();
+  int page_snapshot;
   portENTER_CRITICAL(&dataMux);
-   Data.page += 1;
-   if (Data.page > 4){
-     Data.page = 0;
-   }
+  page_snapshot = Data.page;
   portEXIT_CRITICAL(&dataMux);
 
-  temp_page = Data.page;
-  //Page_Switch_Done = true;
-  DrawSelected(Data.page);
+  temp_page = page_snapshot;
+  DrawSelected(page_snapshot);
   Serial.println("Button");
   check_LED();
 }
 
 // This loop runs on Core 0, while the main loop runs on Core 1
-void CAN_Loop (void *parameter){
+void CAN_Loop (void *parameter) {
   // create infinite loop
   for(;;){
     // We set custom timeout to 0, default is 1000
@@ -263,7 +287,6 @@ void CAN_Loop (void *parameter){
   }
 }
 
-void ISR_INT_PIN(void){
+void ISR_INT_PIN(void) {
   PIN_INT_state = digitalRead(INT_PIN);
 }
-
