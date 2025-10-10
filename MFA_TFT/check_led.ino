@@ -86,11 +86,12 @@ void check_LED (void){
       }
 
     // motor_cap
+// ToDo : We need Symbols for this (idear: Initioal grafic with colored motor cap)
       if(motor_cap == true){
-        tft.drawXBitmap(Icon_Pos_BrakePads[0], Icon_Pos_BrakePads[1], sym_brakepads, 50, 50, TFT_ORANGE);
+        tft.drawXBitmap(Icon_Pos_Door[0], Icon_Pos_Door[1], sym_door, 50, 50, TFT_ORANGE);
       }
       else{
-        tft.fillRect(Icon_Pos_BrakePads[0], Icon_Pos_BrakePads[1], 50, 50, BACK_COLOR);
+        tft.fillRect(Icon_Pos_Door[0], Icon_Pos_Door[1], 50, 50, BACK_COLOR);
       }
 
     // washer fluid

@@ -20,21 +20,20 @@ void update_volt(void){
   temp = analogRead(PIN_Volt);      
 
   // Check if over or undervoltage, to turn on the LED
-  if((temp > 4000) || (temp < 1000)){
+  if((temp > 4000) || (temp < 1500)){
     Serial.println(temp);
-    batterie = true;
-    check_led = true;
+    if (batterie == false) {
+      batterie = true;
+      check_led = true;
+    }
   }
-  else{
+  else if(batterie == true) {
     batterie = false;
+    check_led = true;
   }
 
   // ignition is on! K15 with 12 V
-  if (temp > 1000){
-    // get rid of noise influence ; high pass filtering 
-    // take 80% of old value and 20% of new value to smooth the display
-    volt = (0.9 * volt) + (0.1 * temp);
-
+  if (temp > 1500){
     // ignition came back bevor one hour has past, so reset timer
     // and redraw page, as we have blanked it out Loosing K15
     if (shutdown_timer != 0){
@@ -42,7 +41,6 @@ void update_volt(void){
       if (temp_page != Data.page){
         temp_page = Data.page;
         DrawSelected(Data.page);
-        check_LED();
       }
     }
     // if we had an power off, we need to put Hold high
@@ -53,12 +51,19 @@ void update_volt(void){
   // no Current on K15, so switch off display (better sayed just draw black screen)
   else{
     volt = temp;
-    if ((shutdown_timer == 0) && (digitalRead(PIN_STAY_ON) == true)){
-      shutdown_timer = millis();
-      temp_page = 6;
-      DrawSelected(temp_page);
+    if (motor_on == false){
+      if ((shutdown_timer == 0) && (digitalRead(PIN_STAY_ON) == true)){
+        shutdown_timer = millis();
+        check_led = false;  // otherwise we will have symbols displayed on off page
+        temp_page = 6;
+        DrawSelected(temp_page);
+      }
     }
-  } 
+  }
+  // get rid of noise influence ; high pass filtering 
+  // take 90% of old value and 10% of new value to smooth the display
+  volt = (0.9 * volt) + (0.1 * temp);
+
 }
 
 void update_values(void){

@@ -40,15 +40,15 @@ unsigned long shutdown_timer = 0;          	// time for update values in msec
 uint16_t TEXT_COLOR = DAY_TEXT_COLOR;       // with this we are able to change color with light state
 
 // DEBUG : Need to get suitable places for th LED, May be we hide the dial to show them
-int Icon_Pos_Coolant[2]     = { 20,  50};   // position of LED icon    coolant      red
-int Icon_Pos_BrakeSystem[2] = {135,  50};   // position of LED icon    brakepads    orange
-int Icon_Pos_Petrol[2]      = {240,  50};   // position of LED icon    petrol       orange
-int Icon_Pos_Oil[2]         = { 70, 120};   // 20 / 140 position of LED icon    oil          red / orange
-int Icon_Pos_BrakePads[2]   = {135, 140};   // position of LED icon    brakepads    red
-int Icon_Pos_WasherFluid[2] = {240, 140};   // position of LED icon    washer_fluid orange
-int Icon_Pos_Light[2]       = { 20, 210};   // position of LED icon    light        green
-int Icon_Pos_Door[2]        = {135, 210};   // position of LED icon    door         orange
-int Icon_Pos_Batterie[2]    = {210, 230};   // 240 / 210 position of LED icon    batterie     red
+int Icon_Pos_Coolant[2]     = { 70, 170};   // position of LED icon    coolant      red
+int Icon_Pos_BrakeSystem[2] = {140, 170};   // position of LED icon    brakepads    orange
+int Icon_Pos_Petrol[2]      = {210, 170};   // position of LED icon    petrol       orange
+int Icon_Pos_Oil[2]         = { 70, 110};   // position of LED icon    oil          red / orange
+int Icon_Pos_BrakePads[2]   = {140, 110};   // position of LED icon    brakepads    red
+int Icon_Pos_WasherFluid[2] = {210, 110};   // position of LED icon    washer_fluid orange
+int Icon_Pos_Light[2]       = { 70, 230};   // position of LED icon    light        green
+int Icon_Pos_Door[2]        = {140, 230};   // position of LED icon    door         orange
+int Icon_Pos_Batterie[2]    = {210, 230};   // position of LED icon    batterie     red
 
 struct values_to_save {           // Data to be stored permanetly, 
     int page; 				            // Page to display
@@ -116,10 +116,10 @@ bool door = false;                    // left door is open (true) or closed (fal
 bool batterie = false;                // avoid flicker of batterie symbol during startup and slow increasing voltage due to filter       
 // we get from MCP port expander
 bool coolant = false;                 // coolant warning controlled IO Pull Up
-bool door_r = false;                  // right door is open (false) or closed (true) from IO Pull Up
-bool door_s = false;                  // sliding door is open (false) or closed (true) from IO Pull Up
-bool trunk = false;                   // trunk is open (false) or closed (true) from IO Pull Up
-bool motor_cap = false;               // motor cap is open (false) or closed (true) from IO Pull Up
+bool door_r = false;                  // right door is open or closed from IO Pull Up
+bool door_s = false;                  // sliding door is open or closed from IO Pull Up
+bool trunk = false;                   // trunk is open or closed from IO Pull Up
+bool motor_cap = false;               // motor cap is open or closed from IO Pull Up
 bool oil_presure = false;             // oil presure warning controlled by IO Pull Up 
 // bool oil_level = true;                // oil level warning controlled by IO Pull Up
 bool washer_fluid = true;             // washer_fluid warning controlled IO Pull Up

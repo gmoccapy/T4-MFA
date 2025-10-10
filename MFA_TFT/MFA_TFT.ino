@@ -148,6 +148,9 @@ void loop(void) {
     lastMillis = millis();
   }
 
+  // DEBUG : Check Battreie LED behavior
+  //motor_on = true;
+
   update_volt();
 
   if (check_led == true){
