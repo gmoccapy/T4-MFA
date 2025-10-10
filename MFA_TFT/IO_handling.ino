@@ -11,11 +11,11 @@ void check_IO(int PIN, bool mcp_state){
     case PIN_MODE:
       Serial.print("PIN_MODE IO has changed to ");
       Serial.println(mcp_state);
-      if (mcp_state == true){               // releasing the button will change the page
-        Data.mode += 1;
-        if (Data.mode > 2){
-          Data.mode = 0;
-        }
+      if (mcp_state == true){
+        Mode_Button_pressed = millis();
+      }
+      else{
+        Mode_Button_pressed = 0;
       }
 
       break;

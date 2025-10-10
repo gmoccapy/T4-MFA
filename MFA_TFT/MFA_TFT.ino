@@ -198,6 +198,17 @@ void loop(void) {
     digitalWrite(PIN_STAY_ON, 0);
   }
 
+  if((Mode_Button_pressed != 0) && (millis() > Mode_Button_pressed + 200)){
+    Data.mode += 1;
+    if (Data.mode > 2){
+      Data.mode = 0;
+    }
+    Mode_Button_pressed = 0;
+  }
+
+
+
+
   if((Reset_Button_pressed != 0) && (millis() > Reset_Button_pressed + 3000)){
     reset = true;
     Reset_Button_pressed = 0;
@@ -216,9 +227,7 @@ void loop(void) {
 
     check_IO(PIN, bitRead(mcp.getCapturedInterrupt(), PIN));
 
-    // Serial.println("  Checked");
-    // Serial.print("Data.mode = ");
-    // Serial.println(Data.mode);
+    Serial.println("Checked Interupted PIN");
   
   }
 

@@ -101,7 +101,7 @@ float temp = 0.0;                     // holds temporarily different values
 bool PIN_INT_state = true;
 
 // variables for the button pin
-//unsigned int Mode_Button_pressed = 0;
+unsigned int Mode_Button_pressed = 0;
 //unsigned int Memory_Button_pressed = 0;
 unsigned int Reset_Button_pressed = 0;
 //bool Page_Switch_Done = true;
