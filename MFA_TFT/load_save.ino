@@ -18,78 +18,83 @@
 // };
 
 void save_Data(void){
-  // setup preferences to store and read values "Data = Namespace, false = read and write"
-  preferences.begin("Settings", false);
-    preferences.putInt("page", Data.page);
-    preferences.putInt("mode", Data.mode);
-    preferences.putInt("deposit", Data.deposit_last);
-    preferences.putUInt("vel_max", Data.velocity_max);
-  preferences.end();
+  portENTER_CRITICAL(&dataMux);
 
-  preferences.begin("km", false);
-    preferences.putUInt("start", Data.km_start);
-    preferences.putUInt("refuel", Data.km_refuel);
-    preferences.putUInt("period", Data.km_long_period);
-  preferences.end();
+    // setup preferences to store and read values "Data = Namespace, false = read and write"
+    preferences.begin("Settings", false);
+      preferences.putInt("page", Data.page);
+      preferences.putInt("mode", Data.mode);
+      preferences.putInt("deposit", Data.deposit_last);
+      preferences.putUInt("vel_max", Data.velocity_max);
+    preferences.end();
 
-  preferences.begin("time", false);
-    preferences.putUInt("start", Data.time_start);
-    preferences.putUInt("refuel", Data.time_refuel);
-    preferences.putFloat("period", Data.time_long_period);
-  preferences.end();
+    preferences.begin("km", false);
+      preferences.putUInt("start", Data.km_start);
+      preferences.putUInt("refuel", Data.km_refuel);
+      preferences.putUInt("period", Data.km_long_period);
+    preferences.end();
 
-  preferences.begin("Consumption", false);
-    preferences.putFloat("start", Data.C_start);
-    preferences.putFloat("refuel", Data.C_refuel);
-    preferences.putFloat("period", Data.C_long_period);
-    preferences.putFloat("last_km", Data.C_last_km);
-    for(int i=0; i < 25; i++) {
-      itoa(i, TFT_String, 5);
-      preferences.putFloat(TFT_String, Data.C_25_km[i]);
-    }
-  preferences.end();
+    preferences.begin("time", false);
+      preferences.putUInt("start", Data.time_start);
+      preferences.putUInt("refuel", Data.time_refuel);
+      preferences.putFloat("period", Data.time_long_period);
+    preferences.end();
+
+    preferences.begin("Consumption", false);
+      preferences.putFloat("start", Data.C_start);
+      preferences.putFloat("refuel", Data.C_refuel);
+      preferences.putFloat("period", Data.C_long_period);
+      preferences.putFloat("last_km", Data.C_last_km);
+      for(int i=0; i < 25; i++) {
+        itoa(i, TFT_String, 5);
+        preferences.putFloat(TFT_String, Data.C_25_km[i]);
+      }
+    preferences.end();
+  portEXIT_CRITICAL(&dataMux);
 
   //Serial.println(F("Data saved"));
 
 }
 
 void load_Data(void){
+  portENTER_CRITICAL(&dataMux);
 
-  preferences.begin("Settings", false);
-    Data.page = preferences.getInt("page", 0);
-    Data.mode = preferences.getInt("mode", 1);
-    Data.deposit_last = preferences.getInt("deposit", 0);
-    Data.velocity_max = preferences.getUInt("vel_max", 0);
-  preferences.end();
+    preferences.begin("Settings", false);
+      Data.page = preferences.getInt("page", 0);
+      Data.mode = preferences.getInt("mode", 1);
+      Data.deposit_last = preferences.getInt("deposit", 0);
+      Data.velocity_max = preferences.getUInt("vel_max", 0);
+    preferences.end();
 
-  preferences.begin("km", false);
-    Data.km_start = preferences.getUInt("start", 0);
-    Data.km_refuel = preferences.getUInt("refuel", 0);
-    Data.km_long_period = preferences.getUInt("period", 0);
-  preferences.end();
+    preferences.begin("km", false);
+      Data.km_start = preferences.getUInt("start", 0);
+      Data.km_refuel = preferences.getUInt("refuel", 0);
+      Data.km_long_period = preferences.getUInt("period", 0);
+    preferences.end();
 
-  preferences.begin("time", false);
-    Data.time_start = preferences.getUInt("start", 0);
-    Data.time_refuel = preferences.getUInt("refuel", 0);
-    Data.time_long_period = preferences.getFloat("period", 0.0);
-  preferences.end();
+    preferences.begin("time", false);
+      Data.time_start = preferences.getUInt("start", 0);
+      Data.time_refuel = preferences.getUInt("refuel", 0);
+      Data.time_long_period = preferences.getFloat("period", 0.0);
+    preferences.end();
 
-  preferences.begin("Consumption", false);
-    Data.C_start = preferences.getFloat("start", 0.0);
-    Data.C_refuel = preferences.getFloat("refuel", 0.0);
-    Data.C_long_period = preferences.getFloat("period", 0.0);
-    Data.C_last_km = preferences.getFloat("last_km", 0.0);
+    preferences.begin("Consumption", false);
+      Data.C_start = preferences.getFloat("start", 0.0);
+      Data.C_refuel = preferences.getFloat("refuel", 0.0);
+      Data.C_long_period = preferences.getFloat("period", 0.0);
+      Data.C_last_km = preferences.getFloat("last_km", 0.0);
 
-    C_last_25_km = 0;
-    for(int i=0; i < 25; i++) {
-      itoa(i, TFT_String, 5);
-      Data.C_25_km[i] = preferences.getFloat(TFT_String, 0.0);
-      if(Data.C_25_km[i] != 0){
-        C_last_25_km += Data.C_25_km[i];
+      C_last_25_km = 0;
+      for(int i=0; i < 25; i++) {
+        itoa(i, TFT_String, 5);
+        Data.C_25_km[i] = preferences.getFloat(TFT_String, 0.0);
+        if(Data.C_25_km[i] != 0){
+          C_last_25_km += Data.C_25_km[i];
+        }
       }
-    }
-    
-  preferences.end();
+      
+    preferences.end();
+  portENTER_CRITICAL(&dataMux);
 
   //print_Data();
   //Serial.println(F("Data loaded"));
@@ -104,37 +109,39 @@ void reset_Data(int mode){
   Serial.print("User reset off ");
   Serial.print("\t");
 
-  if(mode == START){
-    Serial.println("START");
-    Data.C_start = 0.0;
-    Data.km_start = 0;
-    C_last = 0.0;
-    Data.C_last_km = 0.0;
-    Data.time_start = 0;
-//    String(F("R_START")).toCharArray(TFT_String, 12);
-  }
-  else if (mode == REFUEL){
-    Serial.println("REFUEL");
-    Data.C_refuel = 0.0;
-    Data.km_refuel = 0;
-    Data.time_refuel = 0;
-    C_last = 0.0;
-    Data.C_last_km = 0.0;
-//    String(F("R_REFUEL")).toCharArray(TFT_String, 12);
-  }
-  else if (mode == PERIOD){
-    Serial.println("PERIOD");
-    Data.C_long_period = 0.0;
-    Data.km_long_period = 0;
-    Data.time_long_period = 0;
-    C_last = 0.0;
-    Data.C_last_km = 0.0;
-//    String(F("R_PERIOD")).toCharArray(TFT_String, 12);
-  }
-  else{
-    //Serial.println(mode);
-    return;
-  }
+  portENTER_CRITICAL(&dataMux);
+    if(mode == START){
+      Serial.println("START");
+      Data.C_start = 0.0;
+      Data.km_start = 0;
+      C_last = 0.0;
+      Data.C_last_km = 0.0;
+      Data.time_start = 0;
+  //    String(F("R_START")).toCharArray(TFT_String, 12);
+    }
+    else if (mode == REFUEL){
+      Serial.println("REFUEL");
+      Data.C_refuel = 0.0;
+      Data.km_refuel = 0;
+      Data.time_refuel = 0;
+      C_last = 0.0;
+      Data.C_last_km = 0.0;
+  //    String(F("R_REFUEL")).toCharArray(TFT_String, 12);
+    }
+    else if (mode == PERIOD){
+      Serial.println("PERIOD");
+      Data.C_long_period = 0.0;
+      Data.km_long_period = 0;
+      Data.time_long_period = 0;
+      C_last = 0.0;
+      Data.C_last_km = 0.0;
+  //    String(F("R_PERIOD")).toCharArray(TFT_String, 12);
+    }
+    else{
+      //Serial.println(mode);
+      return;
+    }
+  portEXIT_CRITICAL(&dataMux);
 //  draw_small_value_box(320, 460, 200, 40, TFT_String);
   //save_Data();
 }

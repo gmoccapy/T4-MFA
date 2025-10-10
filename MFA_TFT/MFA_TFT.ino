@@ -201,10 +201,12 @@ void loop(void) {
   }
 
   if((Mode_Button_pressed != 0) && (millis() > Mode_Button_pressed + 200)){
-    Data.mode += 1;
-    if (Data.mode > 2){
-      Data.mode = 0;
-    }
+    portENTER_CRITICAL(&dataMux);
+      Data.mode += 1;
+      if (Data.mode > 2){
+        Data.mode = 0;
+      }
+    portEXIT_CRITICAL(&dataMux);
     Mode_Button_pressed = 0;
   }
 
@@ -232,15 +234,17 @@ void loop(void) {
     Serial.println("Checked Interupted PIN");
   
   }
-
-
 }
 
 void switch_page(void){
-  Data.page += 1;
-  if (Data.page > 4){
-    Data.page = 0;
-  }
+
+  portENTER_CRITICAL(&dataMux);
+   Data.page += 1;
+   if (Data.page > 4){
+     Data.page = 0;
+   }
+  portEXIT_CRITICAL(&dataMux);
+
   temp_page = Data.page;
   //Page_Switch_Done = true;
   DrawSelected(Data.page);
