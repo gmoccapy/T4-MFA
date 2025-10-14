@@ -135,11 +135,14 @@ void loop(void) {
     start = true;
     Serial.println("Start");
     
-    // We do an initial check for the mccp state, as we may have unatendet IO's
+    // // We do an initial check for the mccp state, as we may have unatendet IO's
     for (byte i = 0; i < 16; i++){
       check_IO(i, mcp.digitalRead(i));
+      Serial.print("PIN\t");
+      Serial.print(i);
+      Serial.print("\t");
+      Serial.println(mcp.digitalRead(i));
     }
-
   }
 
   // update time every second

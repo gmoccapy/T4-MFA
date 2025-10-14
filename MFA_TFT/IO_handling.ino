@@ -170,6 +170,9 @@ void check_IO(int PIN, bool mcp_state){
     default:break;
   }
 
+  Serial.print("Warnings from check IO = ");
+  Serial.println(warnings);
+
   check_led = true;
 
   mcp.clearInterrupts();  // clear

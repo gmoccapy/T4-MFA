@@ -35,30 +35,37 @@
  // 14 = mcp.pin_B6
  // 15 = mcp.pin_B7
 
+// Brake Pad PIN ; IN Green connector PIN 7
+#define PIN_BRAKEPADS 0
+// Motor Cap PIN ; IN Green connector PIN 22
+#define PIN_MOTOR_CAP 1
+// Brake System PIN ; IN Blue connector PIN 29
+#define PIN_BRAKESYSTEM 2 
+// Wiper Water Warning PIN ; IN Green connector PIN 6
+#define PIN_WASHER_FLUID 3
+// Door right PIN ; IN
+#define PIN_R_DOOR 4
+// Door Sliding PIN ; IN
+#define PIN_S_DOOR 5
+// we do not use PIN 6 and 7
+// Oil Presure PIN ; IN
+#define PIN_OIL_PRESURE 8 
+// Coolant PIN ; IN
+#define PIN_COOLANT 9        
+// Trunk PIN ; IN
+#define PIN_TRUNK 10
+
 // MODE Switch momentary button
 #define PIN_MODE 11
 // MEMORY Switch selection switch
 #define PIN_MEMORY 12
 // RESET Switch momentary button
 #define PIN_RESET 13
-// Trunk PIN ; IN
-#define PIN_TRUNK 10
-// Door right PIN ; IN
-#define PIN_R_DOOR 4
-// Door Sliding PIN ; IN
-#define PIN_S_DOOR 5
-// Motor Cap PIN ; IN Green connector PIN 22
-#define PIN_MOTOR_CAP 1
-// Oil Presure PIN ; IN
-#define PIN_OIL_PRESURE 8 
-// Brake Pad PIN ; IN Green connector PIN 7
-#define PIN_BRAKEPADS 0
-// Brake System PIN ; IN Blue connector PIN 29
-#define PIN_BRAKESYSTEM 2 
-// Coolant PIN ; IN
-#define PIN_COOLANT 9        
-// Wiper Water Warning PIN ; IN Green connector PIN 6
-#define PIN_WASHER_FLUID 3
+// we do not use PIN 14 and 15
+
+// we get from Can Bus, so we do not need the following PIN
+// Door Left
+// petrol warning
 
 
 // Analog and digital PIN
@@ -73,9 +80,6 @@
 // OIL LED directly from instrument
 #define PIN_OIL_LED 25
 
-// we get from Can Bus, so we do not need the following PIN
-// Door Left
-// petrol warning
 
 
 

@@ -119,8 +119,6 @@ void check_LED (void){
         tft.fillRect(Icon_Pos_BrakeSystem[0], Icon_Pos_BrakeSystem[1], 50, 50, BACK_COLOR);
       }
 
-
-
   }
 
 }
