@@ -149,8 +149,9 @@ void loop(void) {
   }
 
   // DEBUG : Check LED behavior
-   motor_on = true;
-  // petrol = true;
+  motor_on = true;
+  petrol = true;
+  //light = true;
   // batterie = true;
   // brakepads = true;
   // brakesystem = true;
@@ -164,17 +165,26 @@ void loop(void) {
   // can not be done in check LED, as it will lead to a blinking dial in this case line is 316
   // and should not been done if shutdown timer is running
   if (shutdown_timer == 0){
+    if(Data.time_start % 2 != 0){
+      temp_color = TFT_ORANGE;
+    }
+    else{
+      temp_color = TEXT_COLOR;
+    }
+
     if(petrol == true){
-      if(Data.time_start % 2 != 0){
-        temp_color = TFT_ORANGE;
-      }
-      else{
-        temp_color = TEXT_COLOR;
-      }
       tft.drawXBitmap(Icon_Pos_Petrol[0], Icon_Pos_Petrol[1], sym_petrol, 50, 50, temp_color);
     }
     else if ((petrol == false) && (temp_color == TFT_ORANGE)){
       tft.drawXBitmap(Icon_Pos_Petrol[0], Icon_Pos_Petrol[1], sym_petrol, 50, 50, TEXT_COLOR);
+    }
+
+    if(temp_out_warning = true){
+      //Draw Snowflake only if Temp under 4 degrees
+      tft.drawXBitmap(19, 428 - 25, sym_snowflake, 50, 50, temp_color);
+    }
+    else if ((temp_out_warning == false) && (temp_color == TFT_ORANGE)){
+        tft.drawXBitmap(19, 428 - 25, sym_snowflake, 50, 50, TEXT_COLOR);
     }
   }
 

@@ -82,6 +82,7 @@ bool oil_presure = false;             // oil presure warning controlled by IO Pu
 bool washer_fluid = true;             // washer_fluid warning controlled IO Pull Up
 bool brakepads = false;               // Brakepads warning controlled IO Pull Up
 bool brakesystem = false;             // Brakefluid warning controlled IO Pull Up
+bool temp_out_warning = false;        // We need to set a warning to avoid an update every cycle
 int warnings = false;                 // we count infos, warnings and critical infos
 
 bool units_l_100_km = false;          // true if l/100km ; false if l/h ; start as false, as car is not moving at start 

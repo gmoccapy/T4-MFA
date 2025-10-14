@@ -41,6 +41,8 @@ void check_LED (void){
       //   tft.fillRect(Icon_Pos_Light[0], Icon_Pos_Light[1], 50, 50, BACK_COLOR);
       // }
 
+      
+      // see main loop for blinking LED
       // if(petrol == true){
       //   if(Data.time_start % 2 == 0){
       //     tft.drawXBitmap(19, 316 - 25, sym_petrol, 50, 50, TFT_ORANGE);
@@ -48,10 +50,9 @@ void check_LED (void){
       //   else{
       //     tft.drawXBitmap(19, 316 - 25, sym_petrol, 50, 50, TEXT_COLOR);
       //   }
-      //   //tft.drawXBitmap(Icon_Pos_Petrol[0], Icon_Pos_Petrol[1], sym_petrol, 50, 50, TFT_ORANGE);
       // }
       // else{
-      //   tft.fillRect(Icon_Pos_Petrol[0], Icon_Pos_Petrol[1], 50, 50, BACK_COLOR);
+      //   tft.drawXBitmap(19, 316 - 25, sym_petrol, 50, 50, TEXT_COLOR);
       // }
 
       if(door == true){

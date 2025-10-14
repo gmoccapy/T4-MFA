@@ -476,6 +476,12 @@ void draw_value_out_temp(int Y_Pos){
   // out temp
   dtostrf(temp_out, 6, 1, TFT_String);
   draw_value_box(Y_Pos, 134, 50, TFT_String);
+  if (temp_out < 4){
+    temp_out_warning = true;
+  }
+  else{
+    temp_out_warning = false;
+  }
 }
 
 void draw_value_speed(int Y_Pos){
