@@ -5,6 +5,9 @@ void evaluate_CAN_messages(){
   int bit;     // hold the bit value to evaluate
   int byte;    // The byte / int value to evaluate
   float value; // the float value to evaluate
+  unsigned int C_motor_value;           // the value recieved from motor in µl
+  unsigned long time_C_period = 0;      // time elepsed from consumption update ms
+  unsigned long time_C_period_last = 0; // time elepsed from last consumption update ms
 
   //Auswertung der Daten
   switch (rxFrame.identifier)

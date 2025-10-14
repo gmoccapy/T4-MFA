@@ -149,7 +149,7 @@ void loop(void) {
   }
 
   // DEBUG : Check LED behavior
-  motor_on = true;
+   motor_on = true;
   // petrol = true;
   // batterie = true;
   // brakepads = true;
@@ -186,7 +186,7 @@ void loop(void) {
      check_led = false;
   }
 
-  // to avoid update values for door warning in full page mode
+  // to avoid update values for warnings in full page mode
   if (Data.page == temp_page){
     update_values();
   }
@@ -215,8 +215,8 @@ void loop(void) {
   }
 
   if (!PIN_INT_state){
-    volatile int PIN = mcp.getLastInterruptPin();
-    volatile int mcp_state = mcp.getCapturedInterrupt();
+    int PIN = mcp.getLastInterruptPin();
+    int mcp_state = mcp.getCapturedInterrupt();
 
     // Serial.print("Interupted PIN = ");
     // Serial.println(PIN);
