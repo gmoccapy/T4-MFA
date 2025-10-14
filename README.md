@@ -26,3 +26,7 @@ You will need to use following libraries
 
 Feel free to submit improvements
 
+Electronics and Software Code may be buggy. If you use teh code or the hardware mentioned in this repository,
+you are responsible to check against you local law. I designed this for my own use. 
+I assume no liability for damages resulting from the use of my software or hardware design.
+
