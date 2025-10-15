@@ -68,6 +68,7 @@ bool PIN_INT_state = true;
 unsigned int Mode_Button_pressed = 0;
 //unsigned int Memory_Button_pressed = 0;
 unsigned int Reset_Button_pressed = 0;
+
 //bool Page_Switch_Done = true;
 
 bool batterie = false;                // avoid flicker of batterie symbol during startup and slow increasing voltage due to filter       
@@ -79,11 +80,11 @@ bool trunk = false;                   // trunk is open or closed from IO Pull Up
 bool motor_cap = false;               // motor cap is open or closed from IO Pull Up
 bool oil_presure = false;             // oil presure warning controlled by IO Pull Up 
 // bool oil_level = true;                // oil level warning controlled by IO Pull Up
-bool washer_fluid = true;             // washer_fluid warning controlled IO Pull Up
+bool washer_fluid = false;             // washer_fluid warning controlled IO Pull Up
 bool brakepads = false;               // Brakepads warning controlled IO Pull Up
 bool brakesystem = false;             // Brakefluid warning controlled IO Pull Up
 bool temp_out_warning = false;        // We need to set a warning to avoid an update every cycle
-int warnings = false;                 // we count infos, warnings and critical infos
+int warnings = 0;                 // we count infos, warnings and critical infos
 
 bool units_l_100_km = false;          // true if l/100km ; false if l/h ; start as false, as car is not moving at start 
                                       // as on start the value will be false, as car is not moving

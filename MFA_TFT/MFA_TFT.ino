@@ -134,15 +134,10 @@ void loop(void) {
     DrawSelected(Data.page);
     start = true;
     Serial.println("Start");
+    check_led = true;
     
-    // // We do an initial check for the mccp state, as we may have unatendet IO's
-    for (byte i = 0; i < 16; i++){
-      check_IO(i, mcp.digitalRead(i));
-      Serial.print("PIN\t");
-      Serial.print(i);
-      Serial.print("\t");
-      Serial.println(mcp.digitalRead(i));
-    }
+    // We do an initial check for the mccp state, as we may have unatendet IO's
+    check_IO();
   }
 
   // update time every second
@@ -151,10 +146,10 @@ void loop(void) {
     lastMillis = millis();
   }
 
-  // DEBUG : Check LED behavior
-  motor_on = true;
-  petrol = true;
-  //light = true;
+// DEBUG : Check LED behavior
+   motor_on = true;
+  // petrol = true;
+  // light = true;
   // batterie = true;
   // brakepads = true;
   // brakesystem = true;
@@ -162,7 +157,7 @@ void loop(void) {
   // oil_presure = true;
   // door = true;
   // coolant = true;
-  //warnings = 511;
+  // warnings = 511;
 
   // let the symbol blink, so we do not need a special place for the LED
   // can not be done in check LED, as it will lead to a blinking dial in this case line is 316
@@ -228,22 +223,9 @@ void loop(void) {
   }
 
   if (!PIN_INT_state){
-    int PIN = mcp.getLastInterruptPin();
-    int mcp_state = mcp.getCapturedInterrupt();
-
-    // Serial.print("Interupted PIN = ");
-    // Serial.println(PIN);
-    // Serial.print("Pin states at time of interrupt: ");
-    //Serial.println(mcp.getCapturedInterrupt(), 2);
-    
-    // Serial.println(bitRead(mcp.getCapturedInterrupt(), PIN));
-
-    check_IO(PIN, bitRead(mcp.getCapturedInterrupt(), PIN));
-
-    Serial.println("Checked Interupted PIN");
-  
+    check_IO();
+    //Serial.println("Checked Interupted PIN"); 
   }
-
 
 }
 

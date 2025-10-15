@@ -1,177 +1,64 @@
-void check_IO(int PIN, bool mcp_state){
+void check_IO(){ // int PIN, bool mcp_state){
 
 
 // DEBUG : There shoud never be print statements on interupt routines!
 //         We need to delete them at the end of testing
   warnings = 0;
 
-
-  switch(PIN){
-
-    case PIN_MODE:
-      Serial.print("PIN_MODE IO has changed to ");
-      Serial.println(mcp_state);
-      if (mcp_state == true){
-        Mode_Button_pressed = millis();
-      }
-      else{
-        Mode_Button_pressed = 0;
-      }
-
-      break;
-
-    case PIN_MEMORY:
-      Serial.print("PIN_MEMORY IO has changed to ");
-      Serial.println(mcp_state);
-
-      break;
-
-    case PIN_RESET:
-      Serial.print("PIN_RESET IO has changed to ");
-      Serial.println(mcp_state);
-      if (mcp_state == true){
-        Reset_Button_pressed = millis();
-      }
-      else{
-        Reset_Button_pressed = 0;
-      }
-      break;
-
-    case PIN_TRUNK:
-      Serial.print("PIN_TRUNK IO has changed to ");
-      Serial.println(mcp_state);
-      if (mcp_state == true){
-        warnings += 1;
-        trunk = true;
-      }
-      else{
-        trunk = false;
-      }
-
-      break;
-
-    case PIN_R_DOOR:
-      Serial.print("PIN_R_DOOR IO has changed to");
-      Serial.println(mcp_state);
-      if (mcp_state == true){
-        warnings += 2;
-        door_r = true;
-      }
-      else{
-        door_r = false;
-      }
-
-      break;
-
-    case PIN_S_DOOR:
-      Serial.print("PIN_S_DOOR IO has changed to ");
-      Serial.println(mcp_state);
-      if (mcp_state == true){
-        warnings += 4;
-        door_s = true;
-      }
-      else{
-        door_s = false;
-      }
-
-      break;
-
-    case PIN_OIL_PRESURE:
-      Serial.print("PIN_OIL_PRESURE IO has changed to ");
-      Serial.println(mcp_state);
-      if(mcp_state == true){
-        warnings += 8;
-        oil_presure = true;
-      }
-      else{
-        oil_presure = false;
-      }
-
-      break;
-
-    case PIN_COOLANT:
-      Serial.print("PIN_COOLANT IO has changed to ");
-      Serial.println(mcp_state);
-      if(mcp_state == true){
-        warnings += 16;
-        coolant = true;
-      }
-      else{
-        coolant = false;
-      }
-      break;
-
-    case PIN_BRAKEPADS:
-      Serial.print("PIN_BRAKEPADS IO has changed to ");
-      Serial.println(mcp_state);
-      if(mcp_state == true){
-        warnings += 32;
-        brakepads = true;
-      }
-      else{
-        brakepads = false;
-      }
-      break;
-
-    case PIN_MOTOR_CAP:
-      Serial.print("PIN_MOTOR_CAP IO has changed to ");
-      Serial.println(mcp_state);
-      if(mcp_state == true){
-        warnings += 64;
-        motor_cap = true;
-      }
-      else{
-        motor_cap = false;
-      }
-      break;
-
-    case PIN_WASHER_FLUID:
-      Serial.print("PIN_WASHER_FLUID IO has changed to ");
-      Serial.println(mcp_state);
-      if(mcp_state == true){
-        warnings += 128;
-        washer_fluid = true;
-      }
-      else{
-        washer_fluid = false;
-      }
-      break;
-
-    case PIN_BRAKESYSTEM:
-      Serial.print("PIN_BRAKESYSTEM IO has changed to ");
-      Serial.println(mcp_state);
-      if(mcp_state == true){
-        warnings += 256;
-        brakesystem = true;
-      }
-      else{
-        brakesystem = false;
-      }
-      break;
-
-
-// DEBUG INFO . This need to be done in a separate way, as we will get an PWN Signal from sensor
-    // case PIN_OIL_LEVEL: 
-    //   Serial.print("PIN_OIL_LEVEL IO has changed to ");
-    //   Serial.println(mcp_state);
-    //   if(mcp_state == true){
-    //     tft.drawXBitmap(Icon_Pos_Oil[0], Icon_Pos_Oil[1], sym_oil, 50, 50, TFT_ORANGE);
-    //   }
-    //   else{
-    //     tft.fillRect(Icon_Pos_Oil[0], Icon_Pos_Oil[1], 50, 50, BACK_COLOR);
-    //   }
-    //   break;
-
-// DEBUG INFO: OIL_LED / showing low oil level or old oil, this one is connected direktly to
-// PIN 11 of ESP32, that correspond to GPIO 25
-// Attantion, do not apply 12 V to this PIN, as it will destoy ESP32
-
-
-    default:break;
+  // as we do not use MCP PINS 14 and 15 we only iterate to 13
+  // as MCP PIN 11 ; 12 and 13 are handling the control button, we will handle them separate
+  for (byte i = 0; i < 11; i++){
+    // MCP PIN 6 and 7 are not used
+    if ((i == 6) || (i == 7)){
+      continue;
+    }
+    if (mcp.digitalRead(i) == true){
+      warnings += pow(2, i);
+//      Serial.println(i);
+    }
   }
 
-  Serial.print("Warnings from check IO = ");
-  Serial.println(warnings);
+  // this is the control button handling
+  for (byte i = 11; i < 14; i++){
+    switch (i){
+      // Mode button
+      case 11:
+        if (mcp.digitalRead(i) == true){
+          Serial.println("Mode Button");
+          Mode_Button_pressed = millis();
+        }
+        else{
+          Mode_Button_pressed = 0;
+        }
+        break;
+
+// ToDo : Implement memory button ; will switch between setup and operation
+      // Memory button
+      case 12:
+        if (mcp.digitalRead(i) == true){
+          Serial.println("Memory Button");
+        //   Memory_Button_pressed = millis();
+        }
+        // else{
+        //   Memory_Button_pressed = 0;
+        // }
+        break;
+
+      // Reset button
+      case 13:
+        if (mcp.digitalRead(i) == true){
+          Reset_Button_pressed = millis();
+          Serial.println("Reset Button");
+        }
+        else{
+          Reset_Button_pressed = 0;
+        }
+        break;
+    }
+  }
+
+  // Serial.print("warnings = ");
+  // Serial.println(warnings);
 
   check_led = true;
 
