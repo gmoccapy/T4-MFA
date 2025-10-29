@@ -13,7 +13,7 @@
   min Y_Pos = 44 and max Y_Pos = 453
   resuling in a usable width = 292 and height = 409
 
-  Copyright (c) 2024, nieson@web.de
+  Copyright (c) 2024, nieson@web.de and Daniel Braun
   All rights reserved.
 */
 

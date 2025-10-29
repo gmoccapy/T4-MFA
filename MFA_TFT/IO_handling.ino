@@ -24,7 +24,7 @@ void check_IO(){ // int PIN, bool mcp_state){
       // Mode button
       case 11:
         if (mcp.digitalRead(i) == true){
-          Serial.println("Mode Button");
+          //Serial.println("Mode Button");
           Mode_Button_pressed = millis();
         }
         else{
@@ -36,7 +36,7 @@ void check_IO(){ // int PIN, bool mcp_state){
       // Memory button
       case 12:
         if (mcp.digitalRead(i) == true){
-          Serial.println("Memory Button");
+          //Serial.println("Memory Button");
         //   Memory_Button_pressed = millis();
         }
         // else{
@@ -48,7 +48,7 @@ void check_IO(){ // int PIN, bool mcp_state){
       case 13:
         if (mcp.digitalRead(i) == true){
           Reset_Button_pressed = millis();
-          Serial.println("Reset Button");
+          //Serial.println("Reset Button");
         }
         else{
           Reset_Button_pressed = 0;

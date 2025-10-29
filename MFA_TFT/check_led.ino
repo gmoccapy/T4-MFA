@@ -100,14 +100,15 @@ void check_LED (void){
       }
 
     // brakepads
-      if((i == 0) && (io_state == true)){
+      if((i == 0) && (io_state == false)){
         tft.drawXBitmap(Icon_Pos_BrakePads[0], Icon_Pos_BrakePads[1], sym_brakepads, 50, 50, TFT_ORANGE);
       }
-      else if ((i == 0) && (io_state == false)){
+      else if ((i == 0) && (io_state == true)){
         tft.fillRect(Icon_Pos_BrakePads[0], Icon_Pos_BrakePads[1], 50, 50, BACK_COLOR);
       }
 
-// ToDo : We need Symbols for this (idear: Initioal grafic with colored motor cap)
+// ToDo : We need Symbols for this (idea: initioal grafic with colored motor cap)
+//        has been realized by Daniel Braun, thanks to him I will be able to implement that in a future release
     // motor_cap
       if((i == 1) && (io_state == true)){
         tft.drawXBitmap(Icon_Pos_Door[0], Icon_Pos_Door[1], sym_door, 50, 50, TFT_ORANGE);
