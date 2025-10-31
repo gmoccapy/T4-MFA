@@ -72,6 +72,13 @@ void check_LED (void){
       tft.fillRect(Icon_Pos_Batterie[0], Icon_Pos_Batterie[1], 50, 50, BACK_COLOR);
     }
 
+    if (oil_level == true){
+        tft.drawXBitmap(Icon_Pos_Oil[0], Icon_Pos_Oil[1], sym_oil, 50, 50, TFT_ORANGE);
+    }
+    else if (oil_level == false){
+      tft.fillRect(Icon_Pos_Oil[0], Icon_Pos_Oil[1], 50, 50, BACK_COLOR);
+    }
+
     // this are the MCP connected IO's
     // as we do not use MCP PINS 14 and 15 we only iterate to 13
     for (byte i = 0; i < 14; i++){
@@ -99,13 +106,13 @@ void check_LED (void){
         tft.fillRect(Icon_Pos_Coolant[0], Icon_Pos_Coolant[1], 50, 50, BACK_COLOR);
       }
 
-    // brakepads
-      if((i == 0) && (io_state == false)){
-        tft.drawXBitmap(Icon_Pos_BrakePads[0], Icon_Pos_BrakePads[1], sym_brakepads, 50, 50, TFT_ORANGE);
-      }
-      else if ((i == 0) && (io_state == true)){
-        tft.fillRect(Icon_Pos_BrakePads[0], Icon_Pos_BrakePads[1], 50, 50, BACK_COLOR);
-      }
+    // brakepads in my case it is not connected and set to not active in instrument
+      // if((i == 0) && (io_state == false)){
+      //   tft.drawXBitmap(Icon_Pos_BrakePads[0], Icon_Pos_BrakePads[1], sym_brakepads, 50, 50, TFT_ORANGE);
+      // }
+      // else if ((i == 0) && (io_state == true)){
+      //   tft.fillRect(Icon_Pos_BrakePads[0], Icon_Pos_BrakePads[1], 50, 50, BACK_COLOR);
+      // }
 
 // ToDo : We need Symbols for this (idea: initioal grafic with colored motor cap)
 //        has been realized by Daniel Braun, thanks to him I will be able to implement that in a future release

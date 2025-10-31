@@ -227,6 +227,13 @@ void loop(void) {
     //Serial.println("Checked Interupted PIN"); 
   }
 
+  if ((PIN_OIL_LEVEL == true) && (oil_level == false)){
+    check_LED();
+  }
+  if ((PIN_OIL_LEVEL == false) && (oil_level == true)){
+    check_LED();
+  }
+
 }
 
 void switch_page(void){
