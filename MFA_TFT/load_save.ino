@@ -49,7 +49,9 @@ void save_Data(void){
     }
   preferences.end();
 
-  //Serial.println(F("Data saved"));
+  if(DEBUG){
+    Serial.println(F("Data saved"));
+  }
 
 }
 
@@ -91,8 +93,10 @@ void load_Data(void){
     
   preferences.end();
 
-  //print_Data();
-  //Serial.println(F("Data loaded"));
+  if(DEBUG){
+    print_Data();
+    Serial.println(F("Data loaded"));
+  }
 }
 
 void reset_Data(int mode){
@@ -101,11 +105,15 @@ void reset_Data(int mode){
   // But we need to find a solution for that, may be can be realized with deep sleep
 
 
-  Serial.print("User reset off ");
-  Serial.print("\t");
+  if(DEBUG){
+    Serial.print("User reset off ");
+    Serial.print("\t");
+  }
 
   if(mode == START){
-    Serial.println("START");
+    if(DEBUG){
+      Serial.println("START");
+    }
     Data.C_start = 0.0;
     Data.km_start = 0;
     C_last = 0.0;
@@ -114,7 +122,9 @@ void reset_Data(int mode){
 //    String(F("R_START")).toCharArray(TFT_String, 12);
   }
   else if (mode == REFUEL){
-    Serial.println("REFUEL");
+    if(DEBUG){
+      Serial.println("REFUEL");
+    }
     Data.C_refuel = 0.0;
     Data.km_refuel = 0;
     Data.time_refuel = 0;
@@ -123,7 +133,9 @@ void reset_Data(int mode){
 //    String(F("R_REFUEL")).toCharArray(TFT_String, 12);
   }
   else if (mode == PERIOD){
-    Serial.println("PERIOD");
+    if(DEBUG){
+      Serial.println("PERIOD");
+    }
     Data.C_long_period = 0.0;
     Data.km_long_period = 0;
     Data.time_long_period = 0;
@@ -136,7 +148,6 @@ void reset_Data(int mode){
     return;
   }
 //  draw_small_value_box(320, 460, 200, 40, TFT_String);
-  //save_Data();
 }
 
 void print_Data (void){

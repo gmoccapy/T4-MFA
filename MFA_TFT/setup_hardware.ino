@@ -31,10 +31,10 @@ void pin_setup(void){
   pinMode(PIN_STAY_ON, OUTPUT);
 
   // OIL LED comes directly from GPIO 25:
-  pinMode(PIN_OIL_LED, INPUT);
+  pinMode(PIN_OIL_LED, INPUT_PULLUP);
 
 // TODO: PIN_OIL_PWN as Input from PIN31 from ESP32 coresponds to GPIO 19 
-//pinMode(PIN_OIL_PWM, INPUT);
+  pinMode(PIN_OIL_PWM, INPUT);
 
   // configure MCP pin that will read INTA/B state
   pinMode(INT_PIN, INPUT);

@@ -140,7 +140,9 @@ void draw_value_box(int Y_Pos, int width, int height, char *value){
   box.setColorDepth(8);
   box.createSprite(width, height);
   box.fillSprite(BACK_COLOR);
-  box.drawRect(0, 0, width, height, TFT_RED);
+  if(DEBUG){
+    box.drawRect(0, 0, width, height, TFT_RED);
+  }
   box.setTextColor(TEXT_COLOR, BACK_COLOR);
   box.setTextDatum(MR_DATUM);
   box.drawString(value, width - 1, height / 2, FONT7);
@@ -153,7 +155,9 @@ void draw_small_value_box(int X_Pos, int Y_Pos, int width, int height, char *val
   box.setColorDepth(8);
   box.createSprite(width, height);
   box.fillSprite(BACK_COLOR);
-  box.drawRect(0, 0, width, height, TFT_RED);
+  if(DEBUG){
+    box.drawRect(0, 0, width, height, TFT_RED);
+  }
   box.setTextColor(TEXT_COLOR, BACK_COLOR);
   box.setTextDatum(MR_DATUM);
   box.drawString(value, width - 1, height / 2, FONT4);

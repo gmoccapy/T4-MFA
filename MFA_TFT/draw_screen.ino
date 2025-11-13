@@ -15,11 +15,11 @@ void DrawSelected(int page){
   switch(page){
     
     case 0:
-  // DEBUG:
-  // This is the visible area
-  tft.drawRect(10, 40, 300, 417, TFT_RED);
+      // This is the visible area
+      if(DEBUG){
+        tft.drawRect(10, 40, 300, 417, TFT_RED);
+      }
 
-//      Data.mode = START;
       drawCruiseControl(70);
       //drawVolt(70);
       tft.drawFastHLine(0, 100, 320, TEXT_COLOR);

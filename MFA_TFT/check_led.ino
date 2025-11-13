@@ -53,8 +53,10 @@ void check_LED (void){
 
   if(Data.page == 0){
 
-    tft.drawRect(51, 107, 217, 173, TFT_RED);
-    tft.fillRect(52, 108, 215, 171, BACK_COLOR);
+    if(DEBUG){
+      tft.drawRect(51, 107, 217, 173, TFT_RED);
+      tft.fillRect(52, 108, 215, 171, BACK_COLOR);
+    }
 
     // door from CAN message
     if(door == true){

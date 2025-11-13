@@ -64,9 +64,13 @@ TaskHandle_t EvaluateCAN;
 // function defination to handle also default values
 void drawUnits(int Y_Pos, String upper_line, String lower_line = "");
 
+bool DEBUG = false;
+
 void setup(void) {
 
-  Serial.begin(115200);
+  if(DEBUG){
+    Serial.begin(115200);
+  }
 
   // start the TFT Display and set orientation
   setup_TFT();
@@ -133,10 +137,12 @@ void loop(void) {
 
     DrawSelected(Data.page);
     start = true;
-    Serial.println("Start");
+    if(DEBUG){
+      Serial.println("Start");
+    }
     check_led = true;
     
-    // We do an initial check for the mccp state, as we may have unatendet IO's
+    // We do an initial check for the mccp state, as we may have unatended IO's
     check_IO();
   }
 
@@ -147,7 +153,7 @@ void loop(void) {
   }
 
 // DEBUG : Check LED behavior
-   motor_on = true;
+  // motor_on = true;
   // petrol = true;
   // light = true;
   // batterie = true;
@@ -214,7 +220,12 @@ void loop(void) {
     Mode_Button_pressed = 0;
   }
 
-
+// ToDo: Here must be introduced the code for the memory switch
+// Final behavior should be:
+// Mode Button togles the modes (from start, sice refuel and perion) if Memory switch is on 1 (Operation Mode)
+// Mode button selects the line to be editided if Memory is on 2 (Setup Mode)
+// Short Reset push should toggle between posible values to be displayed in that line. If dial is selected, 
+// it might be possible to hide dial and selct up to 3 additional values as line displays 
 
 
   if((Reset_Button_pressed != 0) && (millis() > Reset_Button_pressed + 3000)){
@@ -227,13 +238,10 @@ void loop(void) {
     //Serial.println("Checked Interupted PIN"); 
   }
 
-  if ((PIN_OIL_LEVEL == true) && (oil_level == false)){
+  if (((digitalRead(PIN_OIL_LEVEL) == HIGH) && (oil_level == false))||((digitalRead(PIN_OIL_LEVEL) == LOW) && (oil_level == true))){
     check_LED();
   }
-  if ((PIN_OIL_LEVEL == false) && (oil_level == true)){
-    check_LED();
-  }
-
+  
 }
 
 void switch_page(void){
@@ -244,7 +252,6 @@ void switch_page(void){
   temp_page = Data.page;
   //Page_Switch_Done = true;
   DrawSelected(Data.page);
-  Serial.println("Button");
   check_LED();
 }
 
