@@ -1,3 +1,4 @@
+#include <sys/_stdint.h>
 // defining the following, reduced the ram space because "100km" has not to be coded on several places 
 #define HUNDERTKM "100km"
 #define LITER     "l"
@@ -10,9 +11,10 @@
 
 // define case for differnt calculation
 enum memory{
-  START,               // values from start
-  REFUEL,              // values since refuel
-  PERIOD               // values long period
+  NOTHING,             // Nothing to do       value = 0
+  START,               // values from start   value = 1
+  REFUEL,              // values since refuel value = 2
+  PERIOD               // values long period  value = 3
 };
 
 // position variables and colors to display Infos 5:6:5 Format 1.Letter = red 2 and 3 are Green and 4 is blue
@@ -92,11 +94,10 @@ bool units_l_100_km = false;          // true if l/100km ; false if l/h ; start 
 
 float temp = 0.0;                     // holds temporarily different values 
 
-unsigned long valueMillis;       	  	// time for update values in msec
 unsigned long lastMillis;         		// time for calculation in msec
 unsigned long time_last;      		    // time since last loop in sec, will be reseted every 60 Seconds and other times will be increased
 
-unsigned int StayOnTime = 10000;    // time to stay on before auto shutdowb
+unsigned int StayOnTime = 10000;    // time to stay on before auto shutdown In this case 10000 ms = 10 s will be changed on working system to 3600000 = 1 h
 
 // this variable are used on both cores (core(1) = main loop and core(0) = evaluate can messages)
 struct values_to_save {           // Data to be stored permanetly, 
@@ -138,7 +139,7 @@ values_to_save Data;
 //                         0
 //                       };
 
-volatile bool reset = false;                   // Set to Data.mode to reset values : start, refuel and period
+volatile uint8_t reset = NOTHING;              // Set to Data.mode to reset values : start, refuel and period
 
 volatile unsigned int C_last = 0;              // last saved consumption in µl
 volatile float C_last_25_km;                   // consumption over the last 25 km in ml

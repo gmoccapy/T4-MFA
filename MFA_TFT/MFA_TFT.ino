@@ -123,10 +123,10 @@ void loop(void) {
     save = false;
   }
 
-  if (reset == true){
-    reset_Data(Data.mode);
+  if (reset != NOTHING){
+    reset_Data(reset);
     //avoid page change
-    reset = false;
+    reset = 0;
   }
 
   // initial drawing the screen
@@ -227,9 +227,10 @@ void loop(void) {
    }
 
   if((Mode_Button_pressed != 0) && (millis() > Mode_Button_pressed + 200)){
+    // Data.modes are equal to enum memory (NOTHING = 0 , START = 1, DEPOSIT = 2, PERIOD = 3)
     Data.mode += 1;
-    if (Data.mode > 2){
-      Data.mode = 0;
+    if (Data.mode > 3){
+      Data.mode = 1;
     }
     Mode_Button_pressed = 0;
   }
@@ -243,7 +244,7 @@ void loop(void) {
 
 
   if((Reset_Button_pressed != 0) && (millis() > Reset_Button_pressed + 3000)){
-    reset = true;
+    reset = Data.mode;
     Reset_Button_pressed = 0;
   }
 
