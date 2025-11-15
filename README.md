@@ -12,8 +12,6 @@ Power Control is solved with a 12V USB Car Adapter (the mainboard from the adapt
 The connections are done to a self desgned brake out board
 Some soldering on the Dash Board Instrument has to be done
 
-As the BrakeOut Board had serios errors, I deleted the design files, until they have been corrected!
-
 The fixture of the display has been solved with a 3d printed part.
 
 Please take care to use ARDUINO IDE 2.XX to programm the ESP
@@ -26,7 +24,7 @@ You will need to use following libraries
 
 Feel free to submit improvements
 
-Electronics and Software Code may be buggy. If you use teh code or the hardware mentioned in this repository,
+Electronics and Software Code may be buggy. If you use the code or the hardware mentioned in this repository,
 you are responsible to check against you local law. I designed this for my own use. 
 I assume no liability for damages resulting from the use of my software or hardware design.
 

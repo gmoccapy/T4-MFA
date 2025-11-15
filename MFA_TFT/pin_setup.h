@@ -79,9 +79,3 @@
 #define PIN_OIL_PWM 19
 // OIL LED directly from instrument
 #define PIN_OIL_LED 25
-
-
-
-
-
-

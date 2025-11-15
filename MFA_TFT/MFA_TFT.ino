@@ -64,7 +64,7 @@ TaskHandle_t EvaluateCAN;
 // function defination to handle also default values
 void drawUnits(int Y_Pos, String upper_line, String lower_line = "");
 
-bool DEBUG = false;
+bool DEBUG = true;
 
 void setup(void) {
 
@@ -150,6 +150,21 @@ void loop(void) {
   if (millis() - lastMillis > 1000){
     update_time();
     lastMillis = millis();
+    if(DEBUG){
+      Serial.print("ShutDownTimer = ");
+      Serial.print(shutdown_timer);
+      Serial.print("\t");
+      Serial.print("Volt = ");
+      Serial.print(volt);
+      Serial.print("\t");
+      Serial.print("Stay On Status = ");
+      Serial.print(digitalRead(PIN_STAY_ON));
+      Serial.print("\t");
+      Serial.print("Data.page / temp_page = ");
+      Serial.print(Data.page);
+      Serial.print(" / ");
+      Serial.println(temp_page);
+    }
   }
 
 // DEBUG : Check LED behavior
@@ -207,10 +222,9 @@ void loop(void) {
 
   // stay_on == true after we had one time ignition
   // shutdown_timer will be set switching off ignition 
-  if ((shutdown_timer != 0) && (millis() > shutdown_timer + 3600000)){
-    shutdown_timer = 0;
-    digitalWrite(PIN_STAY_ON, 0);
-  }
+  if ((shutdown_timer != 0) && (millis() > shutdown_timer + StayOnTime)){
+    digitalWrite(PIN_STAY_ON, LOW);
+   }
 
   if((Mode_Button_pressed != 0) && (millis() > Mode_Button_pressed + 200)){
     Data.mode += 1;

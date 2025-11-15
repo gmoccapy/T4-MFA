@@ -1447,7 +1447,7 @@
 		(at 127.3176 109.3752 90)
 		(descr "Soldered wire connection, for a single 0.5 mm² wire, basic insulation, conductor diameter 0.9mm, outer diameter 2.1mm, size source Multi-Contact FLEXI-E 0.5 (https://ec.staubli.com/AcroFiles/Catalogues/TM_Cab-Main-11014119_(en)_hi.pdf), bend radius 3 times outer diameter, generated with kicad-footprint-generator")
 		(tags "connector wire 0.5sqmm")
-		(property "Reference" "BF1"
+		(property "Reference" "BF"
 			(at 0 -2.25 90)
 			(layer "F.SilkS")
 			(uuid "48abb060-54c4-475f-8010-87e9820d5134")
@@ -3435,7 +3435,7 @@
 		(at 127.3176 101.2472 90)
 		(descr "Soldered wire connection, for a single 0.5 mm² wire, basic insulation, conductor diameter 0.9mm, outer diameter 2.1mm, size source Multi-Contact FLEXI-E 0.5 (https://ec.staubli.com/AcroFiles/Catalogues/TM_Cab-Main-11014119_(en)_hi.pdf), bend radius 3 times outer diameter, generated with kicad-footprint-generator")
 		(tags "connector wire 0.5sqmm")
-		(property "Reference" "MC1"
+		(property "Reference" "MC"
 			(at 0 -2.25 90)
 			(layer "F.SilkS")
 			(uuid "d6a76e46-02d7-43d3-9bcc-783dec83e9d6")
@@ -7098,7 +7098,7 @@
 		(at 127.3176 105.3112 90)
 		(descr "Soldered wire connection, for a single 0.5 mm² wire, basic insulation, conductor diameter 0.9mm, outer diameter 2.1mm, size source Multi-Contact FLEXI-E 0.5 (https://ec.staubli.com/AcroFiles/Catalogues/TM_Cab-Main-11014119_(en)_hi.pdf), bend radius 3 times outer diameter, generated with kicad-footprint-generator")
 		(tags "connector wire 0.5sqmm")
-		(property "Reference" "WW1"
+		(property "Reference" "WW"
 			(at 0 -2.25 90)
 			(layer "F.SilkS")
 			(uuid "b07298fb-064f-46c0-b54d-3f32d1fe735d")
@@ -7834,7 +7834,7 @@
 		(at 127.3176 84.9912 90)
 		(descr "Soldered wire connection, for a single 0.5 mm² wire, basic insulation, conductor diameter 0.9mm, outer diameter 2.1mm, size source Multi-Contact FLEXI-E 0.5 (https://ec.staubli.com/AcroFiles/Catalogues/TM_Cab-Main-11014119_(en)_hi.pdf), bend radius 3 times outer diameter, generated with kicad-footprint-generator")
 		(tags "connector wire 0.5sqmm")
-		(property "Reference" "SD1"
+		(property "Reference" "SD"
 			(at 0 -2.25 90)
 			(layer "F.SilkS")
 			(uuid "914ce610-b7b8-43fc-b62d-245405e7227f")
@@ -11062,7 +11062,7 @@
 		(at 127.3176 89.0552 90)
 		(descr "Soldered wire connection, for a single 0.5 mm² wire, basic insulation, conductor diameter 0.9mm, outer diameter 2.1mm, size source Multi-Contact FLEXI-E 0.5 (https://ec.staubli.com/AcroFiles/Catalogues/TM_Cab-Main-11014119_(en)_hi.pdf), bend radius 3 times outer diameter, generated with kicad-footprint-generator")
 		(tags "connector wire 0.5sqmm")
-		(property "Reference" "OP1"
+		(property "Reference" "OP"
 			(at 0 -2.25 90)
 			(layer "F.SilkS")
 			(uuid "533575bc-3d4c-49e1-8d9f-574a3feda946")
@@ -13076,7 +13076,7 @@
 		(at 127.3176 80.9272 90)
 		(descr "Soldered wire connection, for a single 0.5 mm² wire, basic insulation, conductor diameter 0.9mm, outer diameter 2.1mm, size source Multi-Contact FLEXI-E 0.5 (https://ec.staubli.com/AcroFiles/Catalogues/TM_Cab-Main-11014119_(en)_hi.pdf), bend radius 3 times outer diameter, generated with kicad-footprint-generator")
 		(tags "connector wire 0.5sqmm")
-		(property "Reference" "RD1"
+		(property "Reference" "RD"
 			(at 0 -2.25 90)
 			(layer "F.SilkS")
 			(uuid "bdab0014-44de-4cba-8881-5a00ea931516")
@@ -13310,7 +13310,7 @@
 		(at 127.3176 97.1832 90)
 		(descr "Soldered wire connection, for a single 0.5 mm² wire, basic insulation, conductor diameter 0.9mm, outer diameter 2.1mm, size source Multi-Contact FLEXI-E 0.5 (https://ec.staubli.com/AcroFiles/Catalogues/TM_Cab-Main-11014119_(en)_hi.pdf), bend radius 3 times outer diameter, generated with kicad-footprint-generator")
 		(tags "connector wire 0.5sqmm")
-		(property "Reference" "BP1"
+		(property "Reference" "BP"
 			(at 0 -2.25 90)
 			(layer "F.SilkS")
 			(uuid "c0369136-d2d6-4376-866b-ea01b78615bd")
@@ -13603,7 +13603,7 @@
 		(at 127.3176 117.5032 90)
 		(descr "Soldered wire connection, for a single 0.5 mm² wire, basic insulation, conductor diameter 0.9mm, outer diameter 2.1mm, size source Multi-Contact FLEXI-E 0.5 (https://ec.staubli.com/AcroFiles/Catalogues/TM_Cab-Main-11014119_(en)_hi.pdf), bend radius 3 times outer diameter, generated with kicad-footprint-generator")
 		(tags "connector wire 0.5sqmm")
-		(property "Reference" "OL_LED1"
+		(property "Reference" "OL_LED"
 			(at -0.508 -2.286 90)
 			(layer "F.SilkS")
 			(uuid "a64000f7-11c2-4800-844d-a636fe15d924")
@@ -15934,7 +15934,7 @@
 		(at 127.3176 113.4392 90)
 		(descr "Soldered wire connection, for a single 0.5 mm² wire, basic insulation, conductor diameter 0.9mm, outer diameter 2.1mm, size source Multi-Contact FLEXI-E 0.5 (https://ec.staubli.com/AcroFiles/Catalogues/TM_Cab-Main-11014119_(en)_hi.pdf), bend radius 3 times outer diameter, generated with kicad-footprint-generator")
 		(tags "connector wire 0.5sqmm")
-		(property "Reference" "OS1"
+		(property "Reference" "OS"
 			(at 0 -2.25 90)
 			(layer "F.SilkS")
 			(uuid "a12be262-b357-4c4f-a345-81439cbf7bbe")
@@ -16698,7 +16698,7 @@
 		(at 127.3176 93.1192 90)
 		(descr "Soldered wire connection, for a single 0.5 mm² wire, basic insulation, conductor diameter 0.9mm, outer diameter 2.1mm, size source Multi-Contact FLEXI-E 0.5 (https://ec.staubli.com/AcroFiles/Catalogues/TM_Cab-Main-11014119_(en)_hi.pdf), bend radius 3 times outer diameter, generated with kicad-footprint-generator")
 		(tags "connector wire 0.5sqmm")
-		(property "Reference" "Cool1"
+		(property "Reference" "Cool"
 			(at 0 -2.25 90)
 			(layer "F.SilkS")
 			(uuid "93130af7-6eb1-4477-a993-21d76dbaceee")
@@ -18050,7 +18050,7 @@
 		(at 127.3176 76.8632 -90)
 		(descr "Soldered wire connection, for a single 0.5 mm² wire, basic insulation, conductor diameter 0.9mm, outer diameter 2.1mm, size source Multi-Contact FLEXI-E 0.5 (https://ec.staubli.com/AcroFiles/Catalogues/TM_Cab-Main-11014119_(en)_hi.pdf), bend radius 3 times outer diameter, generated with kicad-footprint-generator")
 		(tags "connector wire 0.5sqmm")
-		(property "Reference" "TR1"
+		(property "Reference" "TR"
 			(at 0 2.286 90)
 			(layer "F.SilkS")
 			(uuid "924b42c7-84fa-430a-a243-623d6c4c1ebe")

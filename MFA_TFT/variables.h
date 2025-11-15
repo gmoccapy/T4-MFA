@@ -6,7 +6,7 @@
 #define MINUTES   "min"
 #define DEGREE    "`C"
 #define RPM       "U"
-#define CAR_NO    "HI-SN 3463"
+#define CAR_NO    "Your_Licence_Plate"
 
 // define case for differnt calculation
 enum memory{
@@ -96,6 +96,7 @@ unsigned long valueMillis;       	  	// time for update values in msec
 unsigned long lastMillis;         		// time for calculation in msec
 unsigned long time_last;      		    // time since last loop in sec, will be reseted every 60 Seconds and other times will be increased
 
+unsigned int StayOnTime = 10000;    // time to stay on before auto shutdowb
 
 // this variable are used on both cores (core(1) = main loop and core(0) = evaluate can messages)
 struct values_to_save {           // Data to be stored permanetly, 

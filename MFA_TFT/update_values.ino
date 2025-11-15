@@ -9,7 +9,7 @@ void update_time(void){
 // DEBUG  
   if(temp_page == 6){
     tft.setTextDatum(MC_DATUM);
-    temp = (shutdown_timer + 3600000 - millis()) / 1000 ;
+    temp = (shutdown_timer + StayOnTime - millis()) / 1000 ;
     dtostrf(temp, 4, 0, TFT_String);
     draw_value_box(250, 134, 50, TFT_String);
   }
@@ -20,7 +20,7 @@ void update_volt(void){
   temp = analogRead(PIN_Volt);      
 
   // Check if over or undervoltage, to turn on the LED
-  if((temp > 4000) || (temp < 1800)){
+  if((temp > 4000) || (temp < 1400)){
 //    Serial.println(temp);
     if (batterie == false) {
       batterie = true;
@@ -33,32 +33,23 @@ void update_volt(void){
   }
 
   // ignition is on! K15 with 12 V
-  if (temp > 1500){
+  if (temp > 1700){
     // ignition came back bevor one hour has past, so reset timer
     // and redraw page, as we have blanked it out Loosing K15
     if (shutdown_timer != 0){
       shutdown_timer = 0;
-      if (temp_page != Data.page){
-        temp_page = Data.page;
-        DrawSelected(Data.page);
-      }
+      temp_page = Data.page;
+      DrawSelected(Data.page);
     }
-    // if we had an power off, we need to put Hold high
-    if (digitalRead(PIN_STAY_ON) == false){
-      digitalWrite(PIN_STAY_ON, 1);
-    }
+    digitalWrite(PIN_STAY_ON, HIGH);
   }
+
   // no Current on K15, so switch off display (better sayed just draw black screen)
-  else{
-    volt = temp;
-    if (motor_on == false){
-      if ((shutdown_timer == 0) && (digitalRead(PIN_STAY_ON) == true)){
-        shutdown_timer = millis();
-        check_led = false;  // otherwise we will have symbols displayed on off page
-        temp_page = 6;
-        DrawSelected(temp_page);
-      }
-    }
+  else if ((shutdown_timer == 0) && (digitalRead(PIN_STAY_ON) == HIGH)){
+    shutdown_timer = millis();
+    check_led = false;  // otherwise we will have symbols displayed on off page
+    temp_page = 6;
+    DrawSelected(temp_page);
   }
   // get rid of noise influence ; high pass filtering 
   // take 90% of old value and 10% of new value to smooth the display

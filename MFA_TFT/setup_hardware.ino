@@ -29,6 +29,7 @@ void pin_setup(void){
 
   // Stay On PIN ; OUT
   pinMode(PIN_STAY_ON, OUTPUT);
+  digitalWrite(PIN_STAY_ON, LOW);
 
   // OIL LED comes directly from GPIO 25:
   pinMode(PIN_OIL_LED, INPUT_PULLUP);

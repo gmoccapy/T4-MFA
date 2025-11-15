@@ -323,8 +323,9 @@ void draw_InitPage(void){
 // need to be black to simulate switch off of display
 void drawShutDown(void){
   tft.fillScreen(TFT_BLACK);
-  tft.setTextDatum(TL_DATUM);
 
-//DEBUG:
-  tft.drawString("Waiting for shut Down", 10, 50, FONT2);
+  if(DEBUG){
+    tft.setTextDatum(TL_DATUM);
+    tft.drawString("Waiting for shut Down", 10, 50, FONT2);
+  }
 }
