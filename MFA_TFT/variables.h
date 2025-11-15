@@ -82,11 +82,11 @@ bool trunk = false;                   // trunk is open or closed from IO Pull Up
 bool motor_cap = false;               // motor cap is open or closed from IO Pull Up
 bool oil_presure = false;             // oil presure warning controlled by IO Pull Up 
 bool oil_level = true;                // oil level warning controlled by IO Pull Up
-bool washer_fluid = false;             // washer_fluid warning controlled IO Pull Up
+bool washer_fluid = false;            // washer_fluid warning controlled IO Pull Up
 bool brakepads = false;               // Brakepads warning controlled IO Pull Up
 bool brakesystem = false;             // Brakefluid warning controlled IO Pull Up
 bool temp_out_warning = false;        // We need to set a warning to avoid an update every cycle
-int warnings = 0;                 // we count infos, warnings and critical infos
+int  warnings = 0;                    // we count infos, warnings and critical infos
 
 bool units_l_100_km = false;          // true if l/100km ; false if l/h ; start as false, as car is not moving at start 
                                       // as on start the value will be false, as car is not moving
@@ -97,26 +97,26 @@ float temp = 0.0;                     // holds temporarily different values
 unsigned long lastMillis;         		// time for calculation in msec
 unsigned long time_last;      		    // time since last loop in sec, will be reseted every 60 Seconds and other times will be increased
 
-unsigned int StayOnTime = 10000;    // time to stay on before auto shutdown In this case 10000 ms = 10 s will be changed on working system to 3600000 = 1 h
+unsigned int StayOnTime = 10000;      // time to stay on before auto shutdown In this case 10000 ms = 10 s will be changed on working system to 3600000 = 1 h
 
 // this variable are used on both cores (core(1) = main loop and core(0) = evaluate can messages)
-struct values_to_save {           // Data to be stored permanetly, 
-    int page; 				            // core(1) Page to display
-    int mode;                     // coer(1) Mode is on of START, REFUEL, PERIOD
-    int deposit_last;             // both cores last stored content of deposit, needed to check if car has been refueled
-    unsigned int km_start;        // both cores distance driven since start           
-    unsigned int km_refuel;       // both cores distance driven since refule           
-    unsigned int km_long_period;  // both cores distance driven since last manual reset
-    float C_start;                // both cores consumption since start ml
-    float C_refuel;               // both cores consumption since refule ml
-    float C_long_period;          // both cores consumption since last manual reset l
-    float C_25_km[25];            // both cores consumption from the last 25 driven km in ml
-    float C_last_km;              // both cores conssumption of the last km, needed to calculate the last 25 km average in ml
-                                  // need to store the value, as we may have driven only 800 m on shut down and we do want to loose the amount used 
-    unsigned int time_start;      // core (1) time since last start min
-    unsigned int time_refuel;     // core (1) time since last refuel min
-    unsigned int time_long_period;// core (1) time since last manual reset min
-    unsigned int velocity_max;    // both cores may be playing only ;-)
+struct values_to_save {               // Data to be stored permanetly, 
+    int page; 				                // core(1) Page to display
+    int mode;                         // coer(1) Mode is on of START, REFUEL, PERIOD
+    int deposit_last;                 // both cores last stored content of deposit, needed to check if car has been refueled
+    unsigned int km_start;            // both cores distance driven since start           
+    unsigned int km_refuel;           // both cores distance driven since refule           
+    unsigned int km_long_period;      // both cores distance driven since last manual reset
+    float C_start;                    // both cores consumption since start ml
+    float C_refuel;                   // both cores consumption since refule ml
+    float C_long_period;              // both cores consumption since last manual reset l
+    float C_25_km[25];                // both cores consumption from the last 25 driven km in ml
+    float C_last_km;                  // both cores conssumption of the last km, needed to calculate the last 25 km average in ml
+                                      // need to store the value, as we may have driven only 800 m on shut down and we do want to loose the amount used 
+    unsigned int time_start;          // core (1) time since last start min
+    unsigned int time_refuel;         // core (1) time since last refuel min
+    unsigned int time_long_period;    // core (1) time since last manual reset min
+    unsigned int velocity_max;        // both cores may be playing only ;-)
 };
 
 //values_to_save Data
@@ -145,10 +145,10 @@ volatile unsigned int C_last = 0;              // last saved consumption in µl
 volatile float C_last_25_km;                   // consumption over the last 25 km in ml
 
 volatile bool start = false;                   // is needed for initial screen display
-volatile bool motor_on	= false;                // Speed has been over 900 U/min than motor_on = true
-volatile bool save = false;				            // Save is set to true if motor_on = true, after saving the variable will be set to false to not save continiously
+volatile bool motor_on	= false;               // Speed has been over 900 U/min than motor_on = true
+volatile bool save = false;				             // Save is set to true if motor_on = true, after saving the variable will be set to false to not save continiously
 volatile bool check_led = false;               // only if true, we will redraw the screen painting or deleting the LED icon
-                                      // avoid redrawing the screen every llop cycle
+                                               // avoid redrawing the screen every loop cycle
 
 // We get some LED information from Can BUS 
 volatile bool light = false;                   // light is on or off from Can 0x420
@@ -157,14 +157,14 @@ volatile bool door = false;                    // left door is open (true) or cl
 
 volatile int speed;                            // rpm of the motor
 volatile unsigned int km_total = 0;            // total km driven by the vehicle / control the change of this value to recalculate values
-                                      // must be 0 at start to not add km with fist CAN message
+                                               // must be 0 at start to not add km with fist CAN message
 
-volatile float C_actual;			        	        // consumption ml, from 0x480 calculated in l/h  may be displayed also as l/100km
+volatile float C_actual;			        	       // consumption ml, from 0x480 calculated in l/h  may be displayed also as l/100km
 
-volatile int temp_oil;		    	                // Oil temp in °C
+volatile int temp_oil;		    	               // Oil temp in °C
 volatile float temp_out;                       // outer temperatur in °C (multiplied by factor 10 to be able to use int)
 
-volatile int deposit = 0;        	            // content of deposit
+volatile int deposit = 0;        	             // content of deposit
 
-volatile unsigned int velocity_actual;	        // actual velocity in km/h
+volatile unsigned int velocity_actual;	       // actual velocity in km/h
 volatile unsigned int velocity_cruise_control; // actual velocity in km/h
