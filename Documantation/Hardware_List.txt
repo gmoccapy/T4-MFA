@@ -1,13 +1,17 @@
 Display:
-APKLVSR 3,5" LCD RPi                            (Amazon)        modification of the connectors are needed
+APKLVSR 3,5" LCD RPi                            (Amazon)        modification of the connectors needed
 alternative:
 EZ Delivery Waveshare 3,5" TFT Touch Shield     (AZ-Delivery)   not tested jet, advantage backlight control
-                                                                3D Holder needs to be modufied
+                                                                3D Holder needs to be modified
 Micocontroler:
 ESP32 Dev KitC V4 ESP32-WROOM-32 unsoldered     (AZ-Delivery)
 
 Brake Out Board:
 see KICAD and Gerber Files
+
+1 x self made board for foto resistors
+6 x photo resistor LDR5528 GL5528 (5 mm diameter, max. 2,5 mm hight) (AZ-Delivery) 
+6 x pull down resistor 1/4W 10k                                      (AZ-Delivery)
 
 several cable
 welding material
